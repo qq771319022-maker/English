@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#eaf4ff">
+<meta name="theme-color" content="#eaf4ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#eaf4ff" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="./manifest.webmanifest">
 <title>DC Engineer English</title>
 <style>
 *{box-sizing:border-box}
+html{color-scheme:light;background:#eaf4ff}
+body{color-scheme:light}
 body{margin:0;background:#f3f6fa;color:#132238;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 header{background:linear-gradient(180deg,#eaf4ff 0%,#f7fbff 100%);color:#132238;padding:20px 18px 17px}
 header h1{margin:0;font-size:27px}
@@ -42,21 +46,25 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .task{background:#f8fafc;border-radius:14px;padding:10px;text-align:center}.task b{font-size:20px;display:block}.task span{font-size:11px;color:#64748b}
 .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eff6ff;color:#2563eb;font-size:11px;margin-top:5px}
 .done{background:#ecfdf5;color:#047857}.duebadge{background:#fff7ed;color:#c2410c}
-.modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:10}.modal.show{display:flex}
-.sheet{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px}
+.modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:100;overscroll-behavior:contain}.modal.show{display:flex}
+.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px 20px calc(210px + env(safe-area-inset-bottom))}
 .close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
-.rating{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:15px}
-.rating button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:10px 3px;font-size:12px}
+.completion{position:fixed;left:0;right:0;bottom:0;z-index:120;margin:0;padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:2px solid #dbeafe;box-shadow:0 -8px 22px rgba(15,23,42,.14)}
+.completion b{display:block;font-size:17px;color:#132238;padding:0 2px}.completion span{display:block;margin-top:4px;font-size:12px;color:#64748b;padding:0 2px}
+.rating{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:11px}
+.rating button{border:1px solid #cbd5e1;background:#fff;border-radius:13px;padding:12px 6px;font-size:13px;min-height:58px;cursor:pointer;touch-action:manipulation}
+.rating button:active{transform:scale(.98);background:#eff6ff}.rating button b{color:#132238}
+.rating b{display:block;font-size:16px;margin-bottom:3px}
 .rating b{display:block;font-size:15px;margin-bottom:2px}
 .flash{background:#f8fafc;border-radius:15px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:750}
 .small{font-size:12px;color:#64748b}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f4}
 .setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#64748b}.setting select{padding:9px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
 .status{padding:9px 11px;background:#f8fafc;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
-@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px}}
+@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:230px}.completion{left:50%;right:auto;bottom:0;width:min(680px,100%);transform:translateX(-50%);border-radius:18px 18px 0 0}}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V13</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V17</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -284,7 +292,16 @@ function detail(i){
     <div class="flash"><div class="big">${isCompletedToday(x.word)?'今日已完成':s.box>=4?'已掌握':s.seen?'学习中':'新词'}</div>
     <div class="small">复习箱：${s.box} · 正确 ${s.correct} · 错误 ${s.wrong}</div></div>
     <div class="tools" style="margin-top:12px"><button id="mw">🔊 单词</button><button id="me">🔊 例句</button><button id="mf">⭐ ${favs.has(x.word)?'已收藏':'收藏'}</button></div>
-    <div class="rating"><button data-rate="again"><b>忘记</b>10分钟后</button><button data-rate="hard"><b>困难</b>1天后</button><button data-rate="good"><b>记得</b>3天后</button><button data-rate="easy"><b>简单</b>7天后</button></div>`;
+    <div class="completion">
+      <b>✓ 完成本词学习</b>
+      <span>选择下面任意一个记忆结果，即表示本词今天已经学习完成。</span>
+      <div class="rating">
+        <button data-rate="again"><b>忘记</b>重新安排 · 10分钟后</button>
+        <button data-rate="hard"><b>困难</b>重新安排 · 1天后</button>
+        <button data-rate="good"><b>记得</b>复习安排 · 3天后</button>
+        <button data-rate="easy"><b>简单</b>复习安排 · 7天后</button>
+      </div>
+    </div>`;
   $id('modal').classList.add('show');
   $id('mw').onclick=()=>speakText(x.word);$id('me').onclick=()=>speakText(x.example_en);
   $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
