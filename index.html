@@ -1,31 +1,62 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827"><link rel="manifest" href="./manifest.webmanifest">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="./manifest.webmanifest">
 <title>DC Engineer English</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#132238;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-header{background:#111827;color:#fff;padding:22px 18px 18px}header h1{margin:0;font-size:27px}header p{margin:5px 0 0;color:#cbd5e1}
-main{max-width:980px;margin:auto;padding:14px 16px 112px}.search{width:100%;padding:14px 15px;border:1px solid #d8dee8;border-radius:15px;font-size:16px;margin-bottom:11px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}.stat{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:10px 5px;text-align:center}.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:#64748b}
-.progress{background:#fff;border:1px solid #e1e7ef;border-radius:17px;padding:14px;margin-bottom:12px}.progressline{display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px}.bar{height:10px;background:#e8edf3;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:#334155;width:0}
-.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:10px}.tabs button,.tools button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:9px 12px;font-size:14px;white-space:nowrap}.tabs button.active{background:#111827;color:#fff}
-.card{background:#fff;border:1px solid #e1e7ef;border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 2px 8px #00000008}.top{display:flex;justify-content:space-between;gap:10px}.word{font-size:23px;font-weight:750}.cn{font-size:17px;color:#64748b;margin-top:2px}.ex{font-size:16px;margin-top:10px;line-height:1.5}.tr{color:#64748b;font-size:13px}.tag{display:inline-block;margin-top:9px;padding:4px 8px;background:#f1f5f9;border-radius:999px;font-size:11px;color:#475569}
-.speak{width:46px;height:46px;border:0;border-radius:13px;background:#eef6ff;font-size:21px;flex:0 0 auto}.panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:13px;margin-bottom:12px}
-.tools{display:flex;flex-wrap:wrap;gap:7px}.tools label{font-size:12px;color:#475569;display:flex;align-items:center;gap:4px}.tools select{padding:7px;border:1px solid #d8dee8;border-radius:9px;background:#fff}
-.install{width:100%;border:0;border-radius:12px;padding:11px;background:#111827;color:#fff;font-size:14px;margin-top:10px}.install.hidden{display:none}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dbe1ea;display:grid;grid-template-columns:repeat(5,1fr);padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:5}.bottom button{background:none;border:0;padding:7px 2px;font-size:14px;color:#64748b;min-width:0}.bottom .ico{font-size:23px;line-height:23px}.bottom button.active{color:#111827;font-weight:750}
-.hero{background:#fff;border:1px solid #e1e7ef;border-radius:18px;padding:16px;margin-bottom:12px}.hero h2{margin:0 0 5px}.hero p{margin:5px 0;color:#64748b}.cta{width:100%;border:0;border-radius:13px;padding:13px;background:#111827;color:#fff;font-size:15px;margin-top:9px}
-.modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:10}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px}.close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
-.rating{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:15px}.rating button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:10px 3px;font-size:12px}.rating b{display:block;font-size:15px;margin-bottom:2px}.flash{background:#f8fafc;border-radius:15px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:750}.small{font-size:12px;color:#64748b}
-.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f4}.setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#64748b}.setting select{padding:9px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fa;color:#132238;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:#111827;color:#fff;padding:20px 18px 17px}
+header h1{margin:0;font-size:27px}
+header p{margin:5px 0 0;color:#cbd5e1}
+main{max-width:980px;margin:auto;padding:14px 16px 112px}
+.search{width:100%;padding:14px 15px;border:1px solid #d8dee8;border-radius:15px;font-size:16px;margin-bottom:11px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.stat{background:#fff;border:1px solid #e2e8f0;border-radius:15px;padding:10px 5px;text-align:center}
+.stat b{display:block;font-size:20px}.stat span{font-size:11px;color:#64748b}
+.progress{background:#fff;border:1px solid #e1e7ef;border-radius:17px;padding:14px;margin-bottom:12px}
+.progressline{display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px}
+.bar{height:10px;background:#e8edf3;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:#2563eb}
+.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:10px}
+.tabs button,.tools button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:9px 12px;font-size:14px;white-space:nowrap}
+.tabs button.active{background:#111827;color:#fff}
+.card{background:#fff;border:1px solid #e1e7ef;border-radius:17px;padding:15px;margin:10px 0;box-shadow:0 2px 8px #00000008}
+.top{display:flex;justify-content:space-between;gap:10px}.word{font-size:23px;font-weight:750}
+.cn{font-size:17px;color:#64748b;margin-top:2px}.ex{font-size:16px;margin-top:10px;line-height:1.5}.tr{color:#64748b;font-size:13px}
+.tag{display:inline-block;margin-top:9px;padding:4px 8px;background:#f1f5f9;border-radius:999px;font-size:11px;color:#475569}
+.speak{width:46px;height:46px;border:0;border-radius:13px;background:#eef6ff;font-size:21px;flex:0 0 auto}
+.panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:13px;margin-bottom:12px}
+.install{width:100%;border:0;border-radius:12px;padding:12px;background:#111827;color:#fff;font-size:14px;margin-top:10px}.install.hidden{display:none}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dbe1ea;display:grid;grid-template-columns:repeat(5,1fr);padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:5}
+.bottom button{background:none;border:0;padding:7px 2px;font-size:14px;color:#64748b;min-width:0}.bottom .ico{font-size:23px;line-height:23px}.bottom button.active{color:#111827;font-weight:750}
+.hero{background:#fff;border:1px solid #e1e7ef;border-radius:18px;padding:16px;margin-bottom:12px}
+.hero h2{margin:0 0 5px}.hero p{margin:5px 0;color:#64748b}
+.cta{width:100%;border:0;border-radius:13px;padding:13px;background:#111827;color:#fff;font-size:15px;margin-top:9px}
+.cta.blue{background:#2563eb}.cta.secondary{background:#eef2f7;color:#111827}
+.taskgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.task{background:#f8fafc;border-radius:14px;padding:10px;text-align:center}.task b{font-size:20px;display:block}.task span{font-size:11px;color:#64748b}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eff6ff;color:#2563eb;font-size:11px;margin-top:5px}
+.done{background:#ecfdf5;color:#047857}.duebadge{background:#fff7ed;color:#c2410c}
+.modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:10}.modal.show{display:flex}
+.sheet{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px}
+.close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
+.rating{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:15px}
+.rating button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:10px 3px;font-size:12px}
+.rating b{display:block;font-size:15px;margin-bottom:2px}
+.flash{background:#f8fafc;border-radius:15px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:750}
+.small{font-size:12px;color:#64748b}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f4}
+.setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#64748b}.setting select{padding:9px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
 .status{padding:9px 11px;background:#f8fafc;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
-@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;border-radius:21px}}
+@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px}}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V6</p></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V8</p></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -35,80 +66,243 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}.search{width:100%;padd
 <button data-nav="mine"><div class="ico">👤</div>我的</button>
 </nav>
 <div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">关闭</button><div id="detail"></div></div></div>
+
 <script>
 let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null;
-const KEY='dceng_v6_progress',progress=JSON.parse(localStorage.getItem(KEY)||'{}'),favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
-function $id(x){return document.getElementById(x)}function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+const KEY='dceng_v8_progress';
+const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v6_progress')||'{}');
+const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
+
+function $id(x){return document.getElementById(x)}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function save(){localStorage.setItem(KEY,JSON.stringify(progress));localStorage.setItem('favs',JSON.stringify([...favs]))}
-function today(){return new Date().toISOString().slice(0,10)}
-function st(w){return progress[w]||{box:0,due:0,seen:0,correct:0,wrong:0}}
-function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'||x.quality==='curated'}
+function today(){return new Date().toLocaleDateString('en-CA')}
+function st(w){return progress[w]||{box:0,due:0,seen:0,correct:0,wrong:0,last:0}}
+function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'}
 function due(){return items.filter(x=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()})}
 function mastered(){return items.filter(x=>st(x.word).box>=4)}
-function newWords(){return items.filter(x=>st(x.word).seen===0)}
-function goals(){return {n:+localStorage.getItem('dceng_daily_new')||20,r:+localStorage.getItem('dceng_review')||20}}
-function todayDone(){let x=JSON.parse(localStorage.getItem('dceng_today')||'{}');return x[today()]||{n:0,r:0}}
-function markToday(type){let x=JSON.parse(localStorage.getItem('dceng_today')||'{}'),k=today();x[k]=x[k]||{n:0,r:0};x[k][type]++;localStorage.setItem('dceng_today',JSON.stringify(x))}
-function streak(){let d=JSON.parse(localStorage.getItem('dceng_days')||'{}'),n=0,dt=new Date();for(let i=0;i<3660;i++){let k=dt.toISOString().slice(0,10);if(!d[k])break;n++;dt.setDate(dt.getDate()-1)}return n}
+function newWords(pool=items){return pool.filter(x=>st(x.word).seen===0)}
+function goals(){return{
+  n:+localStorage.getItem('dceng_daily_new')||20,
+  p:+localStorage.getItem('dceng_daily_pro')||10,
+  r:+localStorage.getItem('dceng_review')||20
+}}
+function dayStats(){return JSON.parse(localStorage.getItem('dceng_daystats')||'{}')}
+function setDayStats(o){localStorage.setItem('dceng_daystats',JSON.stringify(o))}
+function completedToday(){return dayStats()[today()]||{n:0,p:0,r:0}}
+function markToday(type,w){
+  let all=dayStats(),k=today(); all[k]=all[k]||{n:0,p:0,r:0};
+  all[k][type]=all[k][type]||0; all[k][type]++; setDayStats(all);
+  let done=JSON.parse(localStorage.getItem('dceng_completed_today')||'{}');
+  done[k]=done[k]||{}; done[k][w]=true; localStorage.setItem('dceng_completed_today',JSON.stringify(done));
+}
+function isCompletedToday(w){let d=JSON.parse(localStorage.getItem('dceng_completed_today')||'{}');return !!(d[today()]&&d[today()][w])}
+function streak(){
+  let d=JSON.parse(localStorage.getItem('dceng_days')||'{}'),n=0,dt=new Date();
+  for(let i=0;i<3660;i++){let k=dt.toLocaleDateString('en-CA');if(!d[k])break;n++;dt.setDate(dt.getDate()-1)}
+  return n
+}
 function markDay(){let d=JSON.parse(localStorage.getItem('dceng_days')||'{}');d[today()]=true;localStorage.setItem('dceng_days',JSON.stringify(d))}
-function refreshStats(){let m=mastered().length,p=items.length?Math.round(m/items.length*100):0;$id('total')?.replaceChildren(items.length);$id('mastered')?.replaceChildren(m);$id('due')?.replaceChildren(due().length);$id('streak')?.replaceChildren(streak());$id('pct')?.replaceChildren(p+'%');if($id('bar'))$id('bar').style.width=p+'%'}
-function dailySet(){let g=goals(),r=due().slice(0,g.r),n=newWords().slice(0,g.n);return [...r,...n]}
-function card(x,i){let s=st(x.word);return `<article class="card" data-detail="${i}"><div class="top"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'')}</div></div><button class="speak" data-speak="${i}">🔊</button></div><div class="ex">${esc(x.example_en||'')}</div><div class="tr">${esc(x.example_zh||'')}</div><span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'} · ${s.box>=4?'已掌握':s.seen?'学习中':'未学习'}</span></article>`}
-function list(arr){$id('main').insertAdjacentHTML('beforeend','');return arr.slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
+function dailyPlan(){
+  const g=goals(), key='dceng_plan_'+today();
+  let saved=JSON.parse(localStorage.getItem(key)||'null');
+  if(saved && Array.isArray(saved.ids)) return saved;
+  const d=due().slice(0,g.r);
+  const dueIds=new Set(d.map(x=>x.id));
+  const dailyPool=newWords(items.filter(x=>!isPro(x))).filter(x=>!dueIds.has(x.id)).slice(0,g.n);
+  const proPool=newWords(items.filter(isPro)).filter(x=>!dueIds.has(x.id)).slice(0,g.p);
+  const plan={ids:[...d,...dailyPool,...proPool].map(x=>x.id)};
+  localStorage.setItem(key,JSON.stringify(plan)); return plan;
+}
+function todayTasks(){
+  const ids=new Set(dailyPlan().ids);
+  return items.filter(x=>ids.has(x.id));
+}
+function todayRemaining(){return todayTasks().filter(x=>!isCompletedToday(x.word))}
+function todayCounts(){
+  const t=completedToday(),g=goals();
+  return {n:t.n,p:t.p,r:t.r,total:t.n+t.p+t.r,target:g.n+g.p+Math.min(g.r,due().length)}
+}
+function refreshStats(){
+  let m=mastered().length,p=items.length?Math.round(m/items.length*100):0;
+  $id('total')?.replaceChildren(items.length);$id('mastered')?.replaceChildren(m);
+  $id('due')?.replaceChildren(due().length);$id('streak')?.replaceChildren(streak());
+  $id('pct')?.replaceChildren(p+'%');if($id('bar'))$id('bar').style.width=p+'%';
+}
+function statusLabel(x){
+  if(isCompletedToday(x.word)) return '<span class="badge done">今日已完成</span>';
+  let s=st(x.word); if(s.seen===0)return '<span class="badge">新词</span>';
+  if(s.due<=Date.now())return '<span class="badge duebadge">待复习</span>';
+  return '<span class="badge">学习中</span>';
+}
+function card(x,i){
+  return `<article class="card" data-detail="${i}">
+    <div class="top"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'')}</div></div>
+    <button class="speak" data-speak="${i}">🔊</button></div>
+    <div class="ex">${esc(x.example_en||'')}</div><div class="tr">${esc(x.example_zh||'')}</div>
+    <span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'} · ${statusLabel(x)}</span>
+  </article>`
+}
+function list(arr){return arr.slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
+
 function render(){
- let body='';
- if(page==='home'){
-  let g=goals(),td=todayDone(),d=due().length,m=mastered().length,p=items.length?Math.round(m/items.length*100):0;
-  body=`<div class="hero"><h2>今日学习</h2><p>新词 ${g.n} 个 · 复习上限 ${g.r} 个</p><p>今日已完成：${td.n} 个新词 + ${td.r} 个复习</p><button class="cta" data-page="daily">▶ 开始今日学习</button></div>
-  <div class="stats"><div class="stat"><b>${items.length}</b><span>总词汇</span></div><div class="stat"><b>${m}</b><span>已掌握</span></div><div class="stat"><b>${d}</b><span>待复习</span></div><div class="stat"><b>${streak()}</b><span>连续天数</span></div></div>
-  <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%"></i></div></div>
-  <div class="panel"><b>学习建议</b><p class="small">每天先完成到期复习，再学习新词。遇到不熟的词选择“忘记”或“困难”，系统会提前安排。</p></div>`;
- }else if(page==='daily'){
-  let g=goals(),td=todayDone(),todaySet=[...due().slice(0,g.r),...newWords().slice(0,g.n)],dailyAll=items.filter(x=>!isPro(x));
-  body=`<div class="hero"><h2>日常英语</h2><p>今日任务：${g.n} 个新词 + ${g.r} 个复习上限</p><p>已完成：${td.n} 新词 / ${td.r} 复习</p><button class="cta" data-toggle="dailyAll">浏览全部日常内容</button></div><div class="panel" id="todayPanel"><b>今日推荐</b><div id="todayCards">${list(todaySet)}</div></div><input id="search" class="search" placeholder="搜索英文 / 中文 / 例句"><div id="cards"></div>`;
-  setTimeout(()=>{const b=document.querySelector('[data-toggle="dailyAll"]'); if(b)b.onclick=()=>{$id('cards').innerHTML=dailyAll.slice(0,120).map(x=>card(x,items.indexOf(x))).join(''); b.textContent='已显示全部日常内容';}},0);
- }else if(page==='professional'){
-  body=`<div class="hero"><h2>专业英语</h2><p>数据中心、电气、柴油发电机、UPS、MV/LV、测试、MOP、RCA 等。</p></div><input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句"><div id="cards">${list(items.filter(isPro))}</div>`;
- }else if(page==='review'){
-  body=`<div class="hero"><h2>复习</h2><p>这里显示已经学习且到期需要复习的内容。复习结果会自动影响下次出现时间。</p></div><div id="cards">${list(due())}</div>`;
- }else{
-  body=`<div class="hero"><h2>我的</h2><p>学习设置与 App 设置</p>
-  <div class="panel">
-   <div class="setting"><div><b>每日新词</b><span>每天自动加入的新词数量</span></div><select id="setNew"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
-   <div class="setting"><div><b>每日复习上限</b><span>每天最多安排多少个到期复习</span></div><select id="setReview"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
-   <div class="setting"><div><b>发音口音</b><span>单词和例句播放使用</span></div><select id="setAccent"><option value="en-US">🇺🇸 美式 English (US)</option><option value="en-GB">🇬🇧 英式 English (UK)</option></select></div>
-   <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
-   <button id="installBtn" class="install">📲 安装到手机桌面</button>
-   <button id="voiceBtn" class="install">🔊 测试当前发音</button>
-   <div id="status" class="status">学习进度保存在本机浏览器。更换手机不会自动同步。</div>
-  </div>
-  <div class="panel"><b>当前学习统计</b><p class="small">总词汇：${items.length}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
-  <div class="panel"><b>关于版本</b><p class="small">V6.1：五栏导航、设置集中管理，并校正日常与专业高频内容及工程例句。</p></div></div>`;
- }
- $id('main').innerHTML=body;
- bind();
+  let body='';
+  if(page==='home'){
+    const g=goals(), c=todayCounts(), remaining=todayRemaining().length;
+    const totalDone=c.total, target=c.target, pct=target?Math.min(100,Math.round(totalDone/target*100)):100;
+    const m=mastered().length, p=items.length?Math.round(m/items.length*100):0;
+    body=`<div class="hero">
+      <h2>今日学习</h2>
+      <p>每日自动安排：${g.n} 个日常新词 + ${g.p} 个专业新词 + 最多 ${g.r} 个复习词</p>
+      <div class="taskgrid">
+        <div class="task"><b>${c.n}/${g.n}</b><span>日常新词</span></div>
+        <div class="task"><b>${c.p}/${g.p}</b><span>专业新词</span></div>
+        <div class="task"><b>${c.r}/${Math.min(g.r,due().length)}</b><span>到期复习</span></div>
+      </div>
+      <div class="progress"><div class="progressline"><span>今日任务进度</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>
+      <p><b>${remaining===0?'🎉 今日任务已全部完成！':'还剩 '+remaining+' 个任务'}</b></p>
+      <button class="cta blue" data-page="daily">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>${items.length}</b><span>总词汇</span></div>
+      <div class="stat"><b>${m}</b><span>已掌握</span></div>
+      <div class="stat"><b>${due().length}</b><span>待复习</span></div>
+      <div class="stat"><b>${streak()}</b><span>连续天数</span></div>
+    </div>
+    <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%"></i></div></div>
+    <div class="panel"><b>学习规则</b><p class="small">只有在单词详情页选择“忘记 / 困难 / 记得 / 简单”后，才算今天真正完成该词。仅打开、播放发音或浏览不会计入完成。</p></div>`;
+  }else if(page==='daily'){
+    const g=goals(), tasks=todayTasks(), rem=todayRemaining();
+    body=`<div class="hero"><h2>日常英语</h2><p>这里是完整日常词库；今日任务会与专业英语、复习任务一起出现在“首页 → 今日学习”。</p>
+      <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>今日新词</span></div><div class="task"><b>${rem.length}</b><span>今日剩余</span></div><div class="task"><b>${items.filter(x=>!isPro(x)).length}</b><span>日常词库</span></div></div>
+      <button class="cta blue" data-toggle="today">📚 打开今日学习</button></div>
+      <input id="search" class="search" placeholder="搜索英文 / 中文 / 例句">
+      <div id="cards">${list(items.filter(x=>!isPro(x)))}</div>`;
+    setTimeout(()=>{let b=document.querySelector('[data-toggle="today"]');if(b)b.onclick=()=>{page='home';render();setTimeout(()=>{page='daily';render();},0)}},0);
+  }else if(page==='professional'){
+    body=`<div class="hero"><h2>专业英语</h2><p>数据中心、电气、柴油发电机、UPS、MV/LV、测试、MOP、RCA、故障处理、维护与验收等。</p>
+      <div class="taskgrid"><div class="task"><b>${completedToday().p}/${goals().p}</b><span>今日专业新词</span></div><div class="task"><b>${items.filter(isPro).length}</b><span>专业词库</span></div><div class="task"><b>${mastered().filter(isPro).length}</b><span>已掌握专业词</span></div></div>
+      <button class="cta blue" data-page="daily">⚡ 今日任务（含专业英语）</button></div>
+      <input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句">
+      <div id="cards">${list(items.filter(isPro))}</div>`;
+  }else if(page==='review'){
+    body=`<div class="hero"><h2>复习</h2><p>只显示已经学习并且到期的词。复习结果会自动影响下一次出现时间。</p>
+      <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r}</b><span>每日上限</span></div></div>
+      </div><div id="cards">${list(due())}</div>`;
+  }else{
+    body=`<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
+      <div class="panel">
+        <div class="setting"><div><b>每日新词</b><span>日常英语每天自动安排</span></div><select id="setNew"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
+        <div class="setting"><div><b>每日专业新词</b><span>专业英语每天自动安排</span></div><select id="setPro"><option>5</option><option>10</option><option>20</option><option>30</option></select></div>
+        <div class="setting"><div><b>每日复习上限</b><span>每天最多安排多少个到期复习</span></div><select id="setReview"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
+        <div class="setting"><div><b>发音口音</b><span>单词和例句播放使用</span></div><select id="setAccent"><option value="en-US">🇺🇸 美式 English (US)</option><option value="en-GB">🇬🇧 英式 English (UK)</option></select></div>
+        <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
+        <button id="installBtn" class="install">📲 安装到手机桌面</button>
+        <button id="voiceBtn" class="install">🔊 测试当前发音</button>
+        <div id="status" class="status">学习进度保存在本机浏览器。</div>
+      </div>
+      <div class="panel"><b>当前学习统计</b><p class="small">总词汇：${items.length}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
+      <div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
+    </div>`;
+  }
+  $id('main').innerHTML=body; bind();
 }
 function bind(){
- let s=$id('search');if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):newWords();$id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
- document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;render()});
- if($id('setNew')){$id('setNew').value=localStorage.getItem('dceng_daily_new')||20;$id('setReview').value=localStorage.getItem('dceng_review')||20;$id('setAccent').value=localStorage.getItem('dceng_accent')||'en-US';$id('setRate').value=localStorage.getItem('dceng_rate')||1;
- ['setNew','setReview'].forEach(id=>$id(id).onchange=e=>{localStorage.setItem(id==='setNew'?'dceng_daily_new':'dceng_review',e.target.value);render()});
- $id('setAccent').onchange=e=>localStorage.setItem('dceng_accent',e.target.value);$id('setRate').onchange=e=>localStorage.setItem('dceng_rate',e.target.value);
- $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
- }
- if($id('installBtn')){$id('installBtn').onclick=installApp}
+  let s=$id('search');
+  if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
+    $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
+  document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()});
+  if($id('setNew')){
+    $id('setNew').value=localStorage.getItem('dceng_daily_new')||20;
+    $id('setPro').value=localStorage.getItem('dceng_daily_pro')||10;
+    $id('setReview').value=localStorage.getItem('dceng_review')||20;
+    $id('setAccent').value=localStorage.getItem('dceng_accent')||'en-US';
+    $id('setRate').value=localStorage.getItem('dceng_rate')||1;
+    $id('setNew').onchange=e=>{localStorage.setItem('dceng_daily_new',e.target.value);clearTodayPlan();render()};
+    $id('setPro').onchange=e=>{localStorage.setItem('dceng_daily_pro',e.target.value);clearTodayPlan();render()};
+    $id('setReview').onchange=e=>{localStorage.setItem('dceng_review',e.target.value);clearTodayPlan();render()};
+    $id('setAccent').onchange=e=>localStorage.setItem('dceng_accent',e.target.value);
+    $id('setRate').onchange=e=>localStorage.setItem('dceng_rate',e.target.value);
+    $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
+  }
+  if($id('installBtn'))$id('installBtn').onclick=installApp;
 }
-document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';render()});
-$id('main').addEventListener('click',e=>{let sp=e.target.closest('[data-speak]');if(sp){let x=items[+sp.dataset.speak];if(x)speakText((x.word||'')+'. '+(x.example_en||''));return}let c=e.target.closest('[data-detail]');if(c)detail(+c.dataset.detail)});
-function detail(i){let x=items[i],s=st(x.word);if(!x)return;$id('detail').innerHTML=`<h2>${esc(x.word)}</h2><div class="cn">${esc(x.meaning_zh||'')}</div><p><b>音标：</b>${esc(x.phonetic||'')}</p><p><b>词根/构词：</b>${esc(x.root||'')}</p><p><b>搭配：</b>${esc((x.collocations||[]).join(', '))}</p><p><b>例句：</b><br>${esc(x.example_en||'')}</p><p class="tr">${esc(x.example_zh||'')}</p><p><b>连读提示：</b>${esc(x.connected_speech||'注意重音、弱读和连读。')}</p><div class="flash"><div class="big">${s.box>=4?'已掌握':s.seen?'学习中':'新词'}</div><div class="small">复习箱：${s.box} · 正确 ${s.correct} · 错误 ${s.wrong}</div></div><div class="tools" style="margin-top:12px"><button id="mw">🔊 单词</button><button id="me">🔊 例句</button><button id="mf">⭐ ${favs.has(x.word)?'已收藏':'收藏'}</button></div><div class="rating"><button data-rate="again"><b>忘记</b>10分钟后</button><button data-rate="hard"><b>困难</b>1天后</button><button data-rate="good"><b>记得</b>3天后</button><button data-rate="easy"><b>简单</b>7天后</button></div>`;$id('modal').classList.add('show');$id('mw').onclick=()=>speakText(x.word);$id('me').onclick=()=>speakText(x.example_en);$id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};$id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate))}
-function rate(w,l){let s=st(w),now=Date.now(),mins={again:10,hard:1440,good:4320,easy:10080};s.seen++;s.last=now;if(l==='again'){s.box=0;s.wrong++;s.due=now+mins.again*60000}else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=now+mins.hard*60000}else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=now+mins.good*60000}else{s.box=4;s.correct++;s.due=now+mins.easy*60000}progress[w]=s;save();markDay();markToday(s.seen===1?'n':'r');$id('modal').classList.remove('show');render()}
-function browserSpeak(text){return new Promise((res,rej)=>{if(!('speechSynthesis'in window))return rej();speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang=localStorage.getItem('dceng_accent')||'en-US';u.rate=+(localStorage.getItem('dceng_rate')||1);let vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));u.onend=()=>res();u.onerror=()=>rej();speechSynthesis.speak(u);setTimeout(()=>{if(!speechSynthesis.speaking&&!speechSynthesis.pending)rej()},1600)})}
-function onlineSpeak(text){return new Promise((res,rej)=>{let v=(localStorage.getItem('dceng_accent')||'en-US')==='en-GB'?'Emma':'Brian',url='https://api.streamelements.com/kappa/v2/speech?voice='+v+'&text='+encodeURIComponent(text);try{if(audioEl){audioEl.pause();audioEl.src=''}audioEl=new Audio();audioEl.preload='auto';audioEl.playsInline=true;audioEl.src=url;audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1);let done=false,ok=()=>{if(!done){done=true;res()}},bad=()=>{if(!done){done=true;rej()}};audioEl.onerror=bad;audioEl.oncanplay=()=>{let p=audioEl.play();p?.then?.(ok).catch(bad);};audioEl.load();setTimeout(bad,9000)}catch(e){rej(e)}})}
-async function speakText(t){let s=$id('status');if(s)s.textContent='正在播放…';try{await onlineSpeak(t);if(s)s.textContent='✓ 在线语音播放中'}catch(e){try{await browserSpeak(t);if(s)s.textContent='✓ 已切换系统语音'}catch(e2){if(s)s.textContent='✕ 发音失败，请检查媒体音量和网络'}}}
-async function installApp(){if(!deferredInstallPrompt){if($id('status'))$id('status').textContent='当前浏览器未提供安装弹窗。请使用 Android Chrome 打开本页，并在右上角菜单选择“安装应用”或“添加到主屏幕”。';return}deferredInstallPrompt.prompt();let c=await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;if($id('status'))$id('status').textContent=c.outcome==='accepted'?'✓ 已开始安装':'已取消安装'}
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;if(page==='mine'){let b=$id('installBtn');if(b)b.classList.remove('hidden')}});window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hidden')});
-$id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};$id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
+function clearTodayPlan(){localStorage.removeItem('dceng_plan_'+today())}
+document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});
+$id('main').addEventListener('click',e=>{
+  let sp=e.target.closest('[data-speak]');
+  if(sp){let x=items[+sp.dataset.speak];if(x)speakText(x.word+'. '+(x.example_en||''));return}
+  let c=e.target.closest('[data-detail]');if(c)detail(+c.dataset.detail);
+});
+function detail(i){
+  let x=items[i],s=st(x.word);if(!x)return;
+  $id('detail').innerHTML=`<h2>${esc(x.word)}</h2><div class="cn">${esc(x.meaning_zh||'')}</div>
+    <p><b>音标：</b>${esc(x.phonetic||'')}</p><p><b>词性：</b>${esc(x.pos||'')}</p>
+    <p><b>词根/构词：</b>${esc(x.root||'')}</p><p><b>搭配：</b>${esc((x.collocations||[]).join(', '))}</p>
+    <p><b>例句：</b><br>${esc(x.example_en||'')}</p><p class="tr">${esc(x.example_zh||'')}</p>
+    <p><b>连读提示：</b>${esc(x.connected_speech||'注意重音、弱读和连读。')}</p>
+    <div class="flash"><div class="big">${isCompletedToday(x.word)?'今日已完成':s.box>=4?'已掌握':s.seen?'学习中':'新词'}</div>
+    <div class="small">复习箱：${s.box} · 正确 ${s.correct} · 错误 ${s.wrong}</div></div>
+    <div class="tools" style="margin-top:12px"><button id="mw">🔊 单词</button><button id="me">🔊 例句</button><button id="mf">⭐ ${favs.has(x.word)?'已收藏':'收藏'}</button></div>
+    <div class="rating"><button data-rate="again"><b>忘记</b>10分钟后</button><button data-rate="hard"><b>困难</b>1天后</button><button data-rate="good"><b>记得</b>3天后</button><button data-rate="easy"><b>简单</b>7天后</button></div>`;
+  $id('modal').classList.add('show');
+  $id('mw').onclick=()=>speakText(x.word);$id('me').onclick=()=>speakText(x.example_en);
+  $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
+  $id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate));
+}
+function rate(w,l){
+  let x=items.find(a=>a.word===w),s=st(w),now=Date.now(),mins={again:10,hard:1440,good:4320,easy:10080};
+  const wasNew=s.seen===0;
+  s.seen++;s.last=now;
+  if(l==='again'){s.box=0;s.wrong++;s.due=now+mins.again*60000}
+  else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=now+mins.hard*60000}
+  else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=now+mins.good*60000}
+  else{s.box=4;s.correct++;s.due=now+mins.easy*60000}
+  progress[w]=s;save();markDay();
+  if(!isCompletedToday(w)) markToday(isPro(x)?'p':wasNew?'n':'r',w);
+  $id('modal').classList.remove('show');render();
+}
+function browserSpeak(text){
+  return new Promise((res,rej)=>{
+    if(!('speechSynthesis'in window))return rej();
+    speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);
+    u.lang=localStorage.getItem('dceng_accent')||'en-US';u.rate=+(localStorage.getItem('dceng_rate')||1);
+    let vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));
+    u.onend=()=>res();u.onerror=()=>rej();speechSynthesis.speak(u);
+    setTimeout(()=>{if(!speechSynthesis.speaking&&!speechSynthesis.pending)rej()},1600);
+  })
+}
+function onlineSpeak(text){
+  return new Promise((res,rej)=>{
+    let v=(localStorage.getItem('dceng_accent')||'en-US')==='en-GB'?'Emma':'Brian';
+    let url='https://api.streamelements.com/kappa/v2/speech?voice='+v+'&text='+encodeURIComponent(text);
+    try{
+      if(audioEl){audioEl.pause();audioEl.src=''}audioEl=new Audio();audioEl.preload='auto';audioEl.playsInline=true;audioEl.src=url;
+      audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1);
+      let done=false,ok=()=>{if(!done){done=true;res()}},bad=()=>{if(!done){done=true;rej()}};
+      audioEl.onerror=bad;audioEl.oncanplay=()=>{let p=audioEl.play();p?.then?.(ok).catch(bad)};audioEl.load();setTimeout(bad,9000)
+    }catch(e){rej(e)}
+  })
+}
+async function speakText(t){
+  let s=$id('status');if(s)s.textContent='正在播放…';
+  try{await onlineSpeak(t);if(s)s.textContent='✓ 在线语音播放中'}
+  catch(e){try{await browserSpeak(t);if(s)s.textContent='✓ 已切换系统语音'}
+  catch(e2){if(s)s.textContent='✕ 发音失败，请检查媒体音量和网络'}}
+}
+async function installApp(){
+  if(!deferredInstallPrompt){
+    if($id('status'))$id('status').textContent='Android Chrome：如未弹出安装窗口，请打开右上角菜单 → 安装应用 / 添加到主屏幕。';
+    return
+  }
+  deferredInstallPrompt.prompt();let c=await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;
+  if($id('status'))$id('status').textContent=c.outcome==='accepted'?'✓ 已开始安装':'已取消安装'
+}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e});
+window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hidden')});
+$id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
+$id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=6').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>{$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>'});
+fetch('./vocab.json?v=8').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
