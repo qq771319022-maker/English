@@ -73,7 +73,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V41</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V42</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -182,7 +182,7 @@ function card(x,i){
     <span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'} · ${x.quality==='offline-local'?'本地词库':x.quality} · ${statusLabel(x)}</span>
   </article>`
 }
-function list(arr){return arr.slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
+function list(arr){return arr.map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
 
 function openToday(mode='all'){
   todayFilter = mode || 'all';
@@ -278,7 +278,7 @@ function render(){
 function bind(){
   let s=$id('search');
   if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
-    $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
+    $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
   document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()}); document.querySelectorAll('[data-today]').forEach(b=>b.onclick=()=>renderToday(b.dataset.today));
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
@@ -417,6 +417,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=41').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=42').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
