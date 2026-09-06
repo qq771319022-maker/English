@@ -47,11 +47,9 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eff6ff;color:#2563eb;font-size:11px;margin-top:5px}
 .done{background:#ecfdf5;color:#047857}.duebadge{background:#fff7ed;color:#c2410c}
 .modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:100;overscroll-behavior:contain}.modal.show{display:flex}
-.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px 20px calc(125px + env(safe-area-inset-bottom))}
+.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px 20px calc(28px + env(safe-area-inset-bottom))}
 .close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
-.completion{position:fixed;left:50%;bottom:calc(66px + env(safe-area-inset-bottom));transform:translateX(-50%);
-z-index:120;width:min(620px,calc(100% - 20px));margin:0;padding:10px 12px;
-background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28px rgba(15,23,42,.16)}
+.completion{position:relative;width:100%;margin:18px 0 4px;padding:12px;background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 4px 16px rgba(15,23,42,.10)}
 .completion b{display:inline;font-size:14px;color:#132238;padding:0}.completion span{display:inline;margin-left:7px;font-size:11px;color:#64748b;padding:0}
 .rating{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:11px}
 .rating button{border:1px solid #cbd5e1;background:#fff;border-radius:11px;padding:8px 5px;font-size:11px;min-height:46px;cursor:pointer;touch-action:manipulation}
@@ -62,7 +60,7 @@ background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28p
 .small{font-size:12px;color:#64748b}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f4}
 .setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#64748b}.setting select{padding:9px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
 .status{padding:9px 11px;background:#f8fafc;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
-@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:230px}.completion{bottom:18px;width:min(620px,calc(100% - 40px));border-radius:16px}}
+@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:28px}.completion{width:100%;border-radius:16px}}
 
 .homeHero{background:linear-gradient(135deg,#f8fbff 0%,#eef6ff 100%);border:1px solid #dce8f5;border-radius:24px;padding:18px;margin-bottom:13px;box-shadow:0 8px 24px rgba(37,99,235,.07)}
 .homeTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
@@ -75,7 +73,7 @@ background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28p
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V20</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V21</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -90,7 +88,7 @@ background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28p
 let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all';
 const KEY='dceng_v9_progress';
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='20'){localStorage.removeItem('dceng_dict_cache_v1');localStorage.setItem('dceng_dict_cache_version','20');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='20'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','20');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -156,7 +154,7 @@ function statusLabel(x){
   return '<span class="badge">学习中</span>';
 }
 function cachedEntry(word){
-  try{return JSON.parse(localStorage.getItem('dceng_dict_cache_v1')||'{}')[String(word).toLowerCase()]||null}catch(e){return null}
+  try{return JSON.parse(localStorage.getItem('dceng_dict_cache_v21')||'{}')[String(word).toLowerCase()]||null}catch(e){return null}
 }
 function card(x,i){
   const c=cachedEntry(x.word);
@@ -302,36 +300,67 @@ $id('main').addEventListener('click',e=>{
 async function lookupOnline(i){
   const x=items[i]; if(!x)return null;
   const key=String(x.word).toLowerCase();
-  let cache={}; try{cache=JSON.parse(localStorage.getItem('dceng_dict_cache_v1')||'{}')}catch(e){}
+  let cache={}; try{cache=JSON.parse(localStorage.getItem('dceng_dict_cache_v21')||'{}')}catch(e){}
   if(cache[key]){applyOnline(x,cache[key]);return cache[key]}
   const status=$id('detail');
-  try{
-    const url='https://uapis.cn/api/v1/dictionary/lookup?word='+encodeURIComponent(x.word);
-    const r=await fetch(url,{cache:'no-store'}); if(!r.ok)throw Error('UAPI '+r.status);
-    const d=await r.json(); const e=d?.entry; if(!d?.found||!e)throw Error('not found');
-    const defs=(e.definitions||[]).map(a=>a.meaning).filter(Boolean).slice(0,3).join('；');
-    const pos=(e.definitions||[]).map(a=>a.part_of_speech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');
-    const ex=e.examples?.[0]||{};
-    const eng=e.english_definitions?.[0]||{};
-    const uk=e.phonetics?.uk?.text||''; const us=e.phonetics?.us?.text||'';
-    const obj={meaning_zh:defs,pos:pos,phonetic_uk:uk,phonetic_us:us,example_en:ex.source||eng.examples?.[0]||'',example_zh:ex.translation||'',collocations:(e.phrases||[]).map(a=>a.phrase+' — '+a.meaning).slice(0,6),source:'UAPI Dictionary'};
-    obj.verified_online=true; cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);
-    if(page==='home'||page==='daily'||page==='professional'||page==='today') render();
-    return obj;
-  }catch(err){
-    // Fallback: English-only dictionary for phonetics/definition/example. Never fabricate Chinese meaning.
+  let merged={};
+  let settled=0;
+  const refresh=()=>{
+    applyOnline(x,merged);
+    if($id('phoneticNow')){
+      const a=localStorage.getItem('dceng_accent')||'en-US';
+      $id('phoneticNow').textContent=a==='en-GB'?(merged.phonetic_uk||merged.phonetic_us||'在线加载中…'):(merged.phonetic_us||merged.phonetic_uk||'在线加载中…');
+    }
+    if($id('exampleNow'))$id('exampleNow').textContent=merged.example_en||'在线加载中…';
+    if($id('exampleCnNow'))$id('exampleCnNow').textContent=merged.example_zh||'';
+  };
+  const save=()=>{cache[key]=merged;localStorage.setItem('dceng_dict_cache_v21',JSON.stringify(cache));};
+
+  const uapi=(async()=>{
     try{
-      const r=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(x.word),{cache:'no-store'});
+      const url='https://uapis.cn/api/v1/dictionary/lookup?word='+encodeURIComponent(x.word);
+      const r=await fetch(url,{cache:'default'}); if(!r.ok)throw Error('UAPI '+r.status);
+      const d=await r.json(); const e=d?.entry; if(!d?.found||!e)throw Error('not found');
+      const defs=(e.definitions||[]).map(a=>a.meaning).filter(Boolean).slice(0,3).join('；');
+      const pos=(e.definitions||[]).map(a=>a.part_of_speech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');
+      const ex=e.examples?.[0]||{}; const eng=e.english_definitions?.[0]||{};
+      Object.assign(merged,{meaning_zh:defs,pos:pos,phonetic_uk:e.phonetics?.uk?.text||'',phonetic_us:e.phonetics?.us?.text||'',example_en:ex.source||eng.examples?.[0]||'',example_zh:ex.translation||'',collocations:(e.phrases||[]).map(a=>a.phrase+' — '+a.meaning).slice(0,6),source:'UAPI Dictionary'});
+      merged.verified_online=true; refresh(); save();
+      return true;
+    }catch(e){return false}
+  })();
+
+  const fallback=(async()=>{
+    try{
+      const r=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(x.word),{cache:'default'});
       if(!r.ok)throw Error('fallback '+r.status); const a=await r.json(); const e=a?.[0];
       const phon=e?.phonetic||e?.phonetics?.find(p=>p.text)?.text||'';
-      const def=e?.meanings?.[0]?.definitions?.[0]||{};
-      const obj={meaning_zh:'中文释义在线词典暂不可用',pos:e?.meanings?.map(m=>m.partOfSpeech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')||'',phonetic_uk:phon,phonetic_us:phon,example_en:def.example||'',example_zh:'',collocations:[],source:'Dictionary API'};
-      obj.verified_online=true; obj.verified_online=false; cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);return obj;
-    }catch(e2){
-      if(status) status.insertAdjacentHTML('beforeend','<p class="small">在线词典暂时不可用，请检查网络后再次打开。</p>');
-      return null;
-    }
+      const def=e?.meanings?.flatMap(m=>m.definitions||[]).find(d=>d.example||d.definition)||{};
+      const pos=e?.meanings?.map(m=>m.partOfSpeech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')||'';
+      if(!merged.phonetic_uk&&!merged.phonetic_us)merged.phonetic_us=phon;
+      if(!merged.pos)merged.pos=pos;
+      if(!merged.example_en)merged.example_en=def.example||'';
+      if(!merged.source)merged.source='Dictionary API';
+      refresh(); save();
+      return true;
+    }catch(e){return false}
+  })();
+
+  const first=await new Promise(resolve=>{
+    let done=false, count=0;
+    const finish=(ok)=>{if(done)return; if(ok){done=true; resolve(merged); return;} count++; if(count===2){done=true; resolve(null);}};
+    uapi.then(finish); fallback.then(finish);
+  });
+  if(first){
+    if(!first.meaning_zh)first.meaning_zh='中文释义在线词典暂不可用';
+    first.verified_online=!!first.meaning_zh && first.source==='UAPI Dictionary';
+    save(); refresh();
+    // Let the slower source continue and enrich the cached record in the background.
+    Promise.allSettled([uapi,fallback]).then(()=>{save();refresh();});
+    return first;
   }
+  if(status) status.insertAdjacentHTML('beforeend','<p class="small">在线词典暂时不可用，请检查网络后再次打开。</p>');
+  return null;
 }
 function applyOnline(x,c){
   if(!c)return;
@@ -343,11 +372,21 @@ function applyOnline(x,c){
   const accent=localStorage.getItem('dceng_accent')||'en-US'; x.phonetic=accent==='en-GB'?(c.phonetic_uk||c.phonetic_us||''):(c.phonetic_us||c.phonetic_uk||'');
 }
 async function playWordAudio(word){
-  const accent=(localStorage.getItem('dceng_accent')||'en-US')==='en-GB'?'uk':'us';
-  try{
-    const url='https://uapis.cn/api/v1/dictionary/audio?word='+encodeURIComponent(word)+'&accent='+accent;
-    if(audioEl){audioEl.pause();audioEl.src=''} audioEl=new Audio(url); audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1); await audioEl.play(); return true;
-  }catch(e){return false}
+  const accent=(localStorage.getItem('dceng_accent')||'en-US');
+  const voice=accent==='en-GB'?'Emma':'Brian';
+  const urls=[
+    'https://api.streamelements.com/kappa/v2/speech?voice='+voice+'&text='+encodeURIComponent(word),
+    'https://uapis.cn/api/v1/dictionary/audio?word='+encodeURIComponent(word)+'&accent='+(accent==='en-GB'?'uk':'us')
+  ];
+  for(const url of urls){
+    try{
+      if(audioEl){audioEl.pause();audioEl.src=''}
+      audioEl=new Audio(); audioEl.preload='auto'; audioEl.playsInline=true; audioEl.src=url;
+      audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1);
+      await audioEl.play(); return true;
+    }catch(e){}
+  }
+  return false;
 }
 async function detail(i){
   let x=items[i],s=st(x.word);if(!x)return;
@@ -372,7 +411,7 @@ async function detail(i){
     </div>`;
   $id('modal').classList.add('show');
   lookupOnline(i).then(c=>{if(!c)return; const a=localStorage.getItem('dceng_accent')||'en-US'; const ph=a==='en-GB'?(c.phonetic_uk||c.phonetic_us):(c.phonetic_us||c.phonetic_uk); if($id('phoneticNow'))$id('phoneticNow').textContent=ph||'—'; if($id('exampleNow'))$id('exampleNow').textContent=c.example_en||'—'; if($id('exampleCnNow'))$id('exampleCnNow').textContent=c.example_zh||'';});
-  $id('mw').onclick=async()=>{const c=cachedEntry(x.word);if(c?.source){if(!(await playWordAudio(x.word)))await speakText(x.word)}else{const c2=await lookupOnline(i);if(!(await playWordAudio(x.word)))await speakText(x.word)}};$id('me').onclick=async()=>{const c=cachedEntry(x.word)||await lookupOnline(i);speakText(c?.example_en||x.example_en||x.word)};
+  $id('mw').onclick=async()=>{const c=cachedEntry(x.word); if(!c)lookupOnline(i); if(!(await playWordAudio(x.word)))await speakText(x.word)};$id('me').onclick=async()=>{let c=cachedEntry(x.word); if(c?.example_en||x.example_en){speakText(c?.example_en||x.example_en); return;} c=await lookupOnline(i); speakText(c?.example_en||x.example_en||x.word)};
   $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
   $id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate));
 }
