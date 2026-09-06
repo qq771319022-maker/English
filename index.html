@@ -17,7 +17,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}.search{width:100%;padd
 .speak{width:46px;height:46px;border:0;border-radius:13px;background:#eef6ff;font-size:21px;flex:0 0 auto}.small{font-size:12px;color:#64748b}
 .bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dbe1ea;display:flex;justify-content:center;gap:4px;padding:8px 5px calc(8px + env(safe-area-inset-bottom));z-index:5}.bottom button{background:none;border:0;padding:4px 10px;font-size:12px;color:#64748b}.bottom button.active{color:#111827;font-weight:700}
 .panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:13px;margin-bottom:12px}.tools{display:flex;flex-wrap:wrap;gap:7px}.tools label{font-size:12px;color:#475569;display:flex;align-items:center;gap:4px}.tools select{padding:7px;border:1px solid #d8dee8;border-radius:9px;background:#fff}
-.install{display:none;width:100%;margin-top:9px;border:0;border-radius:12px;padding:11px;background:#111827;color:#fff;font-size:14px}.install.show{display:block}
+.install{display:block;width:100%;margin-top:9px;border:0;border-radius:12px;padding:11px;background:#111827;color:#fff;font-size:14px}.install.show{display:block}
 .modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:10}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px}.close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
 .rating{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:15px}.rating button{border:1px solid #d8dee8;background:#fff;border-radius:11px;padding:10px 3px;font-size:12px}.rating b{display:block;font-size:15px;margin-bottom:2px}
 .flash{background:#f8fafc;border-radius:15px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:750}.hidden{display:none}
@@ -28,7 +28,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}.search{width:100%;padd
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V5 学习系统</p></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V6 学习系统</p></header>
 <main>
 <div id="homeHero" class="homehero">
   <h2>今日学习</h2>
@@ -52,7 +52,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}.search{width:100%;padd
     <button id="testBtn">🔊 测试</button><button id="directBtn">🌐 在线直测</button>
   </div>
   <button id="installBtn" class="install">📲 安装到手机桌面</button>
-  <div id="status" class="status">V5：按学习表现自动安排新词与复习。数据保存在本机。</div>
+  <div id="status" class="status">V6：按学习表现自动安排新词与复习；支持添加到手机桌面。数据保存在本机。</div>
 </div>
 <div id="tabs" class="tabs">
 <button class="active" data-cat="all">全部</button><button data-cat="daily">日常</button><button data-cat="professional">专业</button><button data-cat="review">待复习</button><button data-cat="mastered">已掌握</button><button data-cat="favorites">收藏</button>
@@ -67,9 +67,10 @@ let items=[],cat='all',query='';
 const KEY='dceng_v5_progress';
 let progress=JSON.parse(localStorage.getItem(KEY)||'{}');
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
-let audioEl=null,deferredInstallPrompt=null;
+let audioEl=null,deferredInstallPrompt=null,swRegistration=null,refreshing=false;
+const $=id=>document.getElementById(id);
 
-function todayKey(){return new Date().toISOString().slice(0,10)}
+function todayKey(){let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function dayIndex(){let d=new Date();let start=new Date('2026-01-01T00:00:00');return Math.max(0,Math.floor((d-start)/86400000))}
 function save(){localStorage.setItem(KEY,JSON.stringify(progress));localStorage.setItem('favs',JSON.stringify([...favs]));}
 function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
@@ -82,7 +83,7 @@ function todayReview(){let goal=+document.getElementById('reviewGoal').value;ret
 function getTodaySet(){let r=todayReview(),need=Math.max(0,+document.getElementById('dailyGoal').value);let n=todayNew().slice(0,need);return [...r,...n]}
 function streak(){
   let days=JSON.parse(localStorage.getItem('dceng_v5_days')||'{}'),n=0,d=new Date();
-  for(let i=0;i<3660;i++){let k=d.toISOString().slice(0,10);if(days[k]){n++;d.setDate(d.getDate()-1)}else break}
+  for(let i=0;i<3660;i++){let k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');if(days[k]){n++;d.setDate(d.getDate()-1)}else break}
   return n;
 }
 function markDay(){let days=JSON.parse(localStorage.getItem('dceng_v5_days')||'{}');days[todayKey()]=true;localStorage.setItem('dceng_v5_days',JSON.stringify(days))}
@@ -161,7 +162,21 @@ function rate(word,level){
  if(s.seen===1)td.n++;else td.r++;done[k]=td;localStorage.setItem('dceng_v5_today_done',JSON.stringify(done));
  $('modal').classList.remove('show');render();
 }
-$('startToday').onclick=()=>{setCat('today');window.scrollTo({top:0,behavior:'smooth'})};
+$('startToday').onclick=()=>{
+  if(!items.length){
+    $('status').textContent='词库正在加载，请稍候再开始今日学习。';
+    return;
+  }
+  const set=getTodaySet();
+  if(!set.length){
+    $('status').textContent='今日任务已完成，暂无待复习或新词。';
+    setCat('today');
+    return;
+  }
+  $('status').textContent=`今日学习已准备：${set.length} 个词，优先安排待复习内容。`;
+  setCat('today');
+  window.scrollTo({top:0,behavior:'smooth'});
+};
 
 function browserSpeak(text){return new Promise((resolve,reject)=>{
  if(!('speechSynthesis'in window))return reject(new Error('系统语音不支持'));
@@ -183,12 +198,54 @@ async function speakText(text){$('status').textContent='正在播放：'+text.sl
 $('testBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
 $('directBtn').onclick=()=>{let v=$('accent').value==='en-GB'?'Emma':'Brian';window.open('https://api.streamelements.com/kappa/v2/speech?voice='+v+'&text='+encodeURIComponent('Hello, this is a direct online voice test.'),'_blank')};
 
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;$('installBtn').classList.add('show')});
-$('installBtn').onclick=async()=>{if(!deferredInstallPrompt){$('status').textContent='请使用 Android Chrome 打开，并在菜单中选择“安装应用”或“添加到主屏幕”。';return}deferredInstallPrompt.prompt();let c=await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;$('installBtn').classList.remove('show');$('status').textContent=c.outcome==='accepted'?'✓ 已开始安装':'已取消安装'};
-window.addEventListener('appinstalled',()=>{$('installBtn').classList.remove('show');$('status').textContent='✓ App 已安装到手机桌面'});
+function isStandalone(){
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+}
+if('serviceWorker'in navigator){
+  window.addEventListener('load',async()=>{
+    try{
+      swRegistration=await navigator.serviceWorker.register('./sw.js');
+      swRegistration.update().catch(()=>{});
+      swRegistration.addEventListener('updatefound',()=>{
+        const nw=swRegistration.installing;
+        if(nw)nw.addEventListener('statechange',()=>{
+          if(nw.state==='installed' && navigator.serviceWorker.controller){
+            $('status').textContent='发现新版本，请刷新页面完成更新。';
+          }
+        });
+      });
+    }catch(e){}
+  });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.visibilityState==='visible' && swRegistration)swRegistration.update().catch(()=>{});
+  });
+}
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredInstallPrompt=e;
+  $('installBtn').textContent='📲 添加到手机桌面';
+  $('installBtn').classList.add('show');
+});
+$('installBtn').onclick=async()=>{
+  if(isStandalone()){
+    $('status').textContent='✓ 当前已安装到手机桌面。';
+    return;
+  }
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    const c=await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    $('status').textContent=c.outcome==='accepted'?'✓ 已开始添加到手机桌面':'已取消安装，可再次点击按钮。';
+    return;
+  }
+  $('status').textContent='请在 Android Chrome 中打开本页面，点击右上角“⋮”，选择“添加到主屏幕”或“安装应用”。';
+};
+window.addEventListener('appinstalled',()=>{
+  $('installBtn').textContent='✓ 已添加到手机桌面';
+  $('status').textContent='✓ App 已安装到手机桌面';
+});
 
-fetch('./vocab.json?v=5').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>{$('list').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>'});
+fetch('./vocab.json?v=6').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>{$('list').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>'});
 if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=()=>{};
 </script>
 </body>
