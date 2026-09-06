@@ -1,18 +1,24 @@
-DC Engineer English PWA
-=======================
-手机网页 App：日常英语 + 数据中心/电气工程英语。
+DC Engineer English PWA V4
 
-内容：约 3500+ 条学习记录。
-功能：搜索、收藏、已学习、复习、单词/例句语音、美音/英音、慢速、连读提示、词根提示、工程场景。
+本版本修复：
+1. 手机单词/例句播放采用全局 Audio 对象，避免列表按钮播放后立即失效。
+2. 列表和详情页改为事件监听，不再使用容易被引号内容破坏的 inline onclick。
+3. 保留 StreamElements 在线语音，在线失败自动回退系统语音。
+4. 增加 Service Worker 注册。
+5. 增加标准 192x192 / 512x512 PNG 图标和完整 Manifest。
+6. 增加 Android Chrome 的“安装到手机桌面”提示按钮。
+7. 保留原 3538 条词库。
 
-重要：直接双击 index.html 在手机文件管理器里打开，Service Worker/PWA 安装能力可能不会生效。
-要使用“添加到主屏幕/离线缓存”，需要通过 HTTPS 网站或 localhost 提供这些文件。
+GitHub Pages 根目录需要放：
+index.html
+manifest.webmanifest
+sw.js
+vocab.json
+icon-192.png
+icon-512.png
 
-最简单方式：
-1. 把整个目录上传到任意支持 HTTPS 的静态网站托管。
-2. 手机浏览器打开 index.html 对应网址。
-3. 浏览器菜单选择“添加到主屏幕”或“安装应用”。
-
-语音：
-使用浏览器 Web Speech API。若手机没有对应英语语音包，需要在系统文字转语音设置中安装英语语音。
-后续可以把语音接口改成真正的在线 TTS 服务，不把 API Secret 放进前端。
+更新后建议：
+- 等 GitHub Pages 部署完成
+- Android Chrome 打开网页
+- Ctrl+F5 不适用于手机，可在 Chrome 设置中清除该站点缓存，或等待 Service Worker 更新
+- 如果页面出现“📲 安装到手机桌面”，直接点击即可
