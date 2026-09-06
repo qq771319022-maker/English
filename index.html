@@ -47,24 +47,35 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#eff6ff;color:#2563eb;font-size:11px;margin-top:5px}
 .done{background:#ecfdf5;color:#047857}.duebadge{background:#fff7ed;color:#c2410c}
 .modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:100;overscroll-behavior:contain}.modal.show{display:flex}
-.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px 20px calc(210px + env(safe-area-inset-bottom))}
+.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:21px 21px 0 0;padding:20px 20px calc(125px + env(safe-area-inset-bottom))}
 .close{float:right;border:0;background:#f1f5f9;border-radius:9px;padding:7px 11px}
-.completion{position:fixed;left:0;right:0;bottom:0;z-index:120;margin:0;padding:12px 18px calc(14px + env(safe-area-inset-bottom));background:#fff;border-top:2px solid #dbeafe;box-shadow:0 -8px 22px rgba(15,23,42,.14)}
-.completion b{display:block;font-size:17px;color:#132238;padding:0 2px}.completion span{display:block;margin-top:4px;font-size:12px;color:#64748b;padding:0 2px}
+.completion{position:fixed;left:50%;bottom:calc(66px + env(safe-area-inset-bottom));transform:translateX(-50%);
+z-index:120;width:min(620px,calc(100% - 20px));margin:0;padding:10px 12px;
+background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28px rgba(15,23,42,.16)}
+.completion b{display:inline;font-size:14px;color:#132238;padding:0}.completion span{display:inline;margin-left:7px;font-size:11px;color:#64748b;padding:0}
 .rating{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:11px}
-.rating button{border:1px solid #cbd5e1;background:#fff;border-radius:13px;padding:12px 6px;font-size:13px;min-height:58px;cursor:pointer;touch-action:manipulation}
+.rating button{border:1px solid #cbd5e1;background:#fff;border-radius:11px;padding:8px 5px;font-size:11px;min-height:46px;cursor:pointer;touch-action:manipulation}
 .rating button:active{transform:scale(.98);background:#eff6ff}.rating button b{color:#132238}
-.rating b{display:block;font-size:16px;margin-bottom:3px}
+.rating b{display:block;font-size:14px;margin-bottom:1px}
 .rating b{display:block;font-size:15px;margin-bottom:2px}
 .flash{background:#f8fafc;border-radius:15px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:750}
 .small{font-size:12px;color:#64748b}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f4}
 .setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#64748b}.setting select{padding:9px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
 .status{padding:9px 11px;background:#f8fafc;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
-@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:230px}.completion{left:50%;right:auto;bottom:0;width:min(680px,100%);transform:translateX(-50%);border-radius:18px 18px 0 0}}
+@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:230px}.completion{bottom:18px;width:min(620px,calc(100% - 40px));border-radius:16px}}
+
+.homeHero{background:linear-gradient(135deg,#f8fbff 0%,#eef6ff 100%);border:1px solid #dce8f5;border-radius:24px;padding:18px;margin-bottom:13px;box-shadow:0 8px 24px rgba(37,99,235,.07)}
+.homeTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.homeTitle{font-size:27px;font-weight:800;margin:0;color:#10233f}.homeSub{color:#6b7f95;font-size:13px;margin-top:4px}
+.ring{width:84px;height:84px;border-radius:50%;background:conic-gradient(#2563eb var(--pct),#dbeafe 0);display:grid;place-items:center;flex:0 0 auto}
+.ring:after{content:'';width:62px;height:62px;border-radius:50%;background:#fff}.ringText{position:absolute;font-weight:800;color:#132238;font-size:15px}
+.homeTasks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0 12px}.homeTask{background:#fff;border-radius:15px;padding:10px 6px;text-align:center;border:1px solid #e3ebf5}.homeTask b{display:block;font-size:18px;color:#1d4ed8}.homeTask span{font-size:10px;color:#64748b}
+.homeCta{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:15px;padding:14px 16px;background:#2563eb;color:#fff;font-size:16px;font-weight:700;box-shadow:0 7px 16px rgba(37,99,235,.2)}
+.sectionTitle{font-size:18px;font-weight:800;margin:15px 2px 8px}.quoteBox{background:#eef6ff;border-radius:18px;padding:18px;text-align:center;color:#53708e;font-size:14px;line-height:1.7}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V17</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V19</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -143,11 +154,18 @@ function statusLabel(x){
   if(s.due<=Date.now())return '<span class="badge duebadge">待复习</span>';
   return '<span class="badge">学习中</span>';
 }
+function cachedEntry(word){
+  try{return JSON.parse(localStorage.getItem('dceng_dict_cache_v1')||'{}')[String(word).toLowerCase()]||null}catch(e){return null}
+}
 function card(x,i){
+  const c=cachedEntry(x.word);
+  const meaning=c?.meaning_zh||x.meaning_zh||'点击词卡加载释义 / 例句 / 音标';
+  const ex=c?.example_en||x.example_en||'打开词卡后在线加载真实例句';
+  const tr=c?.example_zh||x.example_zh||'';
   return `<article class="card" data-detail="${i}">
-    <div class="top"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'')}</div></div>
+    <div class="top"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(meaning)}</div></div>
     <button class="speak" data-speak="${i}">🔊</button></div>
-    <div class="ex">${esc(x.example_en||'')}</div><div class="tr">${esc(x.example_zh||'')}</div>
+    <div class="ex">${esc(ex)}</div><div class="tr">${esc(tr)}</div>
     <span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'} · ${statusLabel(x)}</span>
   </article>`
 }
@@ -180,38 +198,33 @@ function renderToday(mode='all'){
 function render(){
   let body='';
   if(page==='home'){
-    const g=goals(), c=todayCounts(), remaining=todayRemaining().length;
-    const totalDone=c.total, target=c.target, pct=target?Math.min(100,Math.round(totalDone/target*100)):100;
-    const m=mastered().length, p=items.length?Math.round(m/items.length*100):0;
-    body=`<div class="hero">
-      <h2>今日学习</h2>
-      <p>每日自动安排：${g.n} 个日常新词 + ${g.p} 个专业新词 + 最多 ${g.r} 个复习词</p>
-      <div class="taskgrid">
-        <div class="task"><b>${c.n}/${g.n}</b><span>日常新词</span></div>
-        <div class="task"><b>${c.p}/${g.p}</b><span>专业新词</span></div>
-        <div class="task"><b>${c.r}/${Math.min(g.r,due().length)}</b><span>到期复习</span></div>
+    const g=goals(), ds=completedToday(), totalToday=g.n+g.p+g.r;
+    const doneToday=Math.min(totalToday, ds.n+ds.p+ds.r);
+    const pct=totalToday?Math.round(doneToday/totalToday*100):0;
+    const uniqueCount=new Set(items.map(x=>String(x.word||'').trim().toLowerCase())).size;
+    body=`<div class="homeHero">
+      <div class="homeTop">
+        <div><div class="homeTitle">Good afternoon ☀️</div><div class="homeSub">每天进步一点点，今天也继续。</div></div>
+        <div class="ring" style="--pct:${pct*3.6}deg"><span class="ringText">${pct}%</span></div>
       </div>
-      <div class="progress"><div class="progressline"><span>今日任务进度</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>
-      <p><b>${remaining===0?'🎉 今日任务已全部完成！':'还剩 '+remaining+' 个任务'}</b></p>
-      <button type="button" class="cta blue" onclick="openToday('all')">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
+      <div class="sectionTitle" style="margin-top:16px">今日学习任务</div>
+      <div class="homeTasks">
+        <div class="homeTask"><b>📚 ${ds.n}/${g.n}</b><span>日常新词</span></div>
+        <div class="homeTask"><b>⚡ ${ds.p}/${g.p}</b><span>专业新词</span></div>
+        <div class="homeTask"><b>🔄 ${ds.r}/${g.r}</b><span>复习词</span></div>
+      </div>
+      <div style="text-align:center;color:#64748b;font-size:13px;margin:2px 0 12px">今日总进度 <b style="color:#132238">${doneToday}/${totalToday}</b></div>
+      <button class="homeCta" type="button" onclick="openToday('all')"><span>▶ 开始今日学习</span><span>›</span></button>
     </div>
+    <div class="sectionTitle">学习统计</div>
     <div class="stats">
-      <div class="stat"><b>${items.length}</b><span>总词汇</span></div>
-      <div class="stat"><b>${m}</b><span>已掌握</span></div>
+      <div class="stat"><b>${uniqueCount}</b><span>唯一词条</span></div>
+      <div class="stat"><b>${mastered().length}</b><span>已掌握</span></div>
+      <div class="stat"><b>${items.filter(x=>st(x.word).seen>0&&st(x.word).box<4).length}</b><span>学习中</span></div>
       <div class="stat"><b>${due().length}</b><span>待复习</span></div>
-      <div class="stat"><b>${streak()}</b><span>连续天数</span></div>
-    </div>
-    <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%"></i></div></div>
-    <div class="panel"><b>学习规则</b><p class="small">只有在单词详情页选择“忘记 / 困难 / 记得 / 简单”后，才算今天真正完成该词。仅打开、播放发音或浏览不会计入完成。</p></div>`;
-  }else if(page==='today'){
-    const g=goals(), all=todayTasks(), rem=todayRemaining();
-    const filtered=todayFilter==='daily'?all.filter(x=>!isPro(x)):todayFilter==='professional'?all.filter(isPro):todayFilter==='review'?all.filter(x=>st(x.word).seen>0):all;
-    const done=filtered.filter(x=>isCompletedToday(x.word)).length;
-    body=`<div class="hero"><h2>今日学习</h2><p>按今天的学习计划完成单词。完成一次“忘记 / 困难 / 记得 / 简单”后，才计入今日进度。</p>
-      <div class="tabs"><button class="${todayFilter==='all'?'active':''}" data-tfilter="all">全部 ${all.length}</button><button class="${todayFilter==='daily'?'active':''}" data-tfilter="daily">日常 ${all.filter(x=>!isPro(x)).length}</button><button class="${todayFilter==='professional'?'active':''}" data-tfilter="professional">专业 ${all.filter(isPro).length}</button><button class="${todayFilter==='review'?'active':''}" data-tfilter="review">复习 ${all.filter(x=>st(x.word).seen>0).length}</button></div>
-      <div class="taskgrid"><div class="task"><b>${done}/${filtered.length}</b><span>当前完成</span></div><div class="task"><b>${rem.length}</b><span>全部剩余</span></div><div class="task"><b>${g.n}+${g.p}</b><span>日常+专业新词</span></div></div>
-      <p><b>${filtered.length?`当前${filtered.length-done}个未完成`:'当前没有任务'}</b></p>
-      </div><div id="cards">${list(filtered)}</div>`;
+    </div><div class="small" style="margin:-4px 2px 10px">新增词条：在线词典加载真实释义、例句和音标，首次打开需要网络。</div>
+    <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${items.length?Math.round(mastered().length/items.length*100):0}%</b></div><div class="bar"><i style="width:${items.length?Math.round(mastered().length/items.length*100):0}%"></i></div></div>
+    <div class="quoteBox">A little progress each day adds up to big results.<br><span>每天一点点进步，终会带来大的改变。</span></div>`;
   }else if(page==='daily'){
     const g=goals(), tasks=todayTasks(), rem=todayRemaining();
     body=`<div class="hero"><h2>日常英语</h2><p>这里是完整日常词库；今日任务会与专业英语、复习任务一起出现在“首页 → 今日学习”。</p>
@@ -232,7 +245,7 @@ function render(){
   }else{
     body=`<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
       <div class="panel">
-        <div class="setting"><div><b>每日新词</b><span>日常英语每天自动安排</span></div><select id="setNew"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
+        <div class="setting"><div><b>每日日常新词</b><span>日常英语每天自动安排</span></div><select id="setNew"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
         <div class="setting"><div><b>每日专业新词</b><span>专业英语每天自动安排</span></div><select id="setPro"><option>5</option><option>10</option><option>20</option><option>30</option></select></div>
         <div class="setting"><div><b>每日复习上限</b><span>每天最多安排多少个到期复习</span></div><select id="setReview"><option>10</option><option>20</option><option>30</option><option>50</option></select></div>
         <div class="setting"><div><b>发音口音</b><span>单词和例句播放使用</span></div><select id="setAccent"><option value="en-US">🇺🇸 美式 English (US)</option><option value="en-GB">🇬🇧 英式 English (UK)</option></select></div>
@@ -241,7 +254,7 @@ function render(){
         <button id="voiceBtn" class="install">🔊 测试当前发音</button>
         <div id="status" class="status">学习进度保存在本机浏览器。</div>
       </div>
-      <div class="panel"><b>当前学习统计</b><p class="small">总词汇：${items.length}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
+      <div class="panel"><b>当前学习统计</b><p class="small">学习记录：${items.length}　唯一词条：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
       <div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
     </div>`;
   }
@@ -279,16 +292,67 @@ $id('main').addEventListener('click',e=>{
   let tf=e.target.closest('[data-today-filter]');
   if(tf){openToday(tf.dataset.todayFilter||'all');return}
   let sp=e.target.closest('[data-speak]');
-  if(sp){let x=items[+sp.dataset.speak];if(x)speakText(x.word+'. '+(x.example_en||''));return}
+  if(sp){let x=items[+sp.dataset.speak];if(x){const c=cachedEntry(x.word);speakText(x.word+'. '+(c?.example_en||x.example_en||''));}return}
   let c=e.target.closest('[data-detail]');if(c)detail(+c.dataset.detail);
 });
-function detail(i){
+async function lookupOnline(i){
+  const x=items[i]; if(!x)return null;
+  const key=String(x.word).toLowerCase();
+  let cache={}; try{cache=JSON.parse(localStorage.getItem('dceng_dict_cache_v1')||'{}')}catch(e){}
+  if(cache[key]){applyOnline(x,cache[key]);return cache[key]}
+  const status=$id('detail');
+  try{
+    const url='https://uapis.cn/api/v1/dictionary/lookup?word='+encodeURIComponent(x.word);
+    const r=await fetch(url,{cache:'no-store'}); if(!r.ok)throw Error('UAPI '+r.status);
+    const d=await r.json(); const e=d?.entry; if(!d?.found||!e)throw Error('not found');
+    const defs=(e.definitions||[]).map(a=>a.meaning).filter(Boolean).slice(0,3).join('；');
+    const pos=(e.definitions||[]).map(a=>a.part_of_speech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ');
+    const ex=e.examples?.[0]||{};
+    const eng=e.english_definitions?.[0]||{};
+    const uk=e.phonetics?.uk?.text||''; const us=e.phonetics?.us?.text||'';
+    const obj={meaning_zh:defs,pos:pos,phonetic_uk:uk,phonetic_us:us,example_en:ex.source||eng.examples?.[0]||'',example_zh:ex.translation||'',collocations:(e.phrases||[]).map(a=>a.phrase+' — '+a.meaning).slice(0,6),source:'UAPI Dictionary'};
+    cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);
+    if(page==='home'||page==='daily'||page==='professional'||page==='today') render();
+    return obj;
+  }catch(err){
+    // Fallback: English-only dictionary for phonetics/definition/example. Never fabricate Chinese meaning.
+    try{
+      const r=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(x.word),{cache:'no-store'});
+      if(!r.ok)throw Error('fallback '+r.status); const a=await r.json(); const e=a?.[0];
+      const phon=e?.phonetic||e?.phonetics?.find(p=>p.text)?.text||'';
+      const def=e?.meanings?.[0]?.definitions?.[0]||{};
+      const obj={meaning_zh:'中文释义在线词典暂不可用',pos:e?.meanings?.map(m=>m.partOfSpeech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')||'',phonetic_uk:phon,phonetic_us:phon,example_en:def.example||'',example_zh:'',collocations:[],source:'Dictionary API'};
+      cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);return obj;
+    }catch(e2){
+      if(status) status.insertAdjacentHTML('beforeend','<p class="small">在线词典暂时不可用，请检查网络后再次打开。</p>');
+      return null;
+    }
+  }
+}
+function applyOnline(x,c){
+  if(!c)return;
+  if(c.meaning_zh)x.meaning_zh=c.meaning_zh;
+  if(c.pos)x.pos=c.pos;
+  if(c.example_en)x.example_en=c.example_en;
+  if(c.example_zh)x.example_zh=c.example_zh;
+  if(c.collocations)x.collocations=c.collocations;
+  const accent=localStorage.getItem('dceng_accent')||'en-US'; x.phonetic=accent==='en-GB'?(c.phonetic_uk||c.phonetic_us||''):(c.phonetic_us||c.phonetic_uk||'');
+}
+async function playWordAudio(word){
+  const accent=(localStorage.getItem('dceng_accent')||'en-US')==='en-GB'?'uk':'us';
+  try{
+    const url='https://uapis.cn/api/v1/dictionary/audio?word='+encodeURIComponent(word)+'&accent='+accent;
+    if(audioEl){audioEl.pause();audioEl.src=''} audioEl=new Audio(url); audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1); await audioEl.play(); return true;
+  }catch(e){return false}
+}
+async function detail(i){
   let x=items[i],s=st(x.word);if(!x)return;
+  const c=cachedEntry(x.word); if(c)applyOnline(x,c);
   $id('detail').innerHTML=`<h2>${esc(x.word)}</h2><div class="cn">${esc(x.meaning_zh||'')}</div>
-    <p><b>音标：</b>${esc(x.phonetic||'')}</p><p><b>词性：</b>${esc(x.pos||'')}</p>
+    <p><b>音标：</b><span id="phoneticNow">${esc(x.phonetic||'在线加载中…')}</span></p><p><b>词性：</b>${esc(x.pos||'')}</p>
     <p><b>词根/构词：</b>${esc(x.root||'')}</p><p><b>搭配：</b>${esc((x.collocations||[]).join(', '))}</p>
-    <p><b>例句：</b><br>${esc(x.example_en||'')}</p><p class="tr">${esc(x.example_zh||'')}</p>
-    <p><b>连读提示：</b>${esc(x.connected_speech||'注意重音、弱读和连读。')}</p>
+    <p><b>例句：</b><br><span id="exampleNow">${esc(x.example_en||'在线加载中…')}</span></p><p class="tr" id="exampleCnNow">${esc(x.example_zh||'')}</p>
+    <p><b>连读提示：</b>${esc(x.connected_speech||'注意重音、弱读和连读。')}</p><p class="small">词义 / 例句 / 音标：${esc(cachedEntry(x.word)?.source||'在线词典加载中')}</p>
     <div class="flash"><div class="big">${isCompletedToday(x.word)?'今日已完成':s.box>=4?'已掌握':s.seen?'学习中':'新词'}</div>
     <div class="small">复习箱：${s.box} · 正确 ${s.correct} · 错误 ${s.wrong}</div></div>
     <div class="tools" style="margin-top:12px"><button id="mw">🔊 单词</button><button id="me">🔊 例句</button><button id="mf">⭐ ${favs.has(x.word)?'已收藏':'收藏'}</button></div>
@@ -303,7 +367,8 @@ function detail(i){
       </div>
     </div>`;
   $id('modal').classList.add('show');
-  $id('mw').onclick=()=>speakText(x.word);$id('me').onclick=()=>speakText(x.example_en);
+  lookupOnline(i).then(c=>{if(!c)return; const a=localStorage.getItem('dceng_accent')||'en-US'; const ph=a==='en-GB'?(c.phonetic_uk||c.phonetic_us):(c.phonetic_us||c.phonetic_uk); if($id('phoneticNow'))$id('phoneticNow').textContent=ph||'—'; if($id('exampleNow'))$id('exampleNow').textContent=c.example_en||'—'; if($id('exampleCnNow'))$id('exampleCnNow').textContent=c.example_zh||'';});
+  $id('mw').onclick=async()=>{const c=cachedEntry(x.word);if(c?.source){if(!(await playWordAudio(x.word)))await speakText(x.word)}else{const c2=await lookupOnline(i);if(!(await playWordAudio(x.word)))await speakText(x.word)}};$id('me').onclick=async()=>{const c=cachedEntry(x.word)||await lookupOnline(i);speakText(c?.example_en||x.example_en||x.word)};
   $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
   $id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate));
 }
@@ -361,6 +426,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=13').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=19').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
