@@ -73,7 +73,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V23</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V41</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -91,7 +91,7 @@ const LOCAL_AUDIO_BASE='./audio/';
 const LOCAL_EXAMPLE_BASE='./example_audio/';
 function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_').replace(/^_+|_+$/g,'');}
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='40'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','40');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='41'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','41');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -270,7 +270,7 @@ function render(){
         <div id="status" class="status">学习进度保存在本机浏览器。</div>
       </div>
       <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
-      <div class="panel"><b>词库质量</b><p class="small">本版本包含 1251 个唯一词条；日常生活、旅行及数据中心电气工程词汇均采用本地词库；单词和例句音频也采用本地文件，学习过程中无需访问在线词典。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
+      <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词条；日常生活、旅行及数据中心电气工程词汇均采用本地词库；单词和例句优先使用手机系统英语语音，系统语音不可用时自动使用本地音频。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
     </div>`;
   }
   $id('main').innerHTML=body; bind();
@@ -325,14 +325,28 @@ function playLocalAudio(path){
   });
 }
 async function playLocalWord(word){
-  const s=$id('status'); if(s)s.textContent='正在播放单词…';
-  try{await playLocalAudio(LOCAL_AUDIO_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 单词发音';}
-  catch(e){if(s)s.textContent='✕ 本地单词音频不可用';}
+  const s=$id('status'); if(s)s.textContent='正在播放系统英语语音…';
+  try{
+    await browserSpeak(word);
+    if(s)s.textContent='✓ 系统语音播放完成';
+    return;
+  }catch(e){}
+  if(s)s.textContent='系统语音不可用，使用本地音频…';
+  try{await playLocalAudio(LOCAL_AUDIO_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 本地单词音频播放完成';}
+  catch(e){if(s)s.textContent='✕ 系统语音及本地单词音频均不可用';}
 }
 async function playLocalExample(word){
-  const s=$id('status'); if(s)s.textContent='正在播放例句…';
-  try{await playLocalAudio(LOCAL_EXAMPLE_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 例句发音';}
-  catch(e){if(s)s.textContent='✕ 本地例句音频不可用';}
+  const x=items.find(a=>a.word===word);
+  const text=x&&x.example_en?x.example_en:word;
+  const s=$id('status'); if(s)s.textContent='正在播放系统英语语音…';
+  try{
+    await browserSpeak(text);
+    if(s)s.textContent='✓ 系统语音播放完成';
+    return;
+  }catch(e){}
+  if(s)s.textContent='系统语音不可用，使用本地音频…';
+  try{await playLocalAudio(LOCAL_EXAMPLE_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 本地例句音频播放完成';}
+  catch(e){if(s)s.textContent='✕ 系统语音及本地例句音频均不可用';}
 }
 function detail(i){
   const x=items[i],s=st(x.word); if(!x)return;
@@ -377,16 +391,35 @@ function rate(w,l){
 }
 function browserSpeak(text){
   return new Promise((res,rej)=>{
-    if(!('speechSynthesis'in window))return rej();
-    speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);
-    u.lang=localStorage.getItem('dceng_accent')||'en-US';u.rate=+(localStorage.getItem('dceng_rate')||1);
-    let vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));
-    u.onend=()=>res();u.onerror=()=>rej();speechSynthesis.speak(u);
-    setTimeout(()=>{if(!speechSynthesis.speaking&&!speechSynthesis.pending)rej()},1600);
-  })
+    if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return rej(new Error('tts'));
+    const ss=window.speechSynthesis;
+    ss.cancel();
+    const u=new SpeechSynthesisUtterance(String(text||''));
+    u.lang=localStorage.getItem('dceng_accent')||'en-US';
+    u.rate=+(localStorage.getItem('dceng_rate')||1);
+    let done=false;
+    const finish=(ok)=>{if(done)return;done=true;clearTimeout(timer);try{ss.onvoiceschanged=null}catch(e){};ok?res():rej(new Error('tts'));};
+    const speakNow=()=>{
+      try{
+        const vs=ss.getVoices();
+        const lang=u.lang.toLowerCase();
+        u.voice=vs.find(v=>v.lang&&v.lang.toLowerCase()===lang)||vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith(lang.slice(0,2)));
+        ss.speak(u);
+      }catch(e){finish(false)}
+    };
+    u.onend=()=>finish(true);
+    u.onerror=()=>finish(false);
+    const timer=setTimeout(()=>finish(false),15000);
+    const vs=ss.getVoices();
+    if(vs.length){speakNow()}else{
+      let fired=false;
+      ss.onvoiceschanged=()=>{if(fired)return;fired=true;speakNow()};
+      setTimeout(()=>{if(!fired){fired=true;speakNow()}},700);
+    }
+  });
 }
 async function speakText(t){
-  // Kept only for the voice-test button; normal word/phrase playback is fully local.
+  // Voice test uses the same phone/browser system TTS as normal playback.
   let s=$id('status'); if(s)s.textContent='正在播放系统语音…';
   try{await browserSpeak(t);if(s)s.textContent='✓ 系统语音播放中'}
   catch(e){if(s)s.textContent='✕ 系统语音不可用'}
@@ -404,6 +437,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=38').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=41').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
