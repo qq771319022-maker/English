@@ -235,7 +235,7 @@ function render(){
       <div class="stat"><b>${mastered().length}</b><span>已掌握</span></div>
       <div class="stat"><b>${items.filter(x=>st(x.word).seen>0&&st(x.word).box<4).length}</b><span>学习中</span></div>
       <div class="stat"><b>${due().length}</b><span>待复习</span></div>
-    </div><div class="small" style="margin:-4px 2px 10px">词库校验：1294 个唯一词条；日常生活、旅行及数据中心电气工程词汇均采用本地词库；学习过程中无需在线查询。</div>
+    </div><div class="small" style="margin:-4px 2px 10px">词库校验：本地词库共 2318 条记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。学习过程中无需在线查询。</div>
     <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${items.length?Math.round(mastered().length/items.length*100):0}%</b></div><div class="bar"><i style="width:${items.length?Math.round(mastered().length/items.length*100):0}%"></i></div></div>
     <div class="quoteBox">A little progress each day adds up to big results.<br><span>每天一点点进步，终会带来大的改变。</span></div>`;
   }else if(page==='daily'){
@@ -270,7 +270,7 @@ function render(){
         <div id="status" class="status">学习进度保存在本机浏览器。</div>
       </div>
       <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
-      <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词条；日常生活、旅行及数据中心电气工程词汇均采用本地词库；单词和例句优先使用手机系统英语语音，系统语音不可用时自动使用本地音频。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
+      <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词库记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。单词和例句音频采用本地文件，学习过程中无需访问在线词典。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
     </div>`;
   }
   $id('main').innerHTML=body; bind();
@@ -325,28 +325,14 @@ function playLocalAudio(path){
   });
 }
 async function playLocalWord(word){
-  const s=$id('status'); if(s)s.textContent='正在播放系统英语语音…';
-  try{
-    await browserSpeak(word);
-    if(s)s.textContent='✓ 系统语音播放完成';
-    return;
-  }catch(e){}
-  if(s)s.textContent='系统语音不可用，使用本地音频…';
-  try{await playLocalAudio(LOCAL_AUDIO_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 本地单词音频播放完成';}
-  catch(e){if(s)s.textContent='✕ 系统语音及本地单词音频均不可用';}
+  const s=$id('status'); if(s)s.textContent='正在播放单词…';
+  try{await playLocalAudio(LOCAL_AUDIO_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 单词发音';}
+  catch(e){if(s)s.textContent='✕ 本地单词音频不可用';}
 }
 async function playLocalExample(word){
-  const x=items.find(a=>a.word===word);
-  const text=x&&x.example_en?x.example_en:word;
-  const s=$id('status'); if(s)s.textContent='正在播放系统英语语音…';
-  try{
-    await browserSpeak(text);
-    if(s)s.textContent='✓ 系统语音播放完成';
-    return;
-  }catch(e){}
-  if(s)s.textContent='系统语音不可用，使用本地音频…';
-  try{await playLocalAudio(LOCAL_EXAMPLE_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 本地例句音频播放完成';}
-  catch(e){if(s)s.textContent='✕ 系统语音及本地例句音频均不可用';}
+  const s=$id('status'); if(s)s.textContent='正在播放例句…';
+  try{await playLocalAudio(LOCAL_EXAMPLE_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 例句发音';}
+  catch(e){if(s)s.textContent='✕ 本地例句音频不可用';}
 }
 function detail(i){
   const x=items[i],s=st(x.word); if(!x)return;
@@ -365,9 +351,9 @@ function detail(i){
       <span>选择下面任意一个记忆结果，即表示本词今天已经学习完成。</span>
       <div class="rating">
         <button data-rate="again"><b>忘记</b>重新安排 · 10分钟后</button>
-        <button data-rate="hard"><b>困难</b>重新安排 · 1天后</button>
-        <button data-rate="good"><b>记得</b>复习安排 · 3天后</button>
-        <button data-rate="easy"><b>简单</b>复习安排 · 7天后</button>
+        <button data-rate="hard"><b>困难</b>复习安排 · 次日 00:00</button>
+        <button data-rate="good"><b>记得</b>复习安排 · 第3天 00:00</button>
+        <button data-rate="easy"><b>简单</b>复习安排 · 第7天 00:00</button>
       </div>
     </div>`;
   $id('modal').classList.add('show');
@@ -376,50 +362,44 @@ function detail(i){
   $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
   $id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate));
 }
+function nextMidnight(days){
+  const d=new Date();
+  d.setHours(0,0,0,0);
+  d.setDate(d.getDate()+days);
+  return d.getTime();
+}
 function rate(w,l){
-  let x=items.find(a=>a.word===w),s=st(w),now=Date.now(),mins={again:10,hard:1440,good:4320,easy:10080};
+  let x=items.find(a=>a.word===w),s=st(w),now=Date.now();
   const wasNew=s.seen===0;
   const wasDue=!wasNew && s.due<=now;
   s.seen++;s.last=now;
-  if(l==='again'){s.box=0;s.wrong++;s.due=now+mins.again*60000}
-  else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=now+mins.hard*60000}
-  else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=now+mins.good*60000}
-  else{s.box=4;s.correct++;s.due=now+mins.easy*60000}
+  if(l==='again'){s.box=0;s.wrong++;s.due=now+10*60000}
+  else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=nextMidnight(1)}
+  else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=nextMidnight(3)}
+  else{s.box=4;s.correct++;s.due=nextMidnight(7)}
   progress[w]=s;save();markDay();
   if(!isCompletedToday(w)) markToday(wasDue?'r':isPro(x)?'p':'n',w);
   $id('modal').classList.remove('show');render();
 }
+let midnightTimer=null;
+function scheduleMidnightRefresh(){
+  if(midnightTimer) clearTimeout(midnightTimer);
+  const now=new Date(), next=new Date(now);
+  next.setHours(24,0,0,50);
+  midnightTimer=setTimeout(()=>{render();scheduleMidnightRefresh()},Math.max(1000,next-now));
+}
 function browserSpeak(text){
   return new Promise((res,rej)=>{
-    if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window))return rej(new Error('tts'));
-    const ss=window.speechSynthesis;
-    ss.cancel();
-    const u=new SpeechSynthesisUtterance(String(text||''));
-    u.lang=localStorage.getItem('dceng_accent')||'en-US';
-    u.rate=+(localStorage.getItem('dceng_rate')||1);
-    let done=false;
-    const finish=(ok)=>{if(done)return;done=true;clearTimeout(timer);try{ss.onvoiceschanged=null}catch(e){};ok?res():rej(new Error('tts'));};
-    const speakNow=()=>{
-      try{
-        const vs=ss.getVoices();
-        const lang=u.lang.toLowerCase();
-        u.voice=vs.find(v=>v.lang&&v.lang.toLowerCase()===lang)||vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith(lang.slice(0,2)));
-        ss.speak(u);
-      }catch(e){finish(false)}
-    };
-    u.onend=()=>finish(true);
-    u.onerror=()=>finish(false);
-    const timer=setTimeout(()=>finish(false),15000);
-    const vs=ss.getVoices();
-    if(vs.length){speakNow()}else{
-      let fired=false;
-      ss.onvoiceschanged=()=>{if(fired)return;fired=true;speakNow()};
-      setTimeout(()=>{if(!fired){fired=true;speakNow()}},700);
-    }
-  });
+    if(!('speechSynthesis'in window))return rej();
+    speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);
+    u.lang=localStorage.getItem('dceng_accent')||'en-US';u.rate=+(localStorage.getItem('dceng_rate')||1);
+    let vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));
+    u.onend=()=>res();u.onerror=()=>rej();speechSynthesis.speak(u);
+    setTimeout(()=>{if(!speechSynthesis.speaking&&!speechSynthesis.pending)rej()},1600);
+  })
 }
 async function speakText(t){
-  // Voice test uses the same phone/browser system TTS as normal playback.
+  // Kept only for the voice-test button; normal word/phrase playback is fully local.
   let s=$id('status'); if(s)s.textContent='正在播放系统语音…';
   try{await browserSpeak(t);if(s)s.textContent='✓ 系统语音播放中'}
   catch(e){if(s)s.textContent='✕ 系统语音不可用'}
@@ -437,6 +417,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=41').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=41').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
