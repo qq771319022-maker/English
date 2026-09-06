@@ -75,7 +75,7 @@ background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28p
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V19</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V20</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -90,6 +90,7 @@ background:#fff;border:1px solid #dbe5f0;border-radius:16px;box-shadow:0 8px 28p
 let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all';
 const KEY='dceng_v9_progress';
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
+if(localStorage.getItem('dceng_dict_cache_version')!=='20'){localStorage.removeItem('dceng_dict_cache_v1');localStorage.setItem('dceng_dict_cache_version','20');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -159,9 +160,10 @@ function cachedEntry(word){
 }
 function card(x,i){
   const c=cachedEntry(x.word);
-  const meaning=c?.meaning_zh||x.meaning_zh||'点击词卡加载释义 / 例句 / 音标';
-  const ex=c?.example_en||x.example_en||'打开词卡后在线加载真实例句';
-  const tr=c?.example_zh||x.example_zh||'';
+  const verified=(c&&c.source)||x.quality==='reviewed'||x.quality==='curated';
+  const meaning=verified?(c?.meaning_zh||x.meaning_zh||''):'点击词卡在线验证释义 / 例句 / 音标';
+  const ex=verified?(c?.example_en||x.example_en||''):'打开词卡后在线加载真实例句';
+  const tr=verified?(c?.example_zh||x.example_zh||''):'';
   return `<article class="card" data-detail="${i}">
     <div class="top"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(meaning)}</div></div>
     <button class="speak" data-speak="${i}">🔊</button></div>
@@ -222,7 +224,7 @@ function render(){
       <div class="stat"><b>${mastered().length}</b><span>已掌握</span></div>
       <div class="stat"><b>${items.filter(x=>st(x.word).seen>0&&st(x.word).box<4).length}</b><span>学习中</span></div>
       <div class="stat"><b>${due().length}</b><span>待复习</span></div>
-    </div><div class="small" style="margin:-4px 2px 10px">新增词条：在线词典加载真实释义、例句和音标，首次打开需要网络。</div>
+    </div><div class="small" style="margin:-4px 2px 10px">词库校验：3600 个唯一单词；释义、例句、音标首次打开时在线验证并缓存，不使用伪造音标。</div>
     <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${items.length?Math.round(mastered().length/items.length*100):0}%</b></div><div class="bar"><i style="width:${items.length?Math.round(mastered().length/items.length*100):0}%"></i></div></div>
     <div class="quoteBox">A little progress each day adds up to big results.<br><span>每天一点点进步，终会带来大的改变。</span></div>`;
   }else if(page==='daily'){
@@ -238,6 +240,8 @@ function render(){
       <button type="button" class="cta blue" onclick="openToday('professional')">⚡ 今日专业学习</button></div>
       <input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句">
       <div id="cards">${list(items.filter(isPro))}</div>`;
+  }else if(page==='today'){
+    renderToday(todayFilter||'all'); return;
   }else if(page==='review'){
     body=`<div class="hero"><h2>复习</h2><p>只显示已经学习并且到期的词。复习结果会自动影响下一次出现时间。</p>
       <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r}</b><span>每日上限</span></div></div>
@@ -254,8 +258,8 @@ function render(){
         <button id="voiceBtn" class="install">🔊 测试当前发音</button>
         <div id="status" class="status">学习进度保存在本机浏览器。</div>
       </div>
-      <div class="panel"><b>当前学习统计</b><p class="small">学习记录：${items.length}　唯一词条：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
-      <div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
+      <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
+      <div class="panel"><b>词库质量</b><p class="small">本版本只统计单词（单个英文词），共 3600 个唯一词条；多词短语不计入 3600。中文释义、例句、英美音标由在线词典查询后缓存。若在线查询失败，不会用假的释义或音标替代。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
     </div>`;
   }
   $id('main').innerHTML=body; bind();
@@ -311,7 +315,7 @@ async function lookupOnline(i){
     const eng=e.english_definitions?.[0]||{};
     const uk=e.phonetics?.uk?.text||''; const us=e.phonetics?.us?.text||'';
     const obj={meaning_zh:defs,pos:pos,phonetic_uk:uk,phonetic_us:us,example_en:ex.source||eng.examples?.[0]||'',example_zh:ex.translation||'',collocations:(e.phrases||[]).map(a=>a.phrase+' — '+a.meaning).slice(0,6),source:'UAPI Dictionary'};
-    cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);
+    obj.verified_online=true; cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);
     if(page==='home'||page==='daily'||page==='professional'||page==='today') render();
     return obj;
   }catch(err){
@@ -322,7 +326,7 @@ async function lookupOnline(i){
       const phon=e?.phonetic||e?.phonetics?.find(p=>p.text)?.text||'';
       const def=e?.meanings?.[0]?.definitions?.[0]||{};
       const obj={meaning_zh:'中文释义在线词典暂不可用',pos:e?.meanings?.map(m=>m.partOfSpeech).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')||'',phonetic_uk:phon,phonetic_us:phon,example_en:def.example||'',example_zh:'',collocations:[],source:'Dictionary API'};
-      cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);return obj;
+      obj.verified_online=true; obj.verified_online=false; cache[key]=obj;localStorage.setItem('dceng_dict_cache_v1',JSON.stringify(cache));applyOnline(x,obj);return obj;
     }catch(e2){
       if(status) status.insertAdjacentHTML('beforeend','<p class="small">在线词典暂时不可用，请检查网络后再次打开。</p>');
       return null;
