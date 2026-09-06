@@ -36,7 +36,7 @@ progress{width:100%;height:9px}.empty{padding:30px;text-align:center;color:var(-
 let data=[], route='home', q='', filter='all', review=[];
 const state=JSON.parse(localStorage.getItem('dceng_state')||'{"learned":[],"favorites":[],"review":[]}');
 const save=()=>localStorage.setItem('dceng_state',JSON.stringify(state));
-async function init(){data=(await fetch('data/vocab.json').then(r=>r.json())).entries;render()}
+async function init(){data=(await fetch('vocab.json').then(r=>r.json())).entries;render()}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function speak(t,rate=.82,lang='en-US'){if(!('speechSynthesis'in window)){alert('当前浏览器不支持语音');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=lang;u.rate=rate;u.pitch=1;speechSynthesis.speak(u)}
 function go(r){route=r;render();scrollTo(0,0)}
