@@ -56,7 +56,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V10</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V11</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -68,7 +68,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 <div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">关闭</button><div id="detail"></div></div></div>
 
 <script>
-let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null;
+let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all';
 const KEY='dceng_v9_progress';
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
@@ -161,7 +161,7 @@ function render(){
       </div>
       <div class="progress"><div class="progressline"><span>今日任务进度</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>
       <p><b>${remaining===0?'🎉 今日任务已全部完成！':'还剩 '+remaining+' 个任务'}</b></p>
-      <button class="cta blue" data-page="daily">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
+      <button class="cta blue" data-page="today">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
     </div>
     <div class="stats">
       <div class="stat"><b>${items.length}</b><span>总词汇</span></div>
@@ -171,18 +171,26 @@ function render(){
     </div>
     <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${p}%</b></div><div class="bar"><i style="width:${p}%"></i></div></div>
     <div class="panel"><b>学习规则</b><p class="small">只有在单词详情页选择“忘记 / 困难 / 记得 / 简单”后，才算今天真正完成该词。仅打开、播放发音或浏览不会计入完成。</p></div>`;
+  }else if(page==='today'){
+    const g=goals(), all=todayTasks(), rem=todayRemaining();
+    const filtered=todayFilter==='daily'?all.filter(x=>!isPro(x)):todayFilter==='professional'?all.filter(isPro):todayFilter==='review'?all.filter(x=>st(x.word).seen>0):all;
+    const done=filtered.filter(x=>isCompletedToday(x.word)).length;
+    body=`<div class="hero"><h2>今日学习</h2><p>按今天的学习计划完成单词。完成一次“忘记 / 困难 / 记得 / 简单”后，才计入今日进度。</p>
+      <div class="tabs"><button class="${todayFilter==='all'?'active':''}" data-tfilter="all">全部 ${all.length}</button><button class="${todayFilter==='daily'?'active':''}" data-tfilter="daily">日常 ${all.filter(x=>!isPro(x)).length}</button><button class="${todayFilter==='professional'?'active':''}" data-tfilter="professional">专业 ${all.filter(isPro).length}</button><button class="${todayFilter==='review'?'active':''}" data-tfilter="review">复习 ${all.filter(x=>st(x.word).seen>0).length}</button></div>
+      <div class="taskgrid"><div class="task"><b>${done}/${filtered.length}</b><span>当前完成</span></div><div class="task"><b>${rem.length}</b><span>全部剩余</span></div><div class="task"><b>${g.n}+${g.p}</b><span>日常+专业新词</span></div></div>
+      <p><b>${filtered.length?`当前${filtered.length-done}个未完成`:'当前没有任务'}</b></p>
+      </div><div id="cards">${list(filtered)}</div>`;
   }else if(page==='daily'){
     const g=goals(), tasks=todayTasks(), rem=todayRemaining();
     body=`<div class="hero"><h2>日常英语</h2><p>这里是完整日常词库；今日任务会与专业英语、复习任务一起出现在“首页 → 今日学习”。</p>
       <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>今日新词</span></div><div class="task"><b>${rem.length}</b><span>今日剩余</span></div><div class="task"><b>${items.filter(x=>!isPro(x)).length}</b><span>日常词库</span></div></div>
-      <button class="cta blue" data-toggle="today">📚 打开今日学习</button></div>
+      <button class="cta blue" data-today-filter="daily">📚 打开今日学习</button></div>
       <input id="search" class="search" placeholder="搜索英文 / 中文 / 例句">
       <div id="cards">${list(items.filter(x=>!isPro(x)))}</div>`;
-    setTimeout(()=>{let b=document.querySelector('[data-toggle="today"]');if(b)b.onclick=()=>{page='home';render();setTimeout(()=>{page='daily';render();},0)}},0);
   }else if(page==='professional'){
     body=`<div class="hero"><h2>专业英语</h2><p>数据中心、电气、柴油发电机、UPS、MV/LV、测试、MOP、RCA、故障处理、维护与验收等。</p>
       <div class="taskgrid"><div class="task"><b>${completedToday().p}/${goals().p}</b><span>今日专业新词</span></div><div class="task"><b>${items.filter(isPro).length}</b><span>专业词库</span></div><div class="task"><b>${mastered().filter(isPro).length}</b><span>已掌握专业词</span></div></div>
-      <button class="cta blue" data-page="daily">⚡ 今日任务（含专业英语）</button></div>
+      <button class="cta blue" data-today-filter="professional">⚡ 今日专业学习</button></div>
       <input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句">
       <div id="cards">${list(items.filter(isPro))}</div>`;
   }else if(page==='review'){
@@ -212,6 +220,8 @@ function bind(){
   if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
     $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
   document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()});
+  document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
+  document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
   if($id('setNew')){
     $id('setNew').value=localStorage.getItem('dceng_daily_new')||20;
     $id('setPro').value=localStorage.getItem('dceng_daily_pro')||10;
@@ -253,13 +263,14 @@ function detail(i){
 function rate(w,l){
   let x=items.find(a=>a.word===w),s=st(w),now=Date.now(),mins={again:10,hard:1440,good:4320,easy:10080};
   const wasNew=s.seen===0;
+  const wasDue=!wasNew && s.due<=now;
   s.seen++;s.last=now;
   if(l==='again'){s.box=0;s.wrong++;s.due=now+mins.again*60000}
   else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=now+mins.hard*60000}
   else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=now+mins.good*60000}
   else{s.box=4;s.correct++;s.due=now+mins.easy*60000}
   progress[w]=s;save();markDay();
-  if(!isCompletedToday(w)) markToday(isPro(x)?'p':wasNew?'n':'r',w);
+  if(!isCompletedToday(w)) markToday(wasDue?'r':isPro(x)?'p':'n',w);
   $id('modal').classList.remove('show');render();
 }
 function browserSpeak(text){
@@ -303,6 +314,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=9').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=11').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
