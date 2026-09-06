@@ -73,8 +73,8 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V42</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
-<main id="main"></main>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V45</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V45：音频采用按需语音播放，不内置历史 MP3；词库列表分批加载。</div></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
 <button data-nav="daily"><div class="ico">📚</div>日常</button>
@@ -91,7 +91,7 @@ const LOCAL_AUDIO_BASE='./audio/';
 const LOCAL_EXAMPLE_BASE='./example_audio/';
 function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_').replace(/^_+|_+$/g,'');}
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='43'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','43');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='41'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','41');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -144,8 +144,8 @@ function preloadTodayAudio(){
   try{
     const pool=todayTasks().slice(0,60);
     pool.forEach(x=>{
-      const a=new Audio(LOCAL_AUDIO_BASE+audioSlug(x.word)+'.mp3');a.preload='auto';
-      const b=new Audio(LOCAL_EXAMPLE_BASE+audioSlug(x.word)+'.mp3');b.preload='auto';
+      const a=null; /* V45: bundled audio disabled; use v45Speak() */a.preload='auto';
+      const b=null; /* V45: bundled audio disabled; use v45Speak() */b.preload='auto';
     });
   }catch(e){}
 }
@@ -267,8 +267,7 @@ function render(){
         <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
         <button id="installBtn" class="install">📲 安装到手机桌面</button>
         <button id="voiceBtn" class="install">🔊 测试当前发音</button>
-        <button id="clearCacheBtn" class="install">🧹 清除 App 缓存</button>
-        <div id="status" class="status">学习进度保存在本机浏览器。清除缓存不会删除学习进度。</div>
+        <div id="status" class="status">学习进度保存在本机浏览器。</div>
       </div>
       <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
       <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词库记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。单词和例句音频采用本地文件，学习过程中无需访问在线词典。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
@@ -295,22 +294,8 @@ function bind(){
     $id('setAccent').onchange=e=>localStorage.setItem('dceng_accent',e.target.value);
     $id('setRate').onchange=e=>localStorage.setItem('dceng_rate',e.target.value);
     $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
-    $id('clearCacheBtn').onclick=clearAppCache;
   }
   if($id('installBtn'))$id('installBtn').onclick=installApp;
-}
-async function clearAppCache(){
-  const btn=$id('clearCacheBtn');
-  if(!confirm('清除 App 缓存？\n\n学习进度、收藏、每日学习设置不会被删除。'))return;
-  try{
-    if('caches' in window){const keys=await caches.keys();await Promise.all(keys.map(k=>caches.delete(k)));}
-    if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}
-    if(btn)btn.disabled=true;
-    location.reload();
-  }catch(e){
-    if(btn)btn.disabled=false;
-    alert('缓存清理失败，请稍后重试。');
-  }
 }
 function clearTodayPlan(){localStorage.removeItem('dceng_plan_'+today())}
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});
@@ -329,7 +314,7 @@ function playLocalAudio(path){
   return new Promise((resolve,reject)=>{
     try{
       if(audioEl){audioEl.pause();audioEl.src='';}
-      audioEl=new Audio(path);
+      audioEl=null; /* V45: bundled audio disabled; use v45Speak() */
       audioEl.preload='auto'; audioEl.playsInline=true;
       audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1);
       audioEl.onended=()=>resolve(true);
@@ -432,6 +417,19 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=42').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=45').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+</script>
+
+<script>
+/* V45: no bundled audio. On-demand speech only; no Audio objects or preloading. */
+let v45Utterance=null;
+function v45Speak(text){
+  if(!('speechSynthesis' in window)){ alert('当前浏览器不支持语音播放，请检查系统语音服务。'); return; }
+  window.speechSynthesis.cancel();
+  v45Utterance=new SpeechSynthesisUtterance(String(text||''));
+  v45Utterance.lang='en-US';
+  v45Utterance.rate=0.9;
+  window.speechSynthesis.speak(v45Utterance);
+}
 </script>
 </body></html>
