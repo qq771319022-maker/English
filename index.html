@@ -91,7 +91,7 @@ const LOCAL_AUDIO_BASE='./audio/';
 const LOCAL_EXAMPLE_BASE='./example_audio/';
 function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_').replace(/^_+|_+$/g,'');}
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='41'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','41');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='43'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','43');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -267,7 +267,8 @@ function render(){
         <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
         <button id="installBtn" class="install">📲 安装到手机桌面</button>
         <button id="voiceBtn" class="install">🔊 测试当前发音</button>
-        <div id="status" class="status">学习进度保存在本机浏览器。</div>
+        <button id="clearCacheBtn" class="install">🧹 清除 App 缓存</button>
+        <div id="status" class="status">学习进度保存在本机浏览器。清除缓存不会删除学习进度。</div>
       </div>
       <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
       <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词库记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。单词和例句音频采用本地文件，学习过程中无需访问在线词典。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
@@ -294,8 +295,22 @@ function bind(){
     $id('setAccent').onchange=e=>localStorage.setItem('dceng_accent',e.target.value);
     $id('setRate').onchange=e=>localStorage.setItem('dceng_rate',e.target.value);
     $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
+    $id('clearCacheBtn').onclick=clearAppCache;
   }
   if($id('installBtn'))$id('installBtn').onclick=installApp;
+}
+async function clearAppCache(){
+  const btn=$id('clearCacheBtn');
+  if(!confirm('清除 App 缓存？\n\n学习进度、收藏、每日学习设置不会被删除。'))return;
+  try{
+    if('caches' in window){const keys=await caches.keys();await Promise.all(keys.map(k=>caches.delete(k)));}
+    if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}
+    if(btn)btn.disabled=true;
+    location.reload();
+  }catch(e){
+    if(btn)btn.disabled=false;
+    alert('缓存清理失败，请稍后重试。');
+  }
 }
 function clearTodayPlan(){localStorage.removeItem('dceng_plan_'+today())}
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});
