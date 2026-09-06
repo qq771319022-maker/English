@@ -13,7 +13,7 @@
 body{margin:0;background:#f3f6fa;color:#132238;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 header{background:linear-gradient(180deg,#eaf4ff 0%,#f7fbff 100%);color:#132238;padding:20px 18px 17px}
 header h1{margin:0;font-size:27px}
-header p{margin:5px 0 0;color:#cbd5e1}
+header p{margin:5px 0 0;color:#62809b}
 main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .search{width:100%;padding:14px 15px;border:1px solid #d8dee8;border-radius:15px;font-size:16px;margin-bottom:11px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px}
@@ -36,7 +36,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .bottom button{background:none;border:0;padding:5px 2px;font-size:15px;color:#64748b;min-width:0}.bottom .ico{font-size:26px;line-height:27px}.bottom button.active{color:#2563eb;font-weight:750}.bottom button.active .ico{filter:saturate(1.15)}
 .hero{background:#fff;border:1px solid #e1e7ef;border-radius:18px;padding:16px;margin-bottom:12px}
 .hero h2{margin:0 0 5px}.hero p{margin:5px 0;color:#64748b}
-.cta{width:100%;border:0;border-radius:13px;padding:13px;background:#2563eb;color:#fff;font-size:15px;margin-top:9px}
+.cta{width:100%;border:0;border-radius:13px;cursor:pointer;touch-action:manipulation;padding:13px;background:#2563eb;color:#fff;font-size:15px;margin-top:9px}
 .cta.blue{background:#2563eb}.cta.secondary{background:#eef2f7;color:#111827}
 .taskgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
 .task{background:#f8fafc;border-radius:14px;padding:10px;text-align:center}.task b{font-size:20px;display:block}.task span{font-size:11px;color:#64748b}
@@ -56,7 +56,7 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V11</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V13</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">每天一点进步，成就更好的自己！</div></header>
 <main id="main"></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
@@ -145,6 +145,30 @@ function card(x,i){
 }
 function list(arr){return arr.slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
 
+function openToday(mode='all'){
+  todayFilter = mode || 'all';
+  page = 'today';
+  query = '';
+  render();
+  window.scrollTo({top:0, behavior:'instant'});
+}
+
+function renderToday(mode='all'){
+ const g=goals(), tasks=todayTasks();
+ let pool=tasks;
+ if(mode==='daily') pool=tasks.filter(x=>!isPro(x)&&st(x.word).seen===0);
+ if(mode==='professional') pool=tasks.filter(x=>isPro(x)&&st(x.word).seen===0);
+ if(mode==='review') pool=tasks.filter(x=>st(x.word).seen>0&&st(x.word).due<=Date.now());
+ page='today';
+ $id('main').innerHTML=`<div class="hero"><h2>今日学习</h2><p>固定任务 · 完成一次记忆判断才计入今日完成</p>
+ <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>日常新词</span></div><div class="task"><b>${completedToday().p}/${g.p}</b><span>专业新词</span></div><div class="task"><b>${completedToday().r}/${Math.min(g.r,due().length)}</b><span>到期复习</span></div></div>
+ <div class="tabs"><button class="${mode==='all'?'active':''}" data-tmode="all">全部</button><button class="${mode==='daily'?'active':''}" data-tmode="daily">日常</button><button class="${mode==='professional'?'active':''}" data-tmode="professional">专业</button><button class="${mode==='review'?'active':''}" data-tmode="review">复习</button></div>
+ <div id="cards">${list(pool)}</div></div>`;
+ document.querySelectorAll('[data-tmode]').forEach(b=>b.onclick=()=>renderToday(b.dataset.tmode));
+ document.querySelectorAll('[data-speak]').forEach(b=>b.onclick=()=>{let x=items[+b.dataset.speak];speakText(x.word+'. '+(x.example_en||''))});
+ document.querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>detail(+b.dataset.detail));
+}
+
 function render(){
   let body='';
   if(page==='home'){
@@ -161,7 +185,7 @@ function render(){
       </div>
       <div class="progress"><div class="progressline"><span>今日任务进度</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>
       <p><b>${remaining===0?'🎉 今日任务已全部完成！':'还剩 '+remaining+' 个任务'}</b></p>
-      <button class="cta blue" data-page="today">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
+      <button type="button" class="cta blue" onclick="openToday('all')">${remaining===0?'✓ 查看今日完成':'▶ 开始今日学习'}</button>
     </div>
     <div class="stats">
       <div class="stat"><b>${items.length}</b><span>总词汇</span></div>
@@ -184,13 +208,13 @@ function render(){
     const g=goals(), tasks=todayTasks(), rem=todayRemaining();
     body=`<div class="hero"><h2>日常英语</h2><p>这里是完整日常词库；今日任务会与专业英语、复习任务一起出现在“首页 → 今日学习”。</p>
       <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>今日新词</span></div><div class="task"><b>${rem.length}</b><span>今日剩余</span></div><div class="task"><b>${items.filter(x=>!isPro(x)).length}</b><span>日常词库</span></div></div>
-      <button class="cta blue" data-today-filter="daily">📚 打开今日学习</button></div>
+      <button type="button" class="cta blue" onclick="openToday('daily')">📚 打开今日学习</button></div>
       <input id="search" class="search" placeholder="搜索英文 / 中文 / 例句">
       <div id="cards">${list(items.filter(x=>!isPro(x)))}</div>`;
   }else if(page==='professional'){
     body=`<div class="hero"><h2>专业英语</h2><p>数据中心、电气、柴油发电机、UPS、MV/LV、测试、MOP、RCA、故障处理、维护与验收等。</p>
       <div class="taskgrid"><div class="task"><b>${completedToday().p}/${goals().p}</b><span>今日专业新词</span></div><div class="task"><b>${items.filter(isPro).length}</b><span>专业词库</span></div><div class="task"><b>${mastered().filter(isPro).length}</b><span>已掌握专业词</span></div></div>
-      <button class="cta blue" data-today-filter="professional">⚡ 今日专业学习</button></div>
+      <button type="button" class="cta blue" onclick="openToday('professional')">⚡ 今日专业学习</button></div>
       <input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句">
       <div id="cards">${list(items.filter(isPro))}</div>`;
   }else if(page==='review'){
@@ -219,7 +243,7 @@ function bind(){
   let s=$id('search');
   if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
     $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).slice(0,120).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
-  document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()});
+  document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()}); document.querySelectorAll('[data-today]').forEach(b=>b.onclick=()=>renderToday(b.dataset.today));
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
   if($id('setNew')){
@@ -240,6 +264,12 @@ function bind(){
 function clearTodayPlan(){localStorage.removeItem('dceng_plan_'+today())}
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});
 $id('main').addEventListener('click',e=>{
+  let open=e.target.closest('[data-open-today]');
+  if(open){openToday(open.dataset.openToday||'all');return}
+  let pg=e.target.closest('[data-page]');
+  if(pg){page=pg.dataset.page;query='';render();return}
+  let tf=e.target.closest('[data-today-filter]');
+  if(tf){openToday(tf.dataset.todayFilter||'all');return}
   let sp=e.target.closest('[data-speak]');
   if(sp){let x=items[+sp.dataset.speak];if(x)speakText(x.word+'. '+(x.example_en||''));return}
   let c=e.target.closest('[data-detail]');if(c)detail(+c.dataset.detail);
@@ -314,6 +344,6 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=11').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=13').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 </body></html>
