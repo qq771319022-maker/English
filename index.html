@@ -73,8 +73,8 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V45</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
-<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V45：音频采用按需语音播放，不内置历史 MP3；词库列表分批加载。</div></main>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V46</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V46：音频采用按需语音播放，不内置历史 MP3；词库列表分批加载。</div></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
 <button data-nav="daily"><div class="ico">📚</div>日常</button>
@@ -140,15 +140,7 @@ function todayTasks(){
   return items.filter(x=>ids.has(x.id));
 }
 function todayRemaining(){return todayTasks().filter(x=>!isCompletedToday(x.word))}
-function preloadTodayAudio(){
-  try{
-    const pool=todayTasks().slice(0,60);
-    pool.forEach(x=>{
-      const a=null; /* V45: bundled audio disabled; use v45Speak() */a.preload='auto';
-      const b=null; /* V45: bundled audio disabled; use v45Speak() */b.preload='auto';
-    });
-  }catch(e){}
-}
+function preloadTodayAudio(){}
 function todayCounts(){
   const t=completedToday(),g=goals();
   return {n:t.n,p:t.p,r:t.r,total:t.n+t.p+t.r,target:g.n+g.p+Math.min(g.r,due().length)}
@@ -182,7 +174,26 @@ function card(x,i){
     <span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'} · ${x.quality==='offline-local'?'本地词库':x.quality} · ${statusLabel(x)}</span>
   </article>`
 }
-function list(arr){return arr.map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有符合条件的内容。</div>'}
+const LIST_PAGE_SIZE=60;
+let listState={pool:[],shown:0,container:null,button:null};
+function initLazyList(pool){
+  listState={pool:Array.isArray(pool)?pool:[],shown:0,container:$id('cards'),button:$id('loadMore')};
+  if(!listState.container)return;
+  listState.container.innerHTML='';
+  appendLazyList();
+}
+function appendLazyList(){
+  const start=listState.shown,end=Math.min(start+LIST_PAGE_SIZE,listState.pool.length);
+  if(!listState.container)return;
+  const html=listState.pool.slice(start,end).map(x=>card(x,items.indexOf(x))).join('');
+  if(html) listState.container.insertAdjacentHTML('beforeend',html);
+  listState.shown=end;
+  if(listState.button){
+    listState.button.textContent=listState.shown<listState.pool.length?`加载更多（${listState.shown}/${listState.pool.length}）`:`已全部加载（${listState.pool.length}）`;
+    listState.button.style.display=listState.shown<listState.pool.length?'block':'none';
+  }
+}
+function listShell(){return '<div id="cards"></div><button id="loadMore" class="cta blue" style="margin-top:12px;display:none">加载更多</button>'}
 
 function openToday(mode='all'){
   todayFilter = mode || 'all';
@@ -202,8 +213,9 @@ function renderToday(mode='all'){
  $id('main').innerHTML=`<div class="hero"><h2>今日学习</h2><p>固定任务 · 完成一次记忆判断才计入今日完成</p>
  <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>日常新词</span></div><div class="task"><b>${completedToday().p}/${g.p}</b><span>专业新词</span></div><div class="task"><b>${completedToday().r}/${Math.min(g.r,due().length)}</b><span>到期复习</span></div></div>
  <div class="tabs"><button class="${mode==='all'?'active':''}" data-tmode="all">全部</button><button class="${mode==='daily'?'active':''}" data-tmode="daily">日常</button><button class="${mode==='professional'?'active':''}" data-tmode="professional">专业</button><button class="${mode==='review'?'active':''}" data-tmode="review">复习</button></div>
- <div id="cards">${list(pool)}</div></div>`;
+ ${listShell()}</div>`;
  document.querySelectorAll('[data-tmode]').forEach(b=>b.onclick=()=>renderToday(b.dataset.tmode));
+ initLazyList(pool);
  document.querySelectorAll('[data-speak]').forEach(b=>b.onclick=()=>{let x=items[+b.dataset.speak];playLocalWord(x.word)});
  document.querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>detail(+b.dataset.detail));
 }
@@ -244,19 +256,19 @@ function render(){
       <div class="taskgrid"><div class="task"><b>${completedToday().n}/${g.n}</b><span>今日新词</span></div><div class="task"><b>${rem.length}</b><span>今日剩余</span></div><div class="task"><b>${items.filter(x=>!isPro(x)).length}</b><span>日常词库</span></div></div>
       <button type="button" class="cta blue" onclick="openToday('daily')">📚 打开今日学习</button></div>
       <input id="search" class="search" placeholder="搜索英文 / 中文 / 例句">
-      <div id="cards">${list(items.filter(x=>!isPro(x)))}</div>`;
+      ${listShell()}`;
   }else if(page==='professional'){
     body=`<div class="hero"><h2>专业英语</h2><p>数据中心、电气、柴油发电机、UPS、MV/LV、测试、MOP、RCA、故障处理、维护与验收等。</p>
       <div class="taskgrid"><div class="task"><b>${completedToday().p}/${goals().p}</b><span>今日专业新词</span></div><div class="task"><b>${items.filter(isPro).length}</b><span>专业词库</span></div><div class="task"><b>${mastered().filter(isPro).length}</b><span>已掌握专业词</span></div></div>
       <button type="button" class="cta blue" onclick="openToday('professional')">⚡ 今日专业学习</button></div>
       <input id="search" class="search" placeholder="搜索专业术语 / 中文 / 例句">
-      <div id="cards">${list(items.filter(isPro))}</div>`;
+      ${listShell()}`;
   }else if(page==='today'){
     renderToday(todayFilter||'all'); return;
   }else if(page==='review'){
     body=`<div class="hero"><h2>复习</h2><p>只显示已经学习并且到期的词。复习结果会自动影响下一次出现时间。</p>
       <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r}</b><span>每日上限</span></div></div>
-      </div><div id="cards">${list(due())}</div>`;
+      </div>${listShell()}`;
   }else{
     body=`<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
       <div class="panel">
@@ -274,13 +286,20 @@ function render(){
     </div>`;
   }
   $id('main').innerHTML=body; bind();
+  if(page==='daily') initLazyList(items.filter(x=>!isPro(x)));
+  else if(page==='professional') initLazyList(items.filter(isPro));
+  else if(page==='review') initLazyList(due());
+  else if(page==='today') initLazyList(todayTasks());
 }
 function bind(){
   let s=$id('search');
   if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
-    $id('cards').innerHTML=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query)).map(x=>card(x,items.indexOf(x))).join('')||'<div class="panel">没有找到相关内容。</div>'}}
+    const filtered=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query));
+    initLazyList(filtered);
+    if(!filtered.length) $id('cards').innerHTML='<div class="panel">没有找到相关内容。</div>';}}
   document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()}); document.querySelectorAll('[data-today]').forEach(b=>b.onclick=()=>renderToday(b.dataset.today));
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
+  if($id('loadMore'))$id('loadMore').onclick=appendLazyList;
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
   if($id('setNew')){
     $id('setNew').value=localStorage.getItem('dceng_daily_new')||20;
@@ -310,29 +329,28 @@ $id('main').addEventListener('click',e=>{
   if(sp){let x=items[+sp.dataset.speak];if(x){playLocalWord(x.word);}return}
   let c=e.target.closest('[data-detail]');if(c)detail(+c.dataset.detail);
 });
-function playLocalAudio(path){
+function playSpeech(text,label){
   return new Promise((resolve,reject)=>{
+    if(!('speechSynthesis' in window)){reject(new Error('tts'));return;}
     try{
-      if(audioEl){audioEl.pause();audioEl.src='';}
-      audioEl=null; /* V45: bundled audio disabled; use v45Speak() */
-      audioEl.preload='auto'; audioEl.playsInline=true;
-      audioEl.playbackRate=+(localStorage.getItem('dceng_rate')||1);
-      audioEl.onended=()=>resolve(true);
-      audioEl.onerror=()=>reject(new Error('audio'));
-      const p=audioEl.play();
-      if(p&&p.catch)p.catch(reject); else resolve(true);
+      window.speechSynthesis.cancel();
+      const u=new SpeechSynthesisUtterance(String(text||''));
+      u.lang=localStorage.getItem('dceng_accent')||'en-US';
+      u.rate=+(localStorage.getItem('dceng_rate')||1);
+      u.onend=()=>resolve(true); u.onerror=()=>reject(new Error('tts'));
+      window.speechSynthesis.speak(u);
     }catch(e){reject(e)}
   });
 }
 async function playLocalWord(word){
-  const s=$id('status'); if(s)s.textContent='正在播放单词…';
-  try{await playLocalAudio(LOCAL_AUDIO_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 单词发音';}
-  catch(e){if(s)s.textContent='✕ 本地单词音频不可用';}
+  const x=items.find(a=>a.word===word),s=$id('status');
+  if(s)s.textContent='正在播放单词…';
+  try{await playSpeech(word);if(s)s.textContent='✓ 单词发音';}catch(e){if(s)s.textContent='✕ 当前设备无法播放语音';}
 }
 async function playLocalExample(word){
-  const s=$id('status'); if(s)s.textContent='正在播放例句…';
-  try{await playLocalAudio(LOCAL_EXAMPLE_BASE+audioSlug(word)+'.mp3'); if(s)s.textContent='✓ 例句发音';}
-  catch(e){if(s)s.textContent='✕ 本地例句音频不可用';}
+  const x=items.find(a=>a.word===word),s=$id('status');
+  if(s)s.textContent='正在播放例句…';
+  try{await playSpeech(x?.example_en||'');if(s)s.textContent='✓ 例句发音';}catch(e){if(s)s.textContent='✕ 当前设备无法播放语音';}
 }
 function detail(i){
   const x=items[i],s=st(x.word); if(!x)return;
@@ -417,19 +435,7 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=45').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=46').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 
-<script>
-/* V45: no bundled audio. On-demand speech only; no Audio objects or preloading. */
-let v45Utterance=null;
-function v45Speak(text){
-  if(!('speechSynthesis' in window)){ alert('当前浏览器不支持语音播放，请检查系统语音服务。'); return; }
-  window.speechSynthesis.cancel();
-  v45Utterance=new SpeechSynthesisUtterance(String(text||''));
-  v45Utterance.lang='en-US';
-  v45Utterance.rate=0.9;
-  window.speechSynthesis.speak(v45Utterance);
-}
-</script>
 </body></html>
