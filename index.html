@@ -1,66 +1,72 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827"><meta name="description" content="Daily English + Data Center Engineering English">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827">
 <link rel="manifest" href="manifest.webmanifest">
 <title>DC Engineer English</title>
 <style>
-:root{--bg:#f5f7fb;--card:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#2563eb}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{position:sticky;top:0;z-index:5;background:#111827;color:white;padding:14px 16px calc(12px + env(safe-area-inset-top));box-shadow:0 2px 10px #0002}
-h1{font-size:20px;margin:0 0 10px}.sub{font-size:12px;opacity:.75}
-main{max-width:760px;margin:auto;padding:14px 14px 90px}.hero{background:var(--card);border-radius:18px;padding:16px;margin-bottom:12px;border:1px solid var(--line)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#f9fafb;border-radius:12px;padding:10px;text-align:center}.num{font-size:22px;font-weight:700}.label{font-size:11px;color:var(--muted)}
-.search{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;font-size:15px;background:white;outline:none}
-.tabs{display:flex;gap:8px;overflow:auto;margin:12px 0}.tab{border:1px solid var(--line);background:white;border-radius:999px;padding:9px 13px;white-space:nowrap}.tab.active{background:#111827;color:white}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:9px 0}.row{display:flex;gap:10px;align-items:center}.grow{flex:1}.word{font-size:18px;font-weight:750}.meaning{margin-top:3px;color:var(--muted)}.example{margin-top:9px;line-height:1.45}.small{font-size:12px;color:var(--muted)}
-button{font:inherit;cursor:pointer}.play{border:0;background:#eff6ff;color:#1d4ed8;border-radius:12px;padding:10px 12px}.primary{border:0;background:#111827;color:white;border-radius:12px;padding:10px 14px}.outline{border:1px solid var(--line);background:white;border-radius:12px;padding:9px 12px}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);display:flex;justify-content:center;gap:4px;padding:8px calc(8px + env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));z-index:6}.bottom button{flex:1;max-width:180px;border:0;background:white;padding:8px 4px;color:var(--muted)}.bottom button.active{color:#111827;font-weight:700}
-.modal{position:fixed;inset:0;background:#0008;z-index:20;display:none;align-items:flex-end}.sheet{background:white;border-radius:22px 22px 0 0;width:100%;max-height:88vh;overflow:auto;padding:20px 16px calc(25px + env(safe-area-inset-bottom));max-width:760px;margin:auto}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.pill{display:inline-block;padding:4px 8px;background:#f3f4f6;border-radius:999px;font-size:11px;color:#4b5563}
-progress{width:100%;height:9px}.empty{padding:30px;text-align:center;color:var(--muted)}
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#132238;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+header{background:#111827;color:#fff;padding:24px 18px 20px}header h1{margin:0;font-size:28px}header p{margin:6px 0 0;color:#cbd5e1}
+main{max-width:980px;margin:auto;padding:16px 16px 100px}.search{width:100%;padding:15px 16px;border:1px solid #d8dee8;border-radius:16px;font-size:17px;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:12px;text-align:center}.stat b{display:block;font-size:21px}.stat span{font-size:12px;color:#64748b}
+.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:12px}.tabs button,.tools button{border:1px solid #d8dee8;background:#fff;border-radius:12px;padding:10px 13px;font-size:14px}.tabs button.active{background:#111827;color:#fff}
+.card{background:#fff;border:1px solid #e1e7ef;border-radius:18px;padding:17px;margin:12px 0;box-shadow:0 2px 8px #00000008}.top{display:flex;justify-content:space-between;gap:10px}.word{font-size:24px;font-weight:750}.cn{font-size:18px;color:#64748b;margin-top:2px}.ex{font-size:17px;margin-top:12px;line-height:1.5}.tr{color:#64748b;font-size:14px}.tag{display:inline-block;margin-top:10px;padding:5px 9px;background:#f1f5f9;border-radius:999px;font-size:12px;color:#475569}
+.speak{width:48px;height:48px;border:0;border-radius:14px;background:#eef6ff;font-size:22px}.small{font-size:13px;color:#64748b}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dbe1ea;display:flex;justify-content:center;gap:10px;padding:9px 8px calc(9px + env(safe-area-inset-bottom));z-index:5}.bottom button{background:none;border:0;padding:5px 18px;font-size:14px;color:#64748b}.bottom button.active{color:#111827;font-weight:700}
+.panel{background:#fff;border:1px solid #e1e7ef;border-radius:16px;padding:14px;margin-bottom:14px}.tools{display:flex;flex-wrap:wrap;gap:8px}.tools label{font-size:13px;color:#475569;display:flex;align-items:center;gap:5px}.tools select{padding:8px;border:1px solid #d8dee8;border-radius:10px;background:#fff}
+.modal{position:fixed;inset:0;background:#0007;display:none;align-items:flex-end;z-index:10}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:22px 22px 0 0;padding:22px}.close{float:right;border:0;background:#f1f5f9;border-radius:10px;padding:8px 12px}
+.status{padding:10px 12px;background:#f8fafc;border-radius:12px;margin-top:10px;font-size:13px;line-height:1.5}
+@media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;border-radius:22px}.bottom{display:none}}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><div class="sub">Daily English · Data Center · Electrical · MOP/SOP/RCA · Troubleshooting</div></header>
-<main id="app"></main>
-<nav class="bottom">
-<button id="navHome" onclick="go('home')">🏠<br>首页</button>
-<button id="navDaily" onclick="go('daily')">📚<br>日常</button>
-<button id="navPro" onclick="go('pro')">⚡<br>专业</button>
-<button id="navReview" onclick="go('review')">🔄<br>复习</button>
-</nav>
-<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet" id="sheet"></div></div>
+<header><h1>Daily English</h1><p>日常 + 工作沟通 + 数据中心工程英语</p></header>
+<main>
+<input id="search" class="search" placeholder="搜索英文 / 中文 / 例句">
+<div class="stats"><div class="stat"><b id="total">0</b><span>总内容</span></div><div class="stat"><b id="learned">0</b><span>已学习</span></div><div class="stat"><b id="fav">0</b><span>收藏</span></div></div>
+<div class="panel">
+  <div class="tools">
+    <label>发音 <select id="engine"><option value="online">在线语音优先</option><option value="browser">系统语音</option></select></label>
+    <label>口音 <select id="accent"><option value="en-US">🇺🇸 美式</option><option value="en-GB">🇬🇧 英式</option></select></label>
+    <label>速度 <select id="rate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></label>
+    <button onclick="testVoice()">🔊 测试发音</button><button onclick="directTest()">🌐 在线直测</button>
+    <button onclick="diagnose()">检查声音</button>
+  </div>
+  <div id="status" class="status">V3：在线语音使用 StreamElements，在线失败会自动切换系统语音。</div>
+</div>
+<div id="tabs" class="tabs">
+<button class="active" data-cat="all">全部</button><button data-cat="daily">日常</button><button data-cat="professional">专业</button><button data-cat="review">复习</button>
+</div>
+<div id="list"></div>
+</main>
+<nav class="bottom"><button class="active" onclick="setCat('all')">🏠<br>首页</button><button onclick="setCat('daily')">📚<br>日常</button><button onclick="setCat('professional')">⚡<br>专业</button><button onclick="setCat('review')">🔄<br>复习</button></nav>
+<div id="modal" class="modal"><div class="sheet"><button class="close" onclick="closeModal()">关闭</button><div id="detail"></div></div></div>
 <script>
-let data=[], route='home', q='', filter='all', review=[];
-const state=JSON.parse(localStorage.getItem('dceng_state')||'{"learned":[],"favorites":[],"review":[]}');
-const save=()=>localStorage.setItem('dceng_state',JSON.stringify(state));
-async function init(){data=(await fetch('vocab.json').then(r=>r.json())).entries;render()}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function speak(t,rate=.82,lang='en-US'){if(!('speechSynthesis'in window)){alert('当前浏览器不支持语音');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=lang;u.rate=rate;u.pitch=1;speechSynthesis.speak(u)}
-function go(r){route=r;render();scrollTo(0,0)}
-function markLearned(id){if(!state.learned.includes(id))state.learned.push(id);save();render()}
-function fav(id){state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];save();render()}
-function list(cat){
- let arr=data;
- if(cat==='daily')arr=data.filter(x=>x.category==='Daily & Work English');
- if(cat==='pro')arr=data.filter(x=>x.category.includes('Engineering')||x.category==='Scenario');
- if(cat==='review')arr=data.filter(x=>state.favorites.includes(x.id)||state.learned.includes(x.id));
- if(q)arr=arr.filter(x=>(x.word+' '+x.meaning_zh+' '+x.example_en).toLowerCase().includes(q.toLowerCase()));
- return arr;
-}
-function card(x){let isFav=state.favorites.includes(x.id);return `<div class="card"><div class="row"><div class="grow" onclick="detail(${x.id})"><div class="word">${esc(x.word)}</div><div class="meaning">${esc(x.meaning_zh)}</div></div><button class="play" onclick="speak(${JSON.stringify(x.word)})">🔊</button></div><div class="example">${esc(x.example_en)}</div><div class="small">${esc(x.example_zh)}</div><div style="margin-top:8px"><span class="pill">${esc(x.category)}</span>${isFav?' <span class="pill">⭐ 收藏</span>':''}</div></div>`}
-function header(title,desc){return `<div class="hero"><h2 style="margin:0 0 5px">${title}</h2><div class="small">${desc}</div></div><input class="search" placeholder="搜索英文 / 中文 / 例句" value="${esc(q)}" oninput="q=this.value;renderList()">`}
-function render(){document.querySelectorAll('.bottom button').forEach(b=>b.classList.remove('active'));document.getElementById('nav'+({home:'Home',daily:'Daily',pro:'Pro',review:'Review'}[route])).classList.add('active');if(route==='home')home();else if(route==='daily')page('daily','Daily English','日常 + 工作沟通，先把高频表达练熟。');else if(route==='pro')page('pro','Data Center & Electrical','MV/LV · UPS · Generator · Transformer · MOP/SOP/RCA · Troubleshooting');else page('review','Review','收藏与已学习内容，用于快速复习。')}
-function home(){document.getElementById('app').innerHTML=`<div class="hero"><h2 style="margin:0">今天学一点，现场用得上。</h2><p class="small">不是背孤立单词，而是把单词、例句、连读和工程场景一起练。</p><div class="stats"><div class="stat"><div class="num">${data.length}</div><div class="label">学习内容</div></div><div class="stat"><div class="num">${state.learned.length}</div><div class="label">已学习</div></div><div class="stat"><div class="num">${state.favorites.length}</div><div class="label">收藏</div></div></div><div style="margin-top:12px"><progress value="${state.learned.length}" max="${data.length}"></progress></div></div>
-<div class="hero"><h3 style="margin-top:0">快速入口</h3><div class="actions"><button class="primary" onclick="go('daily')">📚 日常英语</button><button class="primary" onclick="go('pro')">⚡ 专业英语</button><button class="outline" onclick="go('review')">🔄 开始复习</button></div></div>
-<div class="hero"><h3 style="margin-top:0">今日推荐</h3>${data.slice(Math.floor(Math.random()*Math.max(1,data.length-3)),Math.floor(Math.random()*Math.max(1,data.length-3))+3).map(card).join('')}</div>`}
-function page(cat,title,desc){document.getElementById('app').innerHTML=header(title,desc)+'<div id="list"></div>';renderList()}
-function renderList(){let el=document.getElementById('list');if(!el)return;let arr=list(route);el.innerHTML=arr.length?arr.slice(0,100).map(card).join(''):`<div class="empty">没有找到相关内容</div>`}
-function detail(id){let x=data.find(a=>a.id===id);if(!x)return;document.getElementById('sheet').innerHTML=`<div class="row"><div class="grow"><h2 style="margin:0">${esc(x.word)}</h2><div class="small">${esc(x.phonetic)} · ${esc(x.pos)}</div></div><button class="play" onclick="speak(${JSON.stringify(x.word)})">🔊</button></div><p><b>${esc(x.meaning_zh)}</b></p>${x.root?`<p><b>词根/词缀：</b>${esc(x.root)}</p>`:''}<p><b>搭配：</b>${(x.collocations||[]).map(c=>`<span class="pill">${esc(c)}</span>`).join(' ')}</p><p><b>工程/日常例句：</b><br>${esc(x.example_en)}</p><p class="small">${esc(x.example_zh)}</p><p><b>连读：</b>${esc(x.connected_speech)}</p><div class="actions"><button class="primary" onclick="speak(${JSON.stringify(x.word)})">单词</button><button class="primary" onclick="speak(${JSON.stringify(x.example_en)})">例句</button><button class="outline" onclick="speak(${JSON.stringify(x.example_en)},.55)">慢速</button><button class="outline" onclick="speak(${JSON.stringify(x.example_en)},.82,'en-GB')">英音</button><button class="outline" onclick="fav(${x.id});detail(${x.id})">${state.favorites.includes(x.id)?'取消收藏':'⭐ 收藏'}</button><button class="outline" onclick="markLearned(${x.id});detail(${x.id})">✓ 已学习</button></div>`;document.getElementById('modal').style.display='flex'}
-function closeModal(){document.getElementById('modal').style.display='none'}
-init();
-if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+let items=[],cat='all',query='';
+const learned=new Set(JSON.parse(localStorage.getItem('learned')||'[]'));
+const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem('learned',JSON.stringify([...learned]));localStorage.setItem('favs',JSON.stringify([...favs]));}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function isPro(x){return (x.tags||[]).includes('professional') || /professional|generator|transformer|ups|switchgear|protection|battery|busway|pdu|bms|fire|mop|sop|rca|ptw|loto|testing|maintenance|commissioning|inspection|handover|fault|alarm|rectification|medium voltage|low voltage/i.test((x.category||'')+' '+(x.word||'')+' '+(x.example_en||''))}
+function filtered(){return items.filter(x=>{let ok=cat==='all'||(cat==='professional'?isPro(x):cat==='daily'?!isPro(x):learned.has(x.word));let q=query.toLowerCase();return ok&&(!q||[x.word,x.meaning_zh,x.example_en,x.example_zh,x.category].join(' ').toLowerCase().includes(q))})}
+function render(){let a=filtered().slice(0,120);$('list').innerHTML=a.map(x=>`<article class="card" onclick="detail(${items.indexOf(x)})"><div class="top"><div><div class="word">${esc(x.word||'')}</div><div class="cn">${esc(x.meaning_zh||'')}</div></div><button class="speak" onclick="event.stopPropagation();speakText(${JSON.stringify((x.word||'')+'. '+(x.example_en||''))})">🔊</button></div><div class="ex">${esc(x.example_en||'')}</div><div class="tr">${esc(x.example_zh||'')}</div><span class="tag">${isPro(x)?'Professional Engineering':'Daily & Work English'}</span></article>`).join('')||'<div class="panel">没有找到内容。</div>'; $('total').textContent=items.length;$('learned').textContent=learned.size;$('fav').textContent=favs.size}
+function detail(i){let x=items[i];learned.add(x.word);save();render();$('detail').innerHTML=`<h2>${esc(x.word)}</h2><div class="cn">${esc(x.meaning_zh||'')}</div><p><b>发音</b> ${esc(x.phonetic||'')}</p><p><b>词根/构词</b> ${esc(x.root||'')}</p><p><b>搭配</b> ${esc((x.collocations||[]).join(', '))}</p><p><b>例句</b><br>${esc(x.example_en||'')}</p><p class="tr">${esc(x.example_zh||'')}</p><p><b>连读提示</b> ${esc(x.connected_speech||'注意弱读、连读和重音。')}</p><div class="tools"><button onclick="speakText(${JSON.stringify(x.word||'')})">🔊 单词</button><button onclick="speakText(${JSON.stringify(x.example_en||'')})">🔊 例句</button><button onclick="toggleFav(${JSON.stringify(x.word||'')})">⭐ 收藏</button></div>`;$('modal').classList.add('show')}
+function closeModal(){$('modal').classList.remove('show')}
+function toggleFav(w){favs.has(w)?favs.delete(w):favs.add(w);save();render()}
+function setCat(c){cat=c;document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.cat===c));render()}
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>setCat(b.dataset.cat));
+$('search').oninput=e=>{query=e.target.value;render()};
+function browserSpeak(text){return new Promise((resolve,reject)=>{if(!('speechSynthesis' in window))return reject(new Error('浏览器不支持系统语音'));speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang=$('accent').value;u.rate=parseFloat($('rate').value);let vs=speechSynthesis.getVoices();let prefix=$('accent').value.toLowerCase().slice(0,2);let v=vs.find(v=>v.lang.toLowerCase()===$('accent').value.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(prefix));if(v)u.voice=v;u.onend=resolve;u.onerror=()=>reject(new Error('系统语音播放失败'));speechSynthesis.speak(u);setTimeout(()=>{if(!speechSynthesis.speaking&&!speechSynthesis.pending)reject(new Error('系统语音没有启动'));},1200)})}
+async function onlineSpeak(text){let voice=$('accent').value==='en-GB'?'Emma':'Brian';let url='https://api.streamelements.com/kappa/v2/speech?voice='+encodeURIComponent(voice)+'&text='+encodeURIComponent(text);return await new Promise((resolve,reject)=>{let a=new Audio();a.preload='auto';a.src=url;a.playbackRate=parseFloat($('rate').value);a.oncanplay=()=>{a.play().then(()=>resolve(true)).catch(reject)};a.onerror=()=>reject(new Error('在线语音服务器没有返回可播放音频'));setTimeout(()=>reject(new Error('在线语音连接超时')),8000)})}
+async function speakText(text){$('status').textContent='正在播放：'+text.slice(0,80);try{if($('engine').value==='online'){await onlineSpeak(text);$('status').textContent='✓ 在线语音播放正常';}else{await browserSpeak(text);$('status').textContent='✓ 系统语音播放正常';}}catch(e){try{await browserSpeak(text);$('status').textContent='✓ 在线语音不可用，已自动切换系统语音';}catch(e2){$('status').textContent='✕ 发音失败：请检查媒体音量/浏览器声音权限，然后点击“检查声音”。';}}}
+function testVoice(){speakText('Hello. This is a voice test for data center engineering English.')}
+function directTest(){let voice=$('accent').value==='en-GB'?'Emma':'Brian';let url='https://api.streamelements.com/kappa/v2/speech?voice='+voice+'&text='+encodeURIComponent('Hello, this is a direct online voice test.');window.open(url,'_blank');$('status').textContent='已打开在线语音直测页面。如果新页面能播放声音，说明语音服务正常。';}
+function diagnose(){let lines=['浏览器：'+navigator.userAgent.slice(0,90),'speechSynthesis：'+('speechSynthesis'in window?'支持':'不支持')];if('speechSynthesis'in window){speechSynthesis.getVoices();setTimeout(()=>{$('status').innerHTML=lines.concat(['系统英文语音数量：'+speechSynthesis.getVoices().filter(v=>/^en(-|_)/i.test(v.lang)).length,'当前模式：'+$('engine').value,'请点击“测试发音”。']).join('<br>')},500)}else $('status').innerHTML=lines.join('<br>')}
+fetch('vocab.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(d=>{items=d.entries||[];render()}).catch(e=>{$('list').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>'});
+if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=()=>{};
 </script>
-</body></html>
+</body>
+</html>

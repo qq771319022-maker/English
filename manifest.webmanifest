@@ -1,1 +1,16 @@
-{"name":"DC Engineer English","short_name":"DC English","start_url":"./","display":"standalone","background_color":"#f5f7fb","theme_color":"#111827","description":"Daily English and Data Center Engineering English","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "DC Engineer English",
+  "short_name": "DC English",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
