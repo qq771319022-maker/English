@@ -69,12 +69,12 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 .ring:after{content:'';width:62px;height:62px;border-radius:50%;background:#fff}.ringText{position:absolute;font-weight:800;color:#132238;font-size:15px}
 .homeTasks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0 12px}.homeTask{background:#fff;border-radius:15px;padding:10px 6px;text-align:center;border:1px solid #e3ebf5}.homeTask b{display:block;font-size:18px;color:#1d4ed8}.homeTask span{font-size:10px;color:#64748b}
 .homeCta{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:15px;padding:14px 16px;background:#2563eb;color:#fff;font-size:16px;font-weight:700;box-shadow:0 7px 16px rgba(37,99,235,.2)}
-.sectionTitle{font-size:18px;font-weight:800;margin:15px 2px 8px}.quoteBox{background:#eef6ff;border-radius:18px;padding:18px;text-align:center;color:#53708e;font-size:14px;line-height:1.7}
+.sectionTitle{font-size:18px;font-weight:800;margin:15px 2px 8px}.statBtn{appearance:none;-webkit-appearance:none;width:100%;font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}.statBtn:active{transform:scale(.98);background:#f8fbff}.quoteBox{background:#eef6ff;border-radius:18px;padding:18px;text-align:center;color:#53708e;font-size:14px;line-height:1.7}
 </style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V46</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
-<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V46：音频采用按需语音播放，不内置历史 MP3；词库列表分批加载。</div></main>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V48</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V48：以 V47 为基准修正版；无内置音频；词库列表分批加载。</div></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico">🏠</div>首页</button>
 <button data-nav="daily"><div class="ico">📚</div>日常</button>
@@ -85,24 +85,29 @@ main{max-width:980px;margin:auto;padding:14px 16px 112px}
 <div id="modal" class="modal"><div class="sheet"><button class="close" id="closeBtn">关闭</button><div id="detail"></div></div></div>
 
 <script>
-let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all';
+let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all',statusFilter='mastered',lastDateKey='';
 const KEY='dceng_v9_progress';
 const LOCAL_AUDIO_BASE='./audio/';
 const LOCAL_EXAMPLE_BASE='./example_audio/';
 function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_').replace(/^_+|_+$/g,'');}
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='47'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','47');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='48'){localStorage.removeItem('dceng_dict_cache_v21');localStorage.setItem('dceng_dict_cache_version','48');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
 function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function save(){localStorage.setItem(KEY,JSON.stringify(progress));localStorage.setItem('favs',JSON.stringify([...favs]))}
 function today(){return new Date().toLocaleDateString('en-CA')}
+function greeting(){const h=new Date().getHours();if(h>=5&&h<12)return 'Good morning ☀️';if(h>=12&&h<18)return 'Good afternoon ☀️';return 'Good evening 🌙'}
 function st(w){return progress[w]||{box:0,due:0,seen:0,correct:0,wrong:0,last:0}}
 function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'}
-function due(){return items.filter(x=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()})}
-function mastered(){return items.filter(x=>st(x.word).box>=4)}
-function newWords(pool=items){return pool.filter(x=>st(x.word).seen===0)}
+function uniqueByWord(pool){const seen=new Set(),out=[];for(const x of pool){const k=String(x.word||'').trim().toLowerCase();if(!k||seen.has(k))continue;seen.add(k);out.push(x)}return out}
+function due(){return uniqueByWord(items.filter(x=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()}))}
+function mastered(){return uniqueByWord(items.filter(x=>{let s=st(x.word);return s.box>=4&&s.due>Date.now()}))}
+function learning(){return uniqueByWord(items.filter(x=>{let s=st(x.word);return s.seen>0&&s.box<4&&s.due>Date.now()}))}
+function newWords(pool=items){return uniqueByWord(pool).filter(x=>st(x.word).seen===0)}
+function statusPool(mode){if(mode==='mastered')return mastered();if(mode==='learning')return learning();if(mode==='due')return due();return []}
+function openStatus(mode){statusFilter=mode;page='status';query='';render();window.scrollTo({top:0,behavior:'instant'})}
 function goals(){return{
   n:+localStorage.getItem('dceng_daily_new')||20,
   p:+localStorage.getItem('dceng_daily_pro')||10,
@@ -231,7 +236,7 @@ function render(){
     const uniqueCount=new Set(items.map(x=>String(x.word||'').trim().toLowerCase())).size;
     body=`<div class="homeHero">
       <div class="homeTop">
-        <div><div class="homeTitle">Good afternoon ☀️</div><div class="homeSub">每天进步一点点，今天也继续。</div></div>
+        <div><div class="homeTitle">${greeting()}</div><div class="homeSub">每天进步一点点，今天也继续。</div></div>
         <div class="ring" style="--pct:${pct*3.6}deg"><span class="ringText">${pct}%</span></div>
       </div>
       <div class="sectionTitle" style="margin-top:16px">今日学习任务</div>
@@ -246,9 +251,9 @@ function render(){
     <div class="sectionTitle">学习统计</div>
     <div class="stats">
       <div class="stat"><b>${uniqueCount}</b><span>唯一词条</span></div>
-      <div class="stat"><b>${mastered().length}</b><span>已掌握</span></div>
-      <div class="stat"><b>${items.filter(x=>st(x.word).seen>0&&st(x.word).box<4).length}</b><span>学习中</span></div>
-      <div class="stat"><b>${due().length}</b><span>待复习</span></div>
+      <button type="button" class="stat statBtn" data-status="mastered"><b>${mastered().length}</b><span>已掌握</span></button>
+      <button type="button" class="stat statBtn" data-status="learning"><b>${learning().length}</b><span>学习中</span></button>
+      <button type="button" class="stat statBtn" data-status="due"><b>${due().length}</b><span>待复习</span></button>
     </div><div class="small" style="margin:-4px 2px 10px">词库校验：本地词库共 2318 条记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。学习过程中无需在线查询。</div>
     <div class="progress"><div class="progressline"><span>总体掌握进度</span><b>${items.length?Math.round(mastered().length/items.length*100):0}%</b></div><div class="bar"><i style="width:${items.length?Math.round(mastered().length/items.length*100):0}%"></i></div></div>
     <div class="quoteBox">A little progress each day adds up to big results.<br><span>每天一点点进步，终会带来大的改变。</span></div>`;
@@ -267,6 +272,10 @@ function render(){
       ${listShell()}`;
   }else if(page==='today'){
     renderToday(todayFilter||'all'); return;
+  }else if(page==='status'){
+    const labels={mastered:'已掌握',learning:'学习中',due:'待复习'};
+    const pool=statusPool(statusFilter);
+    body=`<div class="hero"><h2>${labels[statusFilter]||'学习状态'}</h2><p>${statusFilter==='mastered'?'已经掌握的词汇。':statusFilter==='learning'?'已经学过、尚未掌握且当前尚未到复习时间的词汇。':'已经到期、现在需要复习的词汇。'}</p><div class="taskgrid"><div class="task"><b>${pool.length}</b><span>当前词数</span></div></div><button type="button" class="cta secondary" data-page="home">← 返回首页</button></div>${listShell()}`;
   }else if(page==='review'){
     body=`<div class="hero"><h2>复习</h2><p>只显示已经学习并且到期的词。复习结果会自动影响下一次出现时间。</p>
       <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r}</b><span>每日上限</span></div></div>
@@ -296,11 +305,12 @@ function render(){
 }
 function bind(){
   let s=$id('search');
-  if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):items.filter(x=>!isPro(x));
-    const filtered=pool.filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query));
+  if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):page==='daily'?items.filter(x=>!isPro(x)):page==='status'?statusPool(statusFilter):items;
+    const filtered=uniqueByWord(pool).filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query));
     initLazyList(filtered);
     if(!filtered.length) $id('cards').innerHTML='<div class="panel">没有找到相关内容。</div>';}}
-  document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()}); document.querySelectorAll('[data-today]').forEach(b=>b.onclick=()=>renderToday(b.dataset.today));
+  document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{page=b.dataset.page;query='';render()});
+  document.querySelectorAll('[data-status]').forEach(b=>b.onclick=()=>openStatus(b.dataset.status)); document.querySelectorAll('[data-today]').forEach(b=>b.onclick=()=>renderToday(b.dataset.today));
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
   if($id('loadMore'))$id('loadMore').onclick=appendLazyList;
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
@@ -318,7 +328,7 @@ function bind(){
     $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
     $id('clearCacheBtn').onclick=async()=>{
       if(!confirm('清除 App 缓存？\n\n学习进度、收藏、学习计划和设置不会被删除。'))return;
-      try{if('caches' in window){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)));}if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}localStorage.setItem('dceng_dict_cache_version','47');alert('缓存已清除，学习进度不会受到影响。');location.reload();}catch(err){location.reload();}
+      try{if('caches' in window){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)));}if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}localStorage.setItem('dceng_dict_cache_version','48');alert('缓存已清除，学习进度不会受到影响。');location.reload();}catch(err){location.reload();}
     };
   }
   if($id('installBtn'))$id('installBtn').onclick=installApp;
@@ -407,12 +417,30 @@ function rate(w,l){
   $id('modal').classList.remove('show');render();
 }
 let midnightTimer=null;
+function refreshForDateChange(){
+  const k=today();
+  if(!lastDateKey){lastDateKey=k;return;}
+  if(k!==lastDateKey){lastDateKey=k;query='';render();}
+}
 function scheduleMidnightRefresh(){
   if(midnightTimer) clearTimeout(midnightTimer);
   const now=new Date(), next=new Date(now);
-  next.setHours(24,0,0,50);
-  midnightTimer=setTimeout(()=>{render();scheduleMidnightRefresh()},Math.max(1000,next-now));
+  next.setHours(24,0,0,200);
+  midnightTimer=setTimeout(()=>{refreshForDateChange();render();scheduleMidnightRefresh()},Math.max(1000,next-now));
 }
+let greetingTimer=null;
+function scheduleGreetingRefresh(){
+  if(greetingTimer) clearTimeout(greetingTimer);
+  const now=new Date(), next=new Date(now), h=now.getHours();
+  const hours=[5,12,18];
+  const nh=hours.find(v=>v>h);
+  if(nh===undefined) next.setDate(next.getDate()+1), next.setHours(5,0,0,100);
+  else next.setHours(nh,0,0,100);
+  greetingTimer=setTimeout(()=>{render();scheduleGreetingRefresh()},Math.max(1000,next-now));
+}
+window.addEventListener('focus',refreshForDateChange);
+window.addEventListener('pageshow',refreshForDateChange);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshForDateChange()});
 function browserSpeak(text){
   return new Promise((res,rej)=>{
     if(!('speechSynthesis'in window))return rej();
@@ -442,7 +470,7 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=46').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];render();scheduleMidnightRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
+fetch('./vocab.json?v=48').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];lastDateKey=today();render();scheduleMidnightRefresh();scheduleGreetingRefresh()}).catch(e=>$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>');
 </script>
 
 </body></html>
