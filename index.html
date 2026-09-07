@@ -301,6 +301,7 @@ function render(){
   if(page==='daily') initLazyList(items.filter(x=>!isPro(x)));
   else if(page==='professional') initLazyList(items.filter(isPro));
   else if(page==='review') initLazyList(due());
+  else if(page==='status') initLazyList(statusPool(statusFilter));
   else if(page==='today') initLazyList(todayTasks());
 }
 function bind(){
