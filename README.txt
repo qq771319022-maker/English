@@ -23,11 +23,4 @@ V1.60 UI optimization:
 - No audio files added.
 
 
-V1.60 UI theme finalization:
-- Light and dark modes are controlled only by the device/system preference.
-- Unified theme applied to page background, header, cards, progress, tabs, task cards, detail sheet, settings, association boxes, modal, and bottom navigation.
-- Existing inline home text colors are also normalized in dark mode.
-- Browser/PWA theme-color is synchronized with the same system preference to prevent a light status bar above a dark page or the reverse.
-- System theme changes while the app is open are synchronized automatically.
-- No vocabulary, learning, review, or association logic changed.
-- No audio files added.
+V1.60: Rebuilt from V1.59 with a single, globally consistent system light/dark theme. No vocabulary or learning logic changes.
