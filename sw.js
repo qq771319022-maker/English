@@ -7,16 +7,10 @@ self.addEventListener('fetch',e=>{
   const u=new URL(e.request.url);
   if(e.request.mode==='navigate'){
     e.respondWith(caches.match('./index.html').then(cached=>{
-      if(cached){
-        fetch(e.request).then(r=>{
-          const cp=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',cp));
-        }).catch(()=>{});
-        return cached;
-      }
-      return fetch(e.request).then(r=>{
-        const cp=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',cp));
-        return r;
-      });
+      const update=fetch(e.request).then(r=>{
+        const cp=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',cp));return r;
+      }).catch(()=>cached);
+      return cached || update;
     }));
     return;
   }
