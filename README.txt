@@ -1,12 +1,11 @@
 DC Engineer English PWA V1.57
 
-基于 V1.56，仅新增“智能收词”能力，其余学习计划、词库、复习逻辑和 UI 保持原有设计。
+V1.57 is based directly on V1.55.
 
-新增：
-- 我的 → 智能收词：输入真实遇到的英文词或短语。
-- 自动检查本地 2360+ 词库是否已有该词。
-- 自动尝试识别已有的关联记忆组。
-- 可调用用户配置的兼容 Chat Completions API，生成中文释义、词性、音标、关联记忆组、搭配、日常场景、工程场景、例句和易混淆词。
-- AI 分析后可加入“我的生词”，个人词条保存在本机，并并入现有学习/复习体系。
-- 支持自定义 Endpoint / API Key / Model。为安全起见，建议使用自己的后端代理而不是直接在浏览器保存第三方 API Key。
-- 无内置音频文件。
+1. Added a structured “关联记忆组” learning model: one core word + prefix/suffix changes + meaning relationships.
+2. Added only high-value gaps found by scanning the existing vocabulary, avoiding inflection-only padding.
+3. Strong groups include connect, charge, load, power, operate, approve, test, configure, respond, depend, prepare, safe, effect, active, direct, possible, necessary, and regular.
+4. Added high-value new headwords such as reconnect, connectivity, overcharge, reload, unload, powered, powerful, powerless, operational, approval, disapprove, testing, tester, configure, configuration, reconfigure, responsive, dependent, independent, dependence, independence, preparation, unprepared, unsafe, safely, ineffective, effectively, inactive, deactivate, indirect, impossible, possibility, unnecessary, irregular, regularly.
+5. Existing strong family members were assigned consistent family metadata so the UI can recognize them as one association group.
+6. Today learning still keeps Daily and Professional pools independent, while related words inside each pool are kept adjacent.
+7. No audio files are included.
