@@ -23,4 +23,7 @@ V1.59 UI optimization:
 - No audio files added.
 
 
-V1.61: Removed the in-page startup cover and opacity gate that could appear during refresh. Restored normal immediate page painting and changed navigation caching to cache-first with background update for a no-visible-intermediate refresh experience. All vocabulary and learning logic unchanged.
+V1.62: Removed the in-page startup cover and opacity gate that could appear during refresh. Restored normal immediate page painting and changed navigation caching to cache-first with background update for a no-visible-intermediate refresh experience. All vocabulary and learning logic unchanged.
+
+
+V1.62: True no-flash refresh; no visible splash/loader/opacity transition. Cached navigation is returned immediately and refreshed silently in the background. Vocabulary and learning logic unchanged.
