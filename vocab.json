@@ -1,5 +1,5 @@
 {
-  "version": 156,
+  "version": 158,
   "total": 2360,
   "unique_words": 2358,
   "phrases": 664,
@@ -99,7 +99,31 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "active"
+      "family": "active",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "activate",
+        "activation",
+        "activity",
+        "current",
+        "deactivate",
+        "frequency",
+        "harmonic",
+        "inactive",
+        "measurement",
+        "meter",
+        "metering",
+        "power",
+        "reactive",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ]
     },
     {
       "id": 5,
@@ -939,7 +963,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 40,
@@ -1179,7 +1220,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "complete",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "completion"
+      ]
     },
     {
       "id": 50,
@@ -1252,7 +1300,21 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "connected",
+        "connecting",
+        "connection",
+        "connectivity",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "reconnect"
+      ]
     },
     {
       "id": 53,
@@ -1372,7 +1434,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "correct",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 58,
@@ -1420,7 +1501,24 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "active",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "meter",
+        "metering",
+        "power",
+        "reactive",
+        "voltage"
+      ]
     },
     {
       "id": 60,
@@ -1468,7 +1566,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "decide",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "decision"
+      ]
     },
     {
       "id": 62,
@@ -1517,7 +1622,17 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "depend"
+      "family": "depend",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "dependence",
+        "dependent",
+        "independence",
+        "independent"
+      ]
     },
     {
       "id": 64,
@@ -1686,7 +1801,15 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "direct"
+      "family": "direct",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "direction",
+        "indirect"
+      ]
     },
     {
       "id": 71,
@@ -1710,7 +1833,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "discuss",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "discussion"
+      ]
     },
     {
       "id": 72,
@@ -1759,7 +1889,16 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "effect"
+      "family": "effect",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "effect",
+        "effectively",
+        "ineffective"
+      ]
     },
     {
       "id": 74,
@@ -1807,7 +1946,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Protection & Safety"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "earth",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safe",
+        "safety",
+        "unsafe"
+      ]
     },
     {
       "id": 76,
@@ -2047,7 +2205,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 86,
@@ -2384,7 +2559,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "indicate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "indication"
+      ]
     },
     {
       "id": 100,
@@ -2408,7 +2590,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "install",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "installation"
+      ]
     },
     {
       "id": 101,
@@ -2504,7 +2693,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "maintain",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 105,
@@ -2528,7 +2736,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "manage",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "management"
+      ]
     },
     {
       "id": 106,
@@ -2552,7 +2767,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "measure",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 107,
@@ -2576,7 +2813,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "manual",
+        "procedure",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ]
     },
     {
       "id": 108,
@@ -2624,7 +2878,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "monitor",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "monitoring"
+      ]
     },
     {
       "id": 110,
@@ -2649,7 +2910,14 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "necessary"
+      "family": "necessary",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "unnecessary"
+      ]
     },
     {
       "id": 111,
@@ -2722,7 +2990,29 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "operate"
+      "family": "operate",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 114,
@@ -2818,7 +3108,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "perform",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "performance"
+      ]
     },
     {
       "id": 118,
@@ -2867,7 +3164,14 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "prepare"
+      "family": "prepare",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "preparation",
+        "unprepared"
+      ]
     },
     {
       "id": 120,
@@ -2891,7 +3195,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "prevent",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 121,
@@ -3179,7 +3502,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "manual",
+        "method",
+        "procedure",
+        "report",
+        "revision",
+        "verification"
+      ]
     },
     {
       "id": 133,
@@ -3299,7 +3639,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "replace",
+        "replacement"
+      ]
     },
     {
       "id": 138,
@@ -3323,7 +3680,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "replace",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 139,
@@ -3396,7 +3772,14 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "respond"
+      "family": "respond",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "response",
+        "responsive"
+      ]
     },
     {
       "id": 142,
@@ -3493,7 +3876,29 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "safe"
+      "family": "safe",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safely",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 146,
@@ -3518,7 +3923,29 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "safe"
+      "family": "safe",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safe",
+        "safely",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 147,
@@ -3806,7 +4233,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "start",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "starter",
+        "starting"
+      ]
     },
     {
       "id": 159,
@@ -4022,7 +4457,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "verify",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 168,
@@ -4191,7 +4648,17 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "active"
+      "family": "active",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "activate",
+        "activation",
+        "active",
+        "deactivate",
+        "inactive"
+      ]
     },
     {
       "id": 175,
@@ -4455,7 +4922,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "communicate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "communicate"
+      ]
     },
     {
       "id": 186,
@@ -4528,7 +5002,20 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connecting",
+        "connectivity",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "reconnect"
+      ]
     },
     {
       "id": 189,
@@ -4624,7 +5111,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "decide",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "decide"
+      ]
     },
     {
       "id": 193,
@@ -4673,7 +5167,15 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "direct"
+      "family": "direct",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "direct",
+        "indirect"
+      ]
     },
     {
       "id": 195,
@@ -4697,7 +5199,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "discuss",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "discuss"
+      ]
     },
     {
       "id": 196,
@@ -5465,7 +5974,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 228,
@@ -5489,7 +6015,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "supervise",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "supervision",
+        "supervisory"
+      ]
     },
     {
       "id": 229,
@@ -6464,7 +6998,15 @@
       "quality": "v40-final-polish",
       "verified_online": false,
       "status": "verified-core",
-      "family": "possible"
+      "family": "possible",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "impossible",
+        "possibility"
+      ]
     },
     {
       "id": 270,
@@ -7228,7 +7770,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "approve",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approve",
+        "disapprove",
+        "manual",
+        "method",
+        "procedure",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ],
+      "scene_groups": [
+        "Documentation & MOP"
+      ]
     },
     {
       "id": 302,
@@ -7276,7 +7840,25 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Battery & DC"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "battery",
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ]
     },
     {
       "category": "Daily & Work English",
@@ -7451,7 +8033,24 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "manual",
+        "method",
+        "procedure",
+        "record",
+        "revision",
+        "verification"
+      ]
     },
     {
       "id": 311,
@@ -7477,7 +8076,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "test"
+      "family": "test",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 312,
@@ -7502,7 +8122,24 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 313,
@@ -7527,7 +8164,25 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Battery & DC"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "capacity",
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ]
     },
     {
       "id": 314,
@@ -7602,7 +8257,41 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "isolate",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "earth",
+        "emergency",
+        "energization",
+        "energize",
+        "energized",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolated",
+        "isolator",
+        "protect",
+        "protection",
+        "protective",
+        "reconnect",
+        "safe",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Energization & Isolation",
+        "Protection & Safety"
+      ]
     },
     {
       "id": 317,
@@ -7652,7 +8341,28 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "protect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protective",
+        "safe",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 319,
@@ -7978,7 +8688,28 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switchboard",
+        "switchgear"
+      ]
     },
     {
       "id": 332,
@@ -8129,7 +8860,27 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "charge"
+      "family": "charge",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charged",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "id": 338,
@@ -8155,7 +8906,13 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "manage"
+      "family": "manage",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "manage"
+      ]
     },
     {
       "id": 339,
@@ -8205,7 +8962,28 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ]
     },
     {
       "id": 341,
@@ -8231,7 +9009,28 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "break"
+      "family": "break",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ]
     },
     {
       "id": 342,
@@ -8557,7 +9356,29 @@
       ],
       "quality": "v40-deep-proofread-pass3",
       "status": "verified-core",
-      "family": "power"
+      "family": "power",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "meter",
+        "metering",
+        "powered",
+        "powerful",
+        "powerless",
+        "reactive",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ]
     },
     {
       "id": 355,
@@ -8734,7 +9555,26 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Protection & Safety"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safe",
+        "safety",
+        "unsafe"
+      ]
     },
     {
       "id": 362,
@@ -8809,7 +9649,24 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 365,
@@ -8959,7 +9816,40 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "energize",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energized",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "lubrication",
+        "reconnect",
+        "starter",
+        "starting"
+      ],
+      "scene_groups": [
+        "Energization & Isolation",
+        "Generator"
+      ]
     },
     {
       "id": 371,
@@ -8984,7 +9874,30 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "energize",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 372,
@@ -9034,7 +9947,26 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "meter",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "metering",
+        "power",
+        "reactive",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ]
     },
     {
       "id": 374,
@@ -9059,7 +9991,26 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "excite",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "exciter",
+        "generate",
+        "generator",
+        "lubrication",
+        "starter",
+        "starting"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 375,
@@ -9184,7 +10135,24 @@
         "electrical"
       ],
       "quality": "v40-deep-proofread-pass3",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "harmonic",
+        "measurement",
+        "meter",
+        "metering",
+        "power",
+        "reactive",
+        "voltage"
+      ]
     },
     {
       "id": 380,
@@ -9259,7 +10227,26 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Protection & Safety"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safe",
+        "safety",
+        "unsafe"
+      ]
     },
     {
       "id": 383,
@@ -9284,7 +10271,24 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "frequency",
+        "measurement",
+        "meter",
+        "metering",
+        "power",
+        "reactive",
+        "voltage"
+      ]
     },
     {
       "id": 384,
@@ -9334,7 +10338,35 @@
         "electrical"
       ],
       "quality": "v40-deep-proofread-pass3",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Battery & DC",
+        "Power Quality & Electrical"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "active",
+        "battery",
+        "capacity",
+        "charge",
+        "charger",
+        "current",
+        "discharge",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "meter",
+        "metering",
+        "overcharge",
+        "power",
+        "reactive",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge"
+      ]
     },
     {
       "id": 386,
@@ -9384,7 +10416,28 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard"
+      ]
     },
     {
       "id": 388,
@@ -9510,7 +10563,13 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "monitor"
+      "family": "monitor",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "monitor"
+      ]
     },
     {
       "id": 393,
@@ -9535,7 +10594,40 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Protection & Safety",
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "earth",
+        "emergency",
+        "grounding",
+        "interlocking",
+        "isolate",
+        "isolation",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "protect",
+        "protection",
+        "protective",
+        "rack",
+        "racking",
+        "safe",
+        "safety",
+        "switch",
+        "switchboard",
+        "switchgear",
+        "unsafe"
+      ]
     },
     {
       "id": 394,
@@ -9561,7 +10653,28 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "interlock"
+      "family": "interlock",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ]
     },
     {
       "id": 395,
@@ -9612,7 +10725,29 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "isolate"
+      "family": "isolate",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 397,
@@ -9663,7 +10798,16 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "load"
+      "family": "load",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "overload",
+        "reload",
+        "unload"
+      ]
     },
     {
       "id": 399,
@@ -9763,7 +10907,28 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchgear"
+      ]
     },
     {
       "id": 403,
@@ -9864,7 +11029,25 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "meter"
+      "family": "meter",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "meter",
+        "power",
+        "reactive",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ]
     },
     {
       "id": 407,
@@ -9940,7 +11123,16 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "load"
+      "family": "load",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "load",
+        "reload",
+        "unload"
+      ]
     },
     {
       "id": 410,
@@ -10069,7 +11261,27 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "protect"
+      "family": "protect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "safe",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 415,
@@ -10394,7 +11606,29 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "operate"
+      "family": "operate",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 428,
@@ -10744,7 +11978,15 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "synchronize",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "synchronization",
+        "synchronizer"
+      ]
     },
     {
       "id": 442,
@@ -10769,7 +12011,15 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "synchronize",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "synchronizer",
+        "synchronizing"
+      ]
     },
     {
       "id": 443,
@@ -11147,7 +12397,14 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "regulate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "regulator"
+      ]
     },
     {
       "id": 458,
@@ -11297,7 +12554,27 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "cool",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "cool",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "lubrication",
+        "starter",
+        "starting"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 464,
@@ -11348,7 +12625,26 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "cool"
+      "family": "cool",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "cool",
+        "coolant",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "lubrication",
+        "starter",
+        "starting"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 466,
@@ -11448,7 +12744,24 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Generator"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "starter",
+        "starting"
+      ]
     },
     {
       "id": 470,
@@ -11974,7 +13287,20 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connection",
+        "connectivity",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "reconnect"
+      ]
     },
     {
       "id": 491,
@@ -12100,7 +13426,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "start"
+      "family": "start",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "lubrication",
+        "start",
+        "starting"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 496,
@@ -12151,7 +13496,26 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "start"
+      "family": "start",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "generator",
+        "lubrication",
+        "start",
+        "starter"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 498,
@@ -12452,7 +13816,14 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "regulate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "regulation"
+      ]
     },
     {
       "id": 510,
@@ -12552,7 +13923,26 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "excite",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "generate",
+        "generator",
+        "lubrication",
+        "starter",
+        "starting"
+      ],
+      "scene_groups": [
+        "Generator"
+      ]
     },
     {
       "id": 514,
@@ -12903,7 +14293,24 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Power Quality & Electrical"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "active",
+        "current",
+        "frequency",
+        "harmonic",
+        "measurement",
+        "meter",
+        "metering",
+        "power",
+        "voltage"
+      ]
     },
     {
       "id": 528,
@@ -12953,7 +14360,26 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "correct",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 530,
@@ -13130,7 +14556,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "accept"
+      "family": "accept",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "accept",
+        "approval",
+        "approved",
+        "manual",
+        "method",
+        "procedure",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ],
+      "scene_groups": [
+        "Documentation & MOP"
+      ]
     },
     {
       "id": 537,
@@ -13230,7 +14675,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "commission"
+      "family": "commission",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 541,
@@ -13280,7 +14746,29 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "inspect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 543,
@@ -13304,7 +14792,26 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "maintain",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 544,
@@ -13330,7 +14837,25 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "prevent"
+      "family": "prevent",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 545,
@@ -13381,7 +14906,25 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "correct"
+      "family": "correct",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace",
+        "replacement"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "id": 547,
@@ -13607,7 +15150,28 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "charge"
+      "family": "charge",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charged",
+        "charger",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "id": 556,
@@ -14209,7 +15773,15 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "supervise",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "supervision",
+        "supervisor"
+      ]
     },
     {
       "id": 580,
@@ -14485,7 +16057,14 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "indicate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "indicate"
+      ]
     },
     {
       "id": 591,
@@ -14536,7 +16115,24 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "warn"
+      "family": "warn",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting"
+      ]
     },
     {
       "id": 593,
@@ -14686,7 +16282,15 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "clean",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "cleaner",
+        "cleaning"
+      ]
     },
     {
       "id": 599,
@@ -14886,7 +16490,24 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "method",
+        "procedure",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ]
     },
     {
       "id": 607,
@@ -14937,7 +16558,16 @@
       ],
       "quality": "v38-meaning-pos-example-proofread",
       "status": "verified-core",
-      "family": "effect"
+      "family": "effect",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "effective",
+        "effectively",
+        "ineffective"
+      ]
     },
     {
       "id": 609,
@@ -15438,7 +17068,14 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "coordinate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "coordinate"
+      ]
     },
     {
       "id": 629,
@@ -16063,7 +17700,15 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "supervise",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "supervisor",
+        "supervisory"
+      ]
     },
     {
       "id": 654,
@@ -16188,7 +17833,18 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "charge",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge"
+      ]
     },
     {
       "id": 659,
@@ -16264,7 +17920,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "rack"
+      "family": "rack",
+      "scene_groups": [
+        "Switchgear Operation"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ]
     },
     {
       "id": 662,
@@ -16339,7 +18016,30 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "isolate",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 665,
@@ -16365,7 +18065,34 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "disconnect"
+      "family": "connect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connecting",
+        "connection",
+        "connectivity",
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnector",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 666,
@@ -16391,7 +18118,20 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connecting",
+        "connection",
+        "connectivity",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "reconnect"
+      ]
     },
     {
       "id": 667,
@@ -16417,7 +18157,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "withdraw"
+      "family": "withdraw",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "withdraw",
+        "withdrawal"
+      ]
     },
     {
       "id": 668,
@@ -16717,7 +18464,24 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "manual",
+        "method",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ]
     },
     {
       "id": 680,
@@ -16742,7 +18506,30 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "operate",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 681,
@@ -17419,7 +19206,15 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "identify",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "identify",
+        "identity"
+      ]
     },
     {
       "id": 708,
@@ -18320,7 +20115,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "recommend"
+      "family": "recommend",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "recommend",
+        "recommendation"
+      ]
     },
     {
       "id": 744,
@@ -18370,7 +20172,14 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "calibrate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "calibrate"
+      ]
     },
     {
       "id": 746,
@@ -18420,7 +20229,14 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "complete",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "complete"
+      ]
     },
     {
       "id": 748,
@@ -18446,7 +20262,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "energize"
+      "family": "energize",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 749,
@@ -19023,7 +20861,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "status": "verified-core",
-      "family": "generate"
+      "family": "generate",
+      "scene_groups": [
+        "Generator"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generate",
+        "lubrication",
+        "starter",
+        "starting"
+      ]
     },
     {
       "id": 772,
@@ -19972,7 +21827,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "accept",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "acceptance"
+      ]
     },
     {
       "id": 810,
@@ -20526,7 +22388,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "communicate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "communication"
+      ]
     },
     {
       "id": 833,
@@ -20959,7 +22828,24 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Generator"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling",
+        "energize",
+        "excitation",
+        "exciter",
+        "generator",
+        "lubrication",
+        "starter",
+        "starting"
+      ]
     },
     {
       "id": 851,
@@ -21152,7 +23038,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "identify",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "identification",
+        "identity"
+      ]
     },
     {
       "id": 859,
@@ -21225,7 +23119,13 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "install"
+      "family": "install",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "install"
+      ]
     },
     {
       "id": 862,
@@ -21442,7 +23342,38 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "measure"
+      "family": "measure",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "active",
+        "commission",
+        "commissioning",
+        "current",
+        "frequency",
+        "harmonic",
+        "inspect",
+        "inspection",
+        "measure",
+        "meter",
+        "metering",
+        "power",
+        "reactive",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing",
+        "Power Quality & Electrical"
+      ]
     },
     {
       "id": 871,
@@ -21636,7 +23567,29 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "operate"
+      "family": "operate",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 879,
@@ -21709,7 +23662,13 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "perform"
+      "family": "perform",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "perform"
+      ]
     },
     {
       "id": 882,
@@ -21901,7 +23860,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "protect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protection",
+        "protective",
+        "safe",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 890,
@@ -21949,7 +23929,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "recommend",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "recommendation",
+        "recommended"
+      ]
     },
     {
       "id": 892,
@@ -21999,7 +23987,15 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "regular"
+      "family": "regular",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "irregular",
+        "regularly"
+      ]
     },
     {
       "id": 894,
@@ -22072,7 +24068,14 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "respond"
+      "family": "respond",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "respond",
+        "responsive"
+      ]
     },
     {
       "id": 897,
@@ -22385,7 +24388,16 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "approve"
+      "family": "approve",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "approval",
+        "approved",
+        "disapprove"
+      ]
     },
     {
       "id": 910,
@@ -22697,7 +24709,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "coordinate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "coordination"
+      ]
     },
     {
       "id": 923,
@@ -22841,7 +24860,41 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "isolate",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "earth",
+        "emergency",
+        "energization",
+        "energize",
+        "energized",
+        "grounding",
+        "interlock",
+        "isolated",
+        "isolation",
+        "isolator",
+        "protect",
+        "protection",
+        "protective",
+        "reconnect",
+        "safe",
+        "safety",
+        "unsafe"
+      ],
+      "scene_groups": [
+        "Energization & Isolation",
+        "Protection & Safety"
+      ]
     },
     {
       "id": 929,
@@ -28621,7 +30674,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "withdraw",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "withdrawable",
+        "withdrawal"
+      ]
     },
     {
       "id": 1164,
@@ -28893,7 +30954,27 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "rectify",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "id": 1175,
@@ -29343,7 +31424,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景"
+      ],
+      "related_words": [
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 1193,
@@ -29443,7 +31545,27 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "rectify",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "id": 1197,
@@ -29518,7 +31640,39 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "verify",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "manual",
+        "measure",
+        "measurement",
+        "method",
+        "procedure",
+        "record",
+        "reinspection",
+        "report",
+        "retest",
+        "revision",
+        "test",
+        "tester",
+        "testing",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing",
+        "Documentation & MOP"
+      ]
     },
     {
       "id": 1200,
@@ -30121,7 +32275,37 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "connect",
+        "connected",
+        "connecting",
+        "connection",
+        "connectivity",
+        "disconnect",
+        "disconnected",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operational",
+        "operator",
+        "rack",
+        "racking",
+        "reconnect",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 1224,
@@ -30496,7 +32680,28 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 1239,
@@ -30521,7 +32726,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "commission",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 1240,
@@ -30546,7 +32773,26 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "troubleshoot",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshooting",
+        "warning"
+      ],
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ]
     },
     {
       "id": 1241,
@@ -30572,7 +32818,28 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "test"
+      "family": "test",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 1242,
@@ -30597,7 +32864,29 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "inspect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 1243,
@@ -30622,7 +32911,14 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "calibrate",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "calibration"
+      ]
     },
     {
       "id": 1244,
@@ -32342,7 +34638,15 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "id": 1316
+      "id": 1316,
+      "family": "synchronize",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "synchronization",
+        "synchronizing"
+      ]
     },
     {
       "category": "Data Center & Electrical Engineering",
@@ -32510,7 +34814,25 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "id": 1323
+      "id": 1323,
+      "scene_groups": [
+        "Battery & DC"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "voltage"
+      ]
     },
     {
       "category": "Data Center & Electrical Engineering",
@@ -33638,7 +35960,29 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "id": 1370
+      "id": 1370,
+      "family": "inspect",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "retest",
+        "test",
+        "tester",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "category": "Data Center & Electrical Engineering",
@@ -39245,7 +41589,17 @@
       "quality": "v39-meaning-pos-example-pass",
       "verified_online": false,
       "status": "verified-core",
-      "family": "active"
+      "family": "active",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "activate",
+        "active",
+        "activity",
+        "deactivate",
+        "inactive"
+      ]
     },
     {
       "id": 1606,
@@ -45414,7 +47768,25 @@
       "quality": "v37-meaning-pos-example-pass2",
       "verified_online": false,
       "status": "verified-core",
-      "family": "troubleshoot"
+      "family": "troubleshoot",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "warning"
+      ],
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ]
     },
     {
       "id": 1863,
@@ -45606,7 +47978,24 @@
       ],
       "quality": "v37-meaning-pos-example-pass2",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Documentation & MOP"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "acceptance",
+        "approval",
+        "approved",
+        "manual",
+        "method",
+        "procedure",
+        "record",
+        "report",
+        "verification"
+      ]
     },
     {
       "id": 1871,
@@ -45799,7 +48188,28 @@
       "quality": "v40-deep-proofread-pass3",
       "verified_online": false,
       "status": "verified-core",
-      "family": "energize"
+      "family": "energize",
+      "association_types": [
+        "前缀/反义",
+        "工程场景"
+      ],
+      "related_words": [
+        "de-energization",
+        "de-energize",
+        "disconnect",
+        "disconnected",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 1879,
@@ -45872,7 +48282,24 @@
       ],
       "quality": "v40-deep-proofread-pass3",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "problem",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "id": 1882,
@@ -46547,7 +48974,14 @@
       "verified_online": false,
       "status": "verified-core",
       "id": 1909,
-      "family": "withdraw"
+      "family": "withdraw",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "withdraw",
+        "withdrawable"
+      ]
     },
     {
       "category": "Daily Life & Travel English",
@@ -48111,7 +50545,28 @@
       "verified_online": false,
       "status": "verified-core",
       "id": 1974,
-      "family": "charge"
+      "family": "charge",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charged",
+        "charger",
+        "discharge",
+        "overcharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "category": "Daily Life & Travel English",
@@ -48520,7 +50975,14 @@
       "verified_online": false,
       "status": "verified-core",
       "id": 1991,
-      "family": "recommend"
+      "family": "recommend",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "recommend",
+        "recommended"
+      ]
     },
     {
       "category": "Daily Life & Travel English",
@@ -48544,7 +51006,24 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "id": 1992
+      "id": 1992,
+      "scene_groups": [
+        "Fault Troubleshooting"
+      ],
+      "association_types": [
+        "工程场景"
+      ],
+      "related_words": [
+        "abnormal",
+        "alarm",
+        "cause",
+        "failure",
+        "fault",
+        "solution",
+        "troubleshoot",
+        "troubleshooting",
+        "warning"
+      ]
     },
     {
       "category": "Data Center & Electrical Engineering",
@@ -49097,7 +51576,25 @@
       "verified_online": false,
       "status": "verified-core",
       "id": 2015,
-      "family": "replace"
+      "family": "replace",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "correct",
+        "correction",
+        "corrective",
+        "maintain",
+        "maintenance",
+        "prevent",
+        "preventive",
+        "repair",
+        "replace"
+      ],
+      "scene_groups": [
+        "Maintenance & Rectification"
+      ]
     },
     {
       "category": "Data Center & Electrical Engineering",
@@ -52125,7 +54622,15 @@
       "verified_online": false,
       "status": "verified-core",
       "category": "Bank Mobile & Money",
-      "id": 2141
+      "id": 2141,
+      "family": "identify",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "identification",
+        "identify"
+      ]
     },
     {
       "word": "loan",
@@ -52246,7 +54751,28 @@
       "status": "verified-core",
       "category": "Bank Mobile & Money",
       "id": 2146,
-      "family": "charge"
+      "family": "charge",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charged",
+        "charger",
+        "discharge",
+        "overcharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "word": "screen",
@@ -52343,7 +54869,18 @@
       "status": "verified-core",
       "category": "Bank Mobile & Money",
       "id": 2150,
-      "family": "active"
+      "family": "active",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "activation",
+        "active",
+        "activity",
+        "deactivate",
+        "inactive"
+      ]
     },
     {
       "word": "register",
@@ -52392,7 +54929,35 @@
       "status": "verified-core",
       "category": "Bank Mobile & Money",
       "id": 2152,
-      "family": "connect"
+      "family": "connect",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connecting",
+        "connection",
+        "connectivity",
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnected",
+        "disconnector",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator",
+        "reconnect"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "word": "roam",
@@ -53353,7 +55918,14 @@
       "status": "verified-core",
       "category": "Home Daily Life",
       "id": 2192,
-      "family": "clean"
+      "family": "clean",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "clean",
+        "cleaner"
+      ]
     },
     {
       "word": "garbage",
@@ -53521,7 +56093,15 @@
       "verified_online": false,
       "status": "verified-core",
       "category": "Home Daily Life",
-      "id": 2199
+      "id": 2199,
+      "family": "cool",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "coolant",
+        "cooling"
+      ]
     },
     {
       "word": "move",
@@ -55492,7 +58072,15 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "clean",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "clean",
+        "cleaning"
+      ]
     },
     {
       "id": 2282,
@@ -56562,7 +59150,35 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connecting",
+        "connection",
+        "connectivity",
+        "de-energization",
+        "de-energize",
+        "de-energized",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "energization",
+        "energize",
+        "energized",
+        "isolate",
+        "isolated",
+        "isolation",
+        "isolator"
+      ],
+      "scene_groups": [
+        "Energization & Isolation"
+      ]
     },
     {
       "id": 2327,
@@ -56587,7 +59203,20 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "connect",
+        "connected",
+        "connecting",
+        "connection",
+        "disconnect",
+        "disconnected",
+        "disconnector",
+        "reconnect"
+      ]
     },
     {
       "id": 2328,
@@ -56613,7 +59242,28 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "battery",
+        "capacity",
+        "charge",
+        "charged",
+        "charger",
+        "discharge",
+        "recharge",
+        "rectification",
+        "rectifier",
+        "state of charge",
+        "voltage"
+      ],
+      "scene_groups": [
+        "Battery & DC"
+      ]
     },
     {
       "id": 2329,
@@ -56638,7 +59288,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "load",
+        "overload",
+        "unload"
+      ]
     },
     {
       "id": 2330,
@@ -56664,7 +59323,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "load",
+        "overload",
+        "reload"
+      ]
     },
     {
       "id": 2331,
@@ -56690,7 +59358,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "power",
+        "powerful",
+        "powerless"
+      ]
     },
     {
       "id": 2332,
@@ -56715,7 +59392,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "power",
+        "powered",
+        "powerless"
+      ]
     },
     {
       "id": 2333,
@@ -56741,7 +59427,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "power",
+        "powered",
+        "powerful"
+      ]
     },
     {
       "id": 2334,
@@ -56767,7 +59462,29 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "breaker",
+        "disconnector",
+        "interlock",
+        "interlocking",
+        "operate",
+        "operating",
+        "operation",
+        "operator",
+        "rack",
+        "racking",
+        "switch",
+        "switchboard",
+        "switchgear"
+      ],
+      "scene_groups": [
+        "Switchgear Operation"
+      ]
     },
     {
       "id": 2335,
@@ -56792,7 +59509,28 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "acceptance",
+        "approve",
+        "approved",
+        "disapprove",
+        "manual",
+        "method",
+        "procedure",
+        "record",
+        "report",
+        "revision",
+        "verification"
+      ],
+      "scene_groups": [
+        "Documentation & MOP"
+      ]
     },
     {
       "id": 2336,
@@ -56817,7 +59555,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "approval",
+        "approve",
+        "approved"
+      ]
     },
     {
       "id": 2337,
@@ -56843,7 +59590,28 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "tester",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 2338,
@@ -56869,7 +59637,28 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "commission",
+        "commissioning",
+        "inspect",
+        "inspection",
+        "measure",
+        "measurement",
+        "reinspection",
+        "retest",
+        "test",
+        "testing",
+        "verification",
+        "verify"
+      ],
+      "scene_groups": [
+        "Commissioning & Testing"
+      ]
     },
     {
       "id": 2339,
@@ -56895,7 +59684,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "configuration",
+        "reconfigure"
+      ]
     },
     {
       "id": 2340,
@@ -56921,7 +59717,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "configure",
+        "reconfigure"
+      ]
     },
     {
       "id": 2341,
@@ -56947,7 +59750,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "configuration",
+        "configure"
+      ]
     },
     {
       "id": 2342,
@@ -56972,7 +59782,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "respond",
+        "response"
+      ]
     },
     {
       "id": 2343,
@@ -56997,7 +59814,17 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "depend",
+        "dependence",
+        "independence",
+        "independent"
+      ]
     },
     {
       "id": 2344,
@@ -57022,7 +59849,17 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "depend",
+        "dependence",
+        "dependent",
+        "independence"
+      ]
     },
     {
       "id": 2345,
@@ -57047,7 +59884,17 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "depend",
+        "dependent",
+        "independence",
+        "independent"
+      ]
     },
     {
       "id": 2346,
@@ -57073,7 +59920,17 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "depend",
+        "dependence",
+        "dependent",
+        "independent"
+      ]
     },
     {
       "id": 2347,
@@ -57098,7 +59955,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "prepare",
+        "unprepared"
+      ]
     },
     {
       "id": 2348,
@@ -57123,7 +59987,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "词族"
+      ],
+      "related_words": [
+        "preparation",
+        "prepare"
+      ]
     },
     {
       "id": 2349,
@@ -57148,7 +60019,29 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "工程场景",
+        "词族"
+      ],
+      "related_words": [
+        "earth",
+        "emergency",
+        "grounding",
+        "interlock",
+        "isolate",
+        "isolation",
+        "protect",
+        "protection",
+        "protective",
+        "safe",
+        "safely",
+        "safety"
+      ],
+      "scene_groups": [
+        "Protection & Safety"
+      ]
     },
     {
       "id": 2350,
@@ -57173,7 +60066,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "safe",
+        "safety",
+        "unsafe"
+      ]
     },
     {
       "id": 2351,
@@ -57198,7 +60100,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "effect",
+        "effective",
+        "effectively"
+      ]
     },
     {
       "id": 2352,
@@ -57223,7 +60134,16 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "effect",
+        "effective",
+        "ineffective"
+      ]
     },
     {
       "id": 2353,
@@ -57248,7 +60168,18 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "activate",
+        "activation",
+        "active",
+        "activity",
+        "deactivate"
+      ]
     },
     {
       "id": 2354,
@@ -57274,7 +60205,18 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "activate",
+        "activation",
+        "active",
+        "activity",
+        "inactive"
+      ]
     },
     {
       "id": 2355,
@@ -57299,7 +60241,15 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "direct",
+        "direction"
+      ]
     },
     {
       "id": 2356,
@@ -57324,7 +60274,15 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "possibility",
+        "possible"
+      ]
     },
     {
       "id": 2357,
@@ -57349,7 +60307,15 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "impossible",
+        "possible"
+      ]
     },
     {
       "id": 2358,
@@ -57375,7 +60341,14 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "necessary"
+      ]
     },
     {
       "id": 2359,
@@ -57400,7 +60373,15 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "regular",
+        "regularly"
+      ]
     },
     {
       "id": 2360,
@@ -57425,7 +60406,20 @@
       ],
       "quality": "v41-association-group",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "association_types": [
+        "前缀/反义",
+        "词族"
+      ],
+      "related_words": [
+        "irregular",
+        "regular"
+      ]
     }
+  ],
+  "association_layers": [
+    "词族",
+    "前缀/反义",
+    "工程场景"
   ]
 }

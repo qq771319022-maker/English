@@ -1,6 +1,6 @@
-DC Engineer English PWA V1.57
+DC Engineer English PWA V1.58
 
-V1.57 is based directly on V1.55.
+V1.58 is based directly on V1.55.
 
 1. Added a structured “关联记忆组” learning model: one core word + prefix/suffix changes + meaning relationships.
 2. Added only high-value gaps found by scanning the existing vocabulary, avoiding inflection-only padding.
@@ -9,3 +9,6 @@ V1.57 is based directly on V1.55.
 5. Existing strong family members were assigned consistent family metadata so the UI can recognize them as one association group.
 6. Today learning still keeps Daily and Professional pools independent, while related words inside each pool are kept adjacent.
 7. No audio files are included.
+
+
+V1.58 association enhancement: existing vocabulary is organized into three association layers — word families, prefix/contrast relationships, and practical data-center/electrical engineering scenarios. No bulk vocabulary expansion was performed.
