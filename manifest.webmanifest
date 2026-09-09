@@ -1,9 +1,9 @@
 {
-  "name": "DC Engineer English V1.60",
+  "name": "DC Engineer English",
   "short_name": "DC English",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#191919",
+  "background_color": "#eef6ff",
   "theme_color": "#191919",
   "lang": "zh-CN",
   "icons": [

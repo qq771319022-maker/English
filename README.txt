@@ -1,6 +1,6 @@
-DC Engineer English PWA V1.60
+DC Engineer English PWA V1.59
 
-V1.60 is based directly on V1.55.
+V1.59 is based directly on V1.55.
 
 1. Added a structured “关联记忆组” learning model: one core word + prefix/suffix changes + meaning relationships.
 2. Added only high-value gaps found by scanning the existing vocabulary, avoiding inflection-only padding.
@@ -11,16 +11,13 @@ V1.60 is based directly on V1.55.
 7. No audio files are included.
 
 
-V1.60 association enhancement: existing vocabulary is organized into three association layers — word families, prefix/contrast relationships, and practical data-center/electrical engineering scenarios. No bulk vocabulary expansion was performed.
+V1.59 association enhancement: existing vocabulary is organized into three association layers — word families, prefix/contrast relationships, and practical data-center/electrical engineering scenarios. No bulk vocabulary expansion was performed.
 
 
-V1.60 UI optimization:
+V1.59 UI optimization:
 - Follow the device/system light/dark mode automatically.
 - Light mode keeps the existing blue-white UI unchanged.
 - Dark mode uses a unified neutral dark palette inspired by WeChat-style black/white contrast.
 - Header, content cards, detail sheets, controls, and bottom navigation switch as one consistent theme.
 - No vocabulary, learning logic, review logic, or association logic changes.
 - No audio files added.
-
-
-V1.60 final UI fix: rebuilt from V1.59; unified system light/dark theme, synchronized browser/PWA theme colors, removed startup legacy splash/unstyled flash, and preserved all vocabulary and learning logic.
