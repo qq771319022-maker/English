@@ -31,8 +31,8 @@ main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padd
 .familyTag{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:8px;background:#eef5ff;color:#3d73b8;font-size:10px;font-weight:650}</style>
 </head>
 <body>
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.55</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
-<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V1.55：基于 V1.54 优化词源分组学习计划，并加入 pose 词源家族；无内置音频。</div></main>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.56</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V1.56：基于 V1.54 优化词源分组学习计划，并加入 pose 词源家族；无内置音频。</div></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="gHome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58c2ff"/><stop offset="1" stop-color="#1d69e8"/></linearGradient></defs><path d="M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z" fill="#fff" stroke="#cfe5fb" stroke-width="1.2"/><path d="M5.5 23.5 24 7l18.5 16.5" fill="none" stroke="url(#gHome)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 42V29h10v13" fill="url(#gHome)"/><rect x="18" y="20" width="5" height="5" rx="1.2" fill="#ffbf28"/><rect x="25" y="20" width="5" height="5" rx="1.2" fill="#ffbf28"/></svg></div>首页</button>
 <button data-nav="daily"><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="gBook1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4da7ff"/><stop offset="1" stop-color="#1d69e8"/></linearGradient><linearGradient id="gBook2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#45d9ad"/><stop offset="1" stop-color="#17a978"/></linearGradient></defs><path d="m8 16 25-7 7 17-25 7z" fill="url(#gBook1)"/><path d="M9 16.5 33 10l3 2-23 6.5z" fill="#7bc5ff" opacity=".75"/><path d="m11 29 25-7 5 13-24 7z" fill="url(#gBook2)"/><path d="M15 33.5 36 28l2 4-21 5.5z" fill="#fff" opacity=".9"/><path d="M30 39v5l4-3 4 1v-6z" fill="#ffc22b"/></svg></div>日常</button>
@@ -49,7 +49,7 @@ const LOCAL_AUDIO_BASE='./audio/';
 const LOCAL_EXAMPLE_BASE='./example_audio/';
 function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_').replace(/^_+|_+$/g,'');}
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
-if(localStorage.getItem('dceng_dict_cache_version')!=='155'){localStorage.removeItem('dceng_dict_cache_v151');localStorage.setItem('dceng_dict_cache_version','155');}
+if(localStorage.getItem('dceng_dict_cache_version')!=='156'){localStorage.removeItem('dceng_dict_cache_v151');localStorage.setItem('dceng_dict_cache_version','156');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
 
 function $id(x){return document.getElementById(x)}
@@ -108,7 +108,7 @@ function familyKey(x){
     'decide':'decide','discuss':'discuss','environment':'environment','instruct':'instruct',
     'solve':'solve','supervise':'supervise','equip':'equip','isolate':'isolate',
     'alternate':'alternate','charge':'charge','manage':'manage','break':'break',
-    'bus':'bus','earth':'earth','resist':'resist','electric':'electric','feed':'feed'
+    'bus':'bus','earth':'earth','resist':'resist','electric':'electric','feed':'feed','charge':'charge','recharge':'charge','discharge':'charge','overcharge':'charge','load':'load','overload':'load','reload':'load','unload':'load','power':'power','powered':'power','powerful':'power','powerless':'power','approve':'approve','disapprove':'approve','test':'test','retest':'test','testing':'test','tester':'test','configure':'configure','configuration':'configure','reconfigure':'configure','respond':'respond','response':'respond','responsive':'respond','depend':'depend','dependent':'depend','dependence':'depend','independent':'depend','independence':'depend','prepare':'prepare','preparation':'prepare','unprepared':'prepare','safe':'safe','unsafe':'safe','safely':'safe','effective':'effect','ineffective':'effect','effectively':'effect','active':'active','activate':'active','inactive':'active','deactivate':'active','direct':'direct','direction':'direct','indirect':'direct','possible':'possible','impossible':'possible','possibility':'possible','necessary':'necessary','unnecessary':'necessary','regular':'regular','irregular':'regular','regularly':'regular'
   };
   if(explicit[w])return 'root:'+explicit[w];
   if(root && /^[a-z][a-z-]{2,20}$/.test(root))return 'root:'+root.replace(/-$/,'');
@@ -138,7 +138,7 @@ function groupedNewWords(pool,limit){
   return out;
 }
 function dailyPlan(){
-  const g=goals(), key='dceng_plan_v155_'+today();
+  const g=goals(), key='dceng_plan_v156_'+today();
   let saved=JSON.parse(localStorage.getItem(key)||'null');
   if(saved && Array.isArray(saved.ids)) return saved;
   const dailyPool=groupedNewWords(items.filter(x=>!isPro(x)),g.n);
@@ -178,7 +178,7 @@ function familyLabel(x){
   if(page!=='today'||!x||!x.family)return '';
   const k=String(x.family).toLowerCase();
   const n=items.filter(y=>String(y.family||'').toLowerCase()===k&&st(y.word).seen===0).length;
-  return n>1?`<span class="familyTag">词源组 · ${esc(x.family)}</span>`:'';
+  return n>1?`<span class="familyTag">关联组 · ${esc(x.family)}</span>`:'';
 }
 function card(x,i){
   const c=cachedEntry(x.word);
@@ -229,7 +229,7 @@ function renderToday(mode='all'){
  if(mode==='daily') pool=tasks.filter(x=>!isPro(x)&&st(x.word).seen===0);
  if(mode==='professional') pool=tasks.filter(x=>isPro(x)&&st(x.word).seen===0);
  page='today';
- $id('main').innerHTML=`<div class="hero"><h2>今日学习</h2><p>按词源 / 构词关系分组 · 同源词尽量连续学习 · 避免按 A→B→C 顺序机械学习</p>
+ $id('main').innerHTML=`<div class="hero"><h2>今日学习</h2><p>按关联记忆组学习 · 一个核心词带动前后缀变化 · 相关词尽量连续学习</p>
  <div class="taskgrid twoTasks"><div class="task">${taskIcon('daily','todayDaily')}<b>${completedToday().n}/${g.n}</b><span>日常新词</span></div><div class="task">${taskIcon('professional','todayPro')}<b>${completedToday().p}/${g.p}</b><span>专业新词</span></div></div>
  <div class="tabs"><button class="${mode==='all'?'active':''}" data-tmode="all">全部</button><button class="${mode==='daily'?'active':''}" data-tmode="daily">日常</button><button class="${mode==='professional'?'active':''}" data-tmode="professional">专业</button></div>
  ${listShell()}</div>`;
@@ -347,12 +347,12 @@ function bind(){
     $id('voiceBtn').onclick=()=>speakText('Hello. This is a voice test for data center engineering English.');
     $id('clearCacheBtn').onclick=async()=>{
       if(!confirm('清除 App 缓存？\n\n学习进度、收藏、学习计划和设置不会被删除。'))return;
-      try{if('caches' in window){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)));}if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}localStorage.setItem('dceng_dict_cache_version','155');alert('缓存已清除，学习进度不会受到影响。');location.reload();}catch(err){location.reload();}
+      try{if('caches' in window){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)));}if('serviceWorker' in navigator){const regs=await navigator.serviceWorker.getRegistrations();await Promise.all(regs.map(r=>r.unregister()));}localStorage.setItem('dceng_dict_cache_version','156');alert('缓存已清除，学习进度不会受到影响。');location.reload();}catch(err){location.reload();}
     };
   }
   if($id('installBtn'))$id('installBtn').onclick=installApp;
 }
-function clearTodayPlan(){localStorage.removeItem('dceng_plan_v155_'+today())}
+function clearTodayPlan(){localStorage.removeItem('dceng_plan_v156_'+today())}
 document.querySelectorAll('.bottom button').forEach(b=>b.onclick=()=>{page=b.dataset.nav;query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));b.classList.add('active');render()});
 $id('main').addEventListener('click',e=>{
   let open=e.target.closest('[data-open-today]');

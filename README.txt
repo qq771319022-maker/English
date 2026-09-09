@@ -1,31 +1,11 @@
-DC Engineer English PWA V1.55
-2318 existing vocabulary records, 2316 unique English headwords. Based directly on V1.52.
+DC Engineer English PWA V1.56
 
-V1.55 changes:
-1. Refined the review icon: the two circular arrows are separated and proportioned to form a clearer circular refresh/review symbol.
-2. Reworked the Today Task cards into a vertically aligned icon / progress / label layout to prevent crowding on narrow mobile screens.
-3. Standardized card spacing, icon sizing, and numeric alignment for Daily, Professional, and Review tasks.
-4. Preserved V1.52 vocabulary, status-page behavior, learning logic, review scheduling, progress storage, and the no-audio requirement.
-5. No audio files are included.
+V1.56 is based directly on V1.55.
 
-
-V1.55 changes:
-1. Review setting adds unlimited (不限).
-2. Daily task no longer includes review target; review content remains independent and complete.
-3. Daily/Professional page CTA icons use the same SVG icon set as Home.
-4. Home daily task cards are aligned; current due-review count remains visible separately.
-5. Mobile focus/tap blue outline removed.
-
-
-V1.55 changes:
-- Added pose / propose / expose / superpose / suppose / impose / compose as one pose word family.
-- Daily new-word planning now prioritizes high-confidence word-family/root groups and keeps related words adjacent instead of simple alphabetical order.
-- Daily and professional pools remain independent.
-- Review settings and review content are preserved.
-- No audio files are included, consistent with V1.54.
-
-
-Plan quality refinement:
-- High-confidence existing word families are grouped using explicit family metadata and existing roots.
-- New-word order is seeded by date, so it is not alphabetical while keeping family members adjacent.
-- The seven pose-family words remain one learning group.
+1. Added a structured “关联记忆组” learning model: one core word + prefix/suffix changes + meaning relationships.
+2. Added only high-value gaps found by scanning the existing vocabulary, avoiding inflection-only padding.
+3. Strong groups include connect, charge, load, power, operate, approve, test, configure, respond, depend, prepare, safe, effect, active, direct, possible, necessary, and regular.
+4. Added high-value new headwords such as reconnect, connectivity, overcharge, reload, unload, powered, powerful, powerless, operational, approval, disapprove, testing, tester, configure, configuration, reconfigure, responsive, dependent, independent, dependence, independence, preparation, unprepared, unsafe, safely, ineffective, effectively, inactive, deactivate, indirect, impossible, possibility, unnecessary, irregular, regularly.
+5. Existing strong family members were assigned consistent family metadata so the UI can recognize them as one association group.
+6. Today learning still keeps Daily and Professional pools independent, while related words inside each pool are kept adjacent.
+7. No audio files are included.

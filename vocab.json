@@ -1,7 +1,7 @@
 {
-  "version": 155,
-  "total": 2325,
-  "unique_words": 2323,
+  "version": 156,
+  "total": 2360,
+  "unique_words": 2358,
   "phrases": 664,
   "entries": [
     {
@@ -83,7 +83,7 @@
       "phonetic": "/ˈæktɪv/",
       "pos": "adj.",
       "meaning_zh": "有效的；启用的；活跃的",
-      "root": "",
+      "root": "active（启用/活跃）",
       "collocations": [
         "active alarm",
         "active link"
@@ -98,7 +98,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "active"
     },
     {
       "id": 5,
@@ -1250,7 +1251,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "connect"
     },
     {
       "id": 53,
@@ -1499,7 +1501,7 @@
       "phonetic": "/dɪpˈɛnd/",
       "pos": "n./v.",
       "meaning_zh": "取决于",
-      "root": "",
+      "root": "depend（依赖）",
       "collocations": [
         "depend on the result",
         "depend on availability"
@@ -1514,7 +1516,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "depend"
     },
     {
       "id": 64,
@@ -1667,7 +1670,7 @@
       "phonetic": "/dɚɹˈɛkt/",
       "pos": "adj./v.",
       "meaning_zh": "直接的；指导",
-      "root": "",
+      "root": "direct（直接）",
       "collocations": [
         "direct instruction",
         "direct access"
@@ -1682,7 +1685,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "direct"
     },
     {
       "id": 71,
@@ -1739,7 +1743,7 @@
       "phonetic": "/ɪfˈɛktɪv/",
       "pos": "adj.",
       "meaning_zh": "有效的",
-      "root": "",
+      "root": "effect（效果）",
       "collocations": [
         "effective measure",
         "effective solution"
@@ -2629,7 +2633,7 @@
       "phonetic": "/nˈɛsəsɚɹi/",
       "pos": "adj.",
       "meaning_zh": "必要的",
-      "root": "",
+      "root": "necessary（必要）",
       "collocations": [
         "necessary step",
         "necessary testing"
@@ -2644,7 +2648,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "necessary"
     },
     {
       "id": 111,
@@ -2716,7 +2721,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "operate"
     },
     {
       "id": 114,
@@ -2845,7 +2851,7 @@
       "phonetic": "/pɹɪpˈɛɹ/",
       "pos": "v.",
       "meaning_zh": "准备",
-      "root": "",
+      "root": "prepare（准备）",
       "collocations": [
         "prepare a report",
         "prepare the equipment"
@@ -2860,7 +2866,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "prepare"
     },
     {
       "id": 120,
@@ -3373,7 +3380,7 @@
       "phonetic": "/ɹɪspˈɑːnd/",
       "pos": "n./v.",
       "meaning_zh": "响应",
-      "root": "",
+      "root": "respond（响应）",
       "collocations": [
         "respond to an alarm",
         "quick response"
@@ -3388,7 +3395,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "respond"
     },
     {
       "id": 142,
@@ -3469,7 +3477,7 @@
       "phonetic": "/sˈeɪf/",
       "pos": "adj.",
       "meaning_zh": "安全的",
-      "root": "",
+      "root": "safe（安全）",
       "collocations": [
         "safe condition",
         "safe to operate"
@@ -3484,7 +3492,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "safe"
     },
     {
       "id": 146,
@@ -3508,7 +3517,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "safe"
     },
     {
       "id": 147,
@@ -4517,7 +4527,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "connect"
     },
     {
       "id": 189,
@@ -4646,7 +4657,7 @@
       "phonetic": "/dɚɹˈɛkʃən/",
       "pos": "n.",
       "meaning_zh": "方向；指示",
-      "root": "",
+      "root": "direct（直接）",
       "collocations": [
         "give directions",
         "in the direction of"
@@ -4661,7 +4672,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "direct"
     },
     {
       "id": 195,
@@ -6436,7 +6448,7 @@
       "phonetic": "/pˈɑːsəbəl/",
       "pos": "adj.",
       "meaning_zh": "可能的",
-      "root": "",
+      "root": "possible（可能）",
       "collocations": [
         "possible condition",
         "possible value"
@@ -6451,7 +6463,8 @@
       ],
       "quality": "v40-final-polish",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "possible"
     },
     {
       "id": 270,
@@ -7447,7 +7460,7 @@
       "phonetic": "/tˈɛst/",
       "pos": "n./v.",
       "meaning_zh": "测试；试验",
-      "root": "",
+      "root": "test（测试）",
       "collocations": [
         "functional test",
         "load test",
@@ -7463,7 +7476,8 @@
         "electrical"
       ],
       "quality": "v36-deep-proofread-pass1",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "test"
     },
     {
       "id": 312,
@@ -8526,7 +8540,7 @@
       "phonetic": "/pˈaʊɚ/",
       "pos": "n.",
       "meaning_zh": "电力；功率",
-      "root": "",
+      "root": "power（电力/力量）",
       "collocations": [
         "active power",
         "reactive power",
@@ -8542,7 +8556,8 @@
         "electrical"
       ],
       "quality": "v40-deep-proofread-pass3",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "power"
     },
     {
       "id": 355,
@@ -9631,7 +9646,7 @@
       "phonetic": "/lˈoʊd/",
       "pos": "n./v.",
       "meaning_zh": "负载",
-      "root": "",
+      "root": "load（装载/负载）",
       "collocations": [
         "critical load",
         "load bank",
@@ -9647,7 +9662,8 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "load"
     },
     {
       "id": 399,
@@ -10377,7 +10393,8 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "operate"
     },
     {
       "id": 428,
@@ -11940,7 +11957,7 @@
       "phonetic": "/kənˈɛktɪŋ/",
       "pos": "adj.",
       "meaning_zh": "连接的",
-      "root": "",
+      "root": "connect（连接）",
       "collocations": [
         "connecting system",
         "connecting status",
@@ -13573,7 +13590,7 @@
       "phonetic": "/dɪstʃˈɑːɹdʒ/",
       "pos": "n./v.",
       "meaning_zh": "放电；放出",
-      "root": "",
+      "root": "charge（充电/收费）",
       "collocations": [
         "discharge system",
         "discharge status",
@@ -13589,7 +13606,8 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "charge"
     },
     {
       "id": 556,
@@ -14902,7 +14920,7 @@
       "phonetic": "/ɪfˈɛkt/",
       "pos": "n.",
       "meaning_zh": "影响；效果",
-      "root": "",
+      "root": "effect（效果）",
       "collocations": [
         "effect system",
         "effect status",
@@ -14918,7 +14936,8 @@
         "electrical"
       ],
       "quality": "v38-meaning-pos-example-proofread",
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "effect"
     },
     {
       "id": 609,
@@ -16355,7 +16374,7 @@
       "phonetic": "/kənˈɛktᵻd/",
       "pos": "adj.",
       "meaning_zh": "已连接的",
-      "root": "",
+      "root": "connect（连接）",
       "collocations": [
         "connected system",
         "connected status",
@@ -21964,7 +21983,7 @@
       "phonetic": "/ɹˈɛɡjuːlɚ/",
       "pos": "adj.",
       "meaning_zh": "定期的；正常的",
-      "root": "",
+      "root": "regular（规律）",
       "collocations": [
         "regular inspection",
         "regular maintenance"
@@ -21979,7 +21998,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "regular"
     },
     {
       "id": 894,
@@ -22051,7 +22071,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "respond"
     },
     {
       "id": 897,
@@ -22348,7 +22369,7 @@
       "phonetic": "/ɐpɹˈuːv/",
       "pos": "v.",
       "meaning_zh": "批准",
-      "root": "",
+      "root": "approve（批准）",
       "collocations": [
         "approve the method",
         "approve the request"
@@ -22363,7 +22384,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "approve"
     },
     {
       "id": 910,
@@ -30082,7 +30104,7 @@
       "phonetic": "/dɪskənˈɛktɚ/",
       "pos": "n.",
       "meaning_zh": "隔离开关；断开器",
-      "root": "",
+      "root": "connect（连接）",
       "collocations": [
         "disconnector position",
         "disconnector operation"
@@ -30099,7 +30121,7 @@
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
       "status": "verified-core",
-      "family": "disconnect"
+      "family": "connect"
     },
     {
       "id": 1224,
@@ -30549,7 +30571,8 @@
       ],
       "quality": "v36-deep-proofread-pass1",
       "verified_online": false,
-      "status": "verified-core"
+      "status": "verified-core",
+      "family": "test"
     },
     {
       "id": 1242,
@@ -39206,7 +39229,7 @@
       "phonetic": "/ˌæktɪvˈe‍ɪʃən/",
       "pos": "n.",
       "meaning_zh": "激活",
-      "root": "",
+      "root": "active（启用/活跃）",
       "collocations": [
         "mobile activation",
         "check activation"
@@ -48071,7 +48094,7 @@
       "phonetic": "/tʃˈɑɹdʒ/",
       "pos": "n./v.",
       "meaning_zh": "费用；收费；充电",
-      "root": "",
+      "root": "charge（充电/收费）",
       "collocations": [
         "service charge",
         "charge the battery"
@@ -48087,7 +48110,8 @@
       "quality": "v38-meaning-pos-example-proofread",
       "verified_online": false,
       "status": "verified-core",
-      "id": 1974
+      "id": 1974,
+      "family": "charge"
     },
     {
       "category": "Daily Life & Travel English",
@@ -52204,7 +52228,7 @@
       "phonetic": "/ɹɪtʃˈɑɹdʒ/",
       "pos": "n.",
       "meaning_zh": "充值",
-      "root": "",
+      "root": "charge（充电/收费）",
       "collocations": [
         "common recharge",
         "recharge service"
@@ -52221,7 +52245,8 @@
       "verified_online": false,
       "status": "verified-core",
       "category": "Bank Mobile & Money",
-      "id": 2146
+      "id": 2146,
+      "family": "charge"
     },
     {
       "word": "screen",
@@ -52300,7 +52325,7 @@
       "phonetic": "/ˈæktᵻvˌeɪt/",
       "pos": "v.",
       "meaning_zh": "激活",
-      "root": "",
+      "root": "active（启用/活跃）",
       "collocations": [
         "activate it",
         "activate before leaving"
@@ -52317,7 +52342,8 @@
       "verified_online": false,
       "status": "verified-core",
       "category": "Bank Mobile & Money",
-      "id": 2150
+      "id": 2150,
+      "family": "active"
     },
     {
       "word": "register",
@@ -52348,7 +52374,7 @@
       "phonetic": "/dɪskənˈɛkt/",
       "pos": "v.",
       "meaning_zh": "断开",
-      "root": "",
+      "root": "connect（连接）",
       "collocations": [
         "disconnect it",
         "disconnect before leaving"
@@ -52365,7 +52391,8 @@
       "verified_online": false,
       "status": "verified-core",
       "category": "Bank Mobile & Money",
-      "id": 2152
+      "id": 2152,
+      "family": "connect"
     },
     {
       "word": "roam",
@@ -56511,6 +56538,894 @@
       "status": "verified-core",
       "id": 2325,
       "family": "pose"
+    },
+    {
+      "id": 2326,
+      "category": "Daily & Work English",
+      "word": "reconnect",
+      "phonetic": "/ˌriːkəˈnɛkt/",
+      "pos": "v.",
+      "meaning_zh": "重新连接",
+      "root": "connect（连接）",
+      "family": "connect",
+      "collocations": [
+        "reconnect the cable",
+        "reconnect to the network"
+      ],
+      "example_en": "Reconnect the cable after the inspection is completed.",
+      "example_zh": "检查完成后重新连接电缆。",
+      "connected_speech": "Practice the smooth transition from reconnect → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2327,
+      "category": "Daily & Work English",
+      "word": "connectivity",
+      "phonetic": "/ˌkɑːnɛkˈtɪvəti/",
+      "pos": "n.",
+      "meaning_zh": "连接性；网络连接能力",
+      "root": "connect（连接）",
+      "family": "connect",
+      "collocations": [
+        "network connectivity",
+        "connectivity issue"
+      ],
+      "example_en": "Check network connectivity before starting the remote test.",
+      "example_zh": "开始远程测试前检查网络连接。",
+      "connected_speech": "Practice the smooth transition from connectivity → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2328,
+      "category": "Daily & Work English",
+      "word": "overcharge",
+      "phonetic": "/ˌoʊvɚˈtʃɑːrdʒ/",
+      "pos": "v./n.",
+      "meaning_zh": "过充；过度收费",
+      "root": "charge（充电/收费）",
+      "family": "charge",
+      "collocations": [
+        "overcharge the battery",
+        "battery overcharge"
+      ],
+      "example_en": "Overcharging the battery may damage the cells.",
+      "example_zh": "电池过充可能损坏电芯。",
+      "connected_speech": "Practice the smooth transition from overcharge → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "daily",
+        "work",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2329,
+      "category": "Data Center & Electrical Engineering",
+      "word": "reload",
+      "phonetic": "/ˌriːˈloʊd/",
+      "pos": "v.",
+      "meaning_zh": "重新加载；重新装载",
+      "root": "load（装载/负载）",
+      "family": "load",
+      "collocations": [
+        "reload the configuration",
+        "reload the page"
+      ],
+      "example_en": "Reload the configuration after applying the new settings.",
+      "example_zh": "应用新设置后重新加载配置。",
+      "connected_speech": "Practice the smooth transition from reload → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2330,
+      "category": "Data Center & Electrical Engineering",
+      "word": "unload",
+      "phonetic": "/ʌnˈloʊd/",
+      "pos": "v.",
+      "meaning_zh": "卸载；卸下负载",
+      "root": "load（装载/负载）",
+      "family": "load",
+      "collocations": [
+        "unload the load bank",
+        "unload the equipment"
+      ],
+      "example_en": "Unload the load bank gradually after the test.",
+      "example_zh": "测试后逐步卸载负载箱。",
+      "connected_speech": "Practice the smooth transition from unload → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2331,
+      "category": "Data Center & Electrical Engineering",
+      "word": "powered",
+      "phonetic": "/ˈpaʊɚd/",
+      "pos": "adj.",
+      "meaning_zh": "通电的；由……供电的",
+      "root": "power（电力/力量）",
+      "family": "power",
+      "collocations": [
+        "powered by the UPS",
+        "fully powered"
+      ],
+      "example_en": "The control panel remains powered by the DC supply.",
+      "example_zh": "控制面板仍由直流电源供电。",
+      "connected_speech": "Practice the smooth transition from powered → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2332,
+      "category": "Daily & Work English",
+      "word": "powerful",
+      "phonetic": "/ˈpaʊɚfəl/",
+      "pos": "adj.",
+      "meaning_zh": "强大的；功能强大的",
+      "root": "power（电力/力量）",
+      "family": "power",
+      "collocations": [
+        "powerful tool",
+        "powerful feature"
+      ],
+      "example_en": "This is a powerful tool for analyzing test data.",
+      "example_zh": "这是一个用于分析测试数据的强大工具。",
+      "connected_speech": "Practice the smooth transition from powerful → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2333,
+      "category": "Daily & Work English",
+      "word": "powerless",
+      "phonetic": "/ˈpaʊɚləs/",
+      "pos": "adj.",
+      "meaning_zh": "无能为力的；没有电力的",
+      "root": "power（电力/力量）",
+      "family": "power",
+      "collocations": [
+        "remain powerless",
+        "powerless without backup"
+      ],
+      "example_en": "Without the backup supply, the control system would be powerless.",
+      "example_zh": "没有备用电源，控制系统将无法运行。",
+      "connected_speech": "Practice the smooth transition from powerless → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2334,
+      "category": "Data Center & Electrical Engineering",
+      "word": "operational",
+      "phonetic": "/ˌɑːpəˈreɪʃənəl/",
+      "pos": "adj.",
+      "meaning_zh": "运行中的；可正常运行的",
+      "root": "operate（操作/运行）",
+      "family": "operate",
+      "collocations": [
+        "operational status",
+        "fully operational"
+      ],
+      "example_en": "Confirm that the UPS is fully operational before the load transfer.",
+      "example_zh": "负载切换前确认 UPS 处于正常运行状态。",
+      "connected_speech": "Practice the smooth transition from operational → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2335,
+      "category": "Daily & Work English",
+      "word": "approval",
+      "phonetic": "/əˈpruːvəl/",
+      "pos": "n.",
+      "meaning_zh": "批准；审批",
+      "root": "approve（批准）",
+      "family": "approve",
+      "collocations": [
+        "client approval",
+        "approval for the work"
+      ],
+      "example_en": "Client approval is required before the work starts.",
+      "example_zh": "工作开始前需要获得客户批准。",
+      "connected_speech": "Practice the smooth transition from approval → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2336,
+      "category": "Daily & Work English",
+      "word": "disapprove",
+      "phonetic": "/ˌdɪsəˈpruːv/",
+      "pos": "v.",
+      "meaning_zh": "不赞成；不批准",
+      "root": "approve（批准）",
+      "family": "approve",
+      "collocations": [
+        "disapprove the proposal",
+        "disapprove of the method"
+      ],
+      "example_en": "The client may disapprove the proposed method.",
+      "example_zh": "客户可能不批准所提议的方法。",
+      "connected_speech": "Practice the smooth transition from disapprove → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2337,
+      "category": "Data Center & Electrical Engineering",
+      "word": "testing",
+      "phonetic": "/ˈtɛstɪŋ/",
+      "pos": "n.",
+      "meaning_zh": "测试；测试过程",
+      "root": "test（测试）",
+      "family": "test",
+      "collocations": [
+        "testing procedure",
+        "testing period"
+      ],
+      "example_en": "All testing must follow the approved procedure.",
+      "example_zh": "所有测试必须遵循批准的程序。",
+      "connected_speech": "Practice the smooth transition from testing → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2338,
+      "category": "Data Center & Electrical Engineering",
+      "word": "tester",
+      "phonetic": "/ˈtɛstɚ/",
+      "pos": "n.",
+      "meaning_zh": "测试人员；测试设备",
+      "root": "test（测试）",
+      "family": "test",
+      "collocations": [
+        "electrical tester",
+        "tester connection"
+      ],
+      "example_en": "The tester checked the insulation before energization.",
+      "example_zh": "测试人员在送电前检查了绝缘。",
+      "connected_speech": "Practice the smooth transition from tester → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2339,
+      "category": "Data Center & Electrical Engineering",
+      "word": "configure",
+      "phonetic": "/kənˈfɪɡjɚ/",
+      "pos": "v.",
+      "meaning_zh": "配置；设定",
+      "root": "configure（配置）",
+      "family": "configure",
+      "collocations": [
+        "configure the relay",
+        "configure the system"
+      ],
+      "example_en": "Configure the relay according to the approved settings.",
+      "example_zh": "按照批准的设置配置继电器。",
+      "connected_speech": "Practice the smooth transition from configure → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2340,
+      "category": "Data Center & Electrical Engineering",
+      "word": "configuration",
+      "phonetic": "/kənˌfɪɡjəˈreɪʃən/",
+      "pos": "n.",
+      "meaning_zh": "配置；配置参数",
+      "root": "configure（配置）",
+      "family": "configure",
+      "collocations": [
+        "system configuration",
+        "protection configuration"
+      ],
+      "example_en": "Record the protection configuration before making any changes.",
+      "example_zh": "进行任何更改前记录保护配置。",
+      "connected_speech": "Practice the smooth transition from configuration → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2341,
+      "category": "Data Center & Electrical Engineering",
+      "word": "reconfigure",
+      "phonetic": "/ˌriːkənˈfɪɡjɚ/",
+      "pos": "v.",
+      "meaning_zh": "重新配置",
+      "root": "configure（配置）",
+      "family": "configure",
+      "collocations": [
+        "reconfigure the controller",
+        "reconfigure the system"
+      ],
+      "example_en": "The controller must be reconfigured after the firmware update.",
+      "example_zh": "固件更新后必须重新配置控制器。",
+      "connected_speech": "Practice the smooth transition from reconfigure → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2342,
+      "category": "Daily & Work English",
+      "word": "responsive",
+      "phonetic": "/rɪˈspɑːnsɪv/",
+      "pos": "adj.",
+      "meaning_zh": "响应迅速的；反应灵敏的",
+      "root": "respond（响应）",
+      "family": "respond",
+      "collocations": [
+        "responsive to alarms",
+        "responsive system"
+      ],
+      "example_en": "The monitoring system is responsive to the alarm signal.",
+      "example_zh": "监控系统能够及时响应告警信号。",
+      "connected_speech": "Practice the smooth transition from responsive → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2343,
+      "category": "Daily & Work English",
+      "word": "dependent",
+      "phonetic": "/dɪˈpɛndənt/",
+      "pos": "adj.",
+      "meaning_zh": "依赖的；取决于……的",
+      "root": "depend（依赖）",
+      "family": "depend",
+      "collocations": [
+        "dependent on the result",
+        "system dependent on supply"
+      ],
+      "example_en": "The final decision is dependent on the test results.",
+      "example_zh": "最终决定取决于测试结果。",
+      "connected_speech": "Practice the smooth transition from dependent → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2344,
+      "category": "Daily & Work English",
+      "word": "independent",
+      "phonetic": "/ˌɪndɪˈpɛndənt/",
+      "pos": "adj.",
+      "meaning_zh": "独立的；不依赖的",
+      "root": "depend（依赖）",
+      "family": "depend",
+      "collocations": [
+        "independent test",
+        "independent source"
+      ],
+      "example_en": "The two measurements should be independently verified.",
+      "example_zh": "两项测量应分别进行独立验证。",
+      "connected_speech": "Practice the smooth transition from independent → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2345,
+      "category": "Daily & Work English",
+      "word": "dependence",
+      "phonetic": "/dɪˈpɛndəns/",
+      "pos": "n.",
+      "meaning_zh": "依赖；依赖关系",
+      "root": "depend（依赖）",
+      "family": "depend",
+      "collocations": [
+        "dependence on the supply",
+        "system dependence"
+      ],
+      "example_en": "The system has a high dependence on the backup supply.",
+      "example_zh": "该系统高度依赖备用电源。",
+      "connected_speech": "Practice the smooth transition from dependence → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2346,
+      "category": "Daily & Work English",
+      "word": "independence",
+      "phonetic": "/ˌɪndɪˈpɛndəns/",
+      "pos": "n.",
+      "meaning_zh": "独立性；自主性",
+      "root": "depend（依赖）",
+      "family": "depend",
+      "collocations": [
+        "energy independence",
+        "operational independence"
+      ],
+      "example_en": "The design improves the independence of the two power sources.",
+      "example_zh": "该设计提高了两个电源之间的独立性。",
+      "connected_speech": "Practice the smooth transition from independence → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2347,
+      "category": "Daily & Work English",
+      "word": "preparation",
+      "phonetic": "/ˌprɛpəˈreɪʃən/",
+      "pos": "n.",
+      "meaning_zh": "准备；准备工作",
+      "root": "prepare（准备）",
+      "family": "prepare",
+      "collocations": [
+        "test preparation",
+        "preparation work"
+      ],
+      "example_en": "Complete the test preparation before the scheduled start time.",
+      "example_zh": "在计划开始时间前完成测试准备工作。",
+      "connected_speech": "Practice the smooth transition from preparation → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2348,
+      "category": "Daily & Work English",
+      "word": "unprepared",
+      "phonetic": "/ˌʌnprɪˈpɛrd/",
+      "pos": "adj.",
+      "meaning_zh": "未准备好的",
+      "root": "prepare（准备）",
+      "family": "prepare",
+      "collocations": [
+        "unprepared for the test",
+        "leave unprepared"
+      ],
+      "example_en": "Do not start the work if the team is unprepared.",
+      "example_zh": "如果团队没有准备好，不要开始工作。",
+      "connected_speech": "Practice the smooth transition from unprepared → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2349,
+      "category": "Daily & Work English",
+      "word": "unsafe",
+      "phonetic": "/ʌnˈseɪf/",
+      "pos": "adj.",
+      "meaning_zh": "不安全的",
+      "root": "safe（安全）",
+      "family": "safe",
+      "collocations": [
+        "unsafe condition",
+        "unsafe to operate"
+      ],
+      "example_en": "Do not operate the equipment under an unsafe condition.",
+      "example_zh": "在不安全状态下不要操作设备。",
+      "connected_speech": "Practice the smooth transition from unsafe → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2350,
+      "category": "Daily & Work English",
+      "word": "safely",
+      "phonetic": "/ˈseɪfli/",
+      "pos": "adv.",
+      "meaning_zh": "安全地",
+      "root": "safe（安全）",
+      "family": "safe",
+      "collocations": [
+        "work safely",
+        "operate safely"
+      ],
+      "example_en": "Make sure the equipment can be operated safely.",
+      "example_zh": "确保设备可以安全操作。",
+      "connected_speech": "Practice the smooth transition from safely → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2351,
+      "category": "Daily & Work English",
+      "word": "ineffective",
+      "phonetic": "/ˌɪnɪˈfɛktɪv/",
+      "pos": "adj.",
+      "meaning_zh": "无效的；效果不佳的",
+      "root": "effect（效果）",
+      "family": "effect",
+      "collocations": [
+        "ineffective measure",
+        "ineffective protection"
+      ],
+      "example_en": "The temporary measure proved ineffective.",
+      "example_zh": "事实证明临时措施无效。",
+      "connected_speech": "Practice the smooth transition from ineffective → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2352,
+      "category": "Daily & Work English",
+      "word": "effectively",
+      "phonetic": "/ɪˈfɛktɪvli/",
+      "pos": "adv.",
+      "meaning_zh": "有效地；实际上",
+      "root": "effect（效果）",
+      "family": "effect",
+      "collocations": [
+        "work effectively",
+        "effectively prevent"
+      ],
+      "example_en": "The new procedure effectively reduces the risk of misoperation.",
+      "example_zh": "新程序有效降低了误操作风险。",
+      "connected_speech": "Practice the smooth transition from effectively → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2353,
+      "category": "Data Center & Electrical Engineering",
+      "word": "inactive",
+      "phonetic": "/ɪnˈæktɪv/",
+      "pos": "adj.",
+      "meaning_zh": "未启用的；不活动的",
+      "root": "active（启用/活跃）",
+      "family": "active",
+      "collocations": [
+        "inactive status",
+        "inactive alarm"
+      ],
+      "example_en": "The spare input remains inactive during normal operation.",
+      "example_zh": "备用输入在正常运行期间保持未启用状态。",
+      "connected_speech": "Practice the smooth transition from inactive → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2354,
+      "category": "Data Center & Electrical Engineering",
+      "word": "deactivate",
+      "phonetic": "/ˌdiːˈæktɪveɪt/",
+      "pos": "v.",
+      "meaning_zh": "停用；使失效",
+      "root": "active（启用/活跃）",
+      "family": "active",
+      "collocations": [
+        "deactivate the function",
+        "deactivate the alarm"
+      ],
+      "example_en": "Deactivate the temporary function after the test.",
+      "example_zh": "测试完成后停用临时功能。",
+      "connected_speech": "Practice the smooth transition from deactivate → the in the sentence.",
+      "difficulty": "engineering",
+      "tags": [
+        "professional",
+        "data-center",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2355,
+      "category": "Daily & Work English",
+      "word": "indirect",
+      "phonetic": "/ˌɪndəˈrɛkt/",
+      "pos": "adj.",
+      "meaning_zh": "间接的",
+      "root": "direct（直接）",
+      "family": "direct",
+      "collocations": [
+        "indirect impact",
+        "indirect connection"
+      ],
+      "example_en": "The fault may have an indirect impact on the monitoring system.",
+      "example_zh": "该故障可能对监控系统产生间接影响。",
+      "connected_speech": "Practice the smooth transition from indirect → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2356,
+      "category": "Daily & Work English",
+      "word": "impossible",
+      "phonetic": "/ɪmˈpɑːsəbəl/",
+      "pos": "adj.",
+      "meaning_zh": "不可能的",
+      "root": "possible（可能）",
+      "family": "possible",
+      "collocations": [
+        "impossible to verify",
+        "technically impossible"
+      ],
+      "example_en": "It is impossible to complete the test without the required isolation.",
+      "example_zh": "没有必要的隔离就不可能完成测试。",
+      "connected_speech": "Practice the smooth transition from impossible → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2357,
+      "category": "Daily & Work English",
+      "word": "possibility",
+      "phonetic": "/ˌpɑːsəˈbɪləti/",
+      "pos": "n.",
+      "meaning_zh": "可能性",
+      "root": "possible（可能）",
+      "family": "possible",
+      "collocations": [
+        "possibility of failure",
+        "possibility of delay"
+      ],
+      "example_en": "We need to consider the possibility of a delay.",
+      "example_zh": "我们需要考虑延误的可能性。",
+      "connected_speech": "Practice the smooth transition from possibility → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2358,
+      "category": "Daily & Work English",
+      "word": "unnecessary",
+      "phonetic": "/ʌnˈnɛsəˌsɛri/",
+      "pos": "adj.",
+      "meaning_zh": "不必要的",
+      "root": "necessary（必要）",
+      "family": "necessary",
+      "collocations": [
+        "unnecessary operation",
+        "unnecessary risk"
+      ],
+      "example_en": "Avoid unnecessary switching operations.",
+      "example_zh": "避免不必要的切换操作。",
+      "connected_speech": "Practice the smooth transition from unnecessary → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work",
+        "electrical"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2359,
+      "category": "Daily & Work English",
+      "word": "irregular",
+      "phonetic": "/ɪˈrɛɡjələr/",
+      "pos": "adj.",
+      "meaning_zh": "不规则的；不定期的",
+      "root": "regular（规律）",
+      "family": "regular",
+      "collocations": [
+        "irregular reading",
+        "irregular inspection"
+      ],
+      "example_en": "An irregular reading was recorded during the inspection.",
+      "example_zh": "检查期间记录到一个异常读数。",
+      "connected_speech": "Practice the smooth transition from irregular → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2360,
+      "category": "Daily & Work English",
+      "word": "regularly",
+      "phonetic": "/ˈrɛɡjələrli/",
+      "pos": "adv.",
+      "meaning_zh": "定期地；经常地",
+      "root": "regular（规律）",
+      "family": "regular",
+      "collocations": [
+        "inspect regularly",
+        "regularly monitor"
+      ],
+      "example_en": "The equipment should be inspected regularly.",
+      "example_zh": "设备应定期检查。",
+      "connected_speech": "Practice the smooth transition from regularly → the in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "daily",
+        "work"
+      ],
+      "quality": "v41-association-group",
+      "verified_online": false,
+      "status": "verified-core"
     }
   ]
 }
