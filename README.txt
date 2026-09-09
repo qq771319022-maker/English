@@ -21,3 +21,6 @@ V1.59 UI optimization:
 - Header, content cards, detail sheets, controls, and bottom navigation switch as one consistent theme.
 - No vocabulary, learning logic, review logic, or association logic changes.
 - No audio files added.
+
+
+V1.61: Removed the in-page startup cover and opacity gate that could appear during refresh. Restored normal immediate page painting and changed navigation caching to cache-first with background update for a no-visible-intermediate refresh experience. All vocabulary and learning logic unchanged.

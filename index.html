@@ -13,8 +13,7 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{color-scheme:light;background:#edf6ff}
-body{margin:0;opacity:0;background:linear-gradient(180deg,#edf6ff 0%,#f8fbff 38%,#f4f8fd 100%);color:#12233f;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-body.app-ready{opacity:1;transition:opacity .08s linear}
+body{margin:0;background:linear-gradient(180deg,#edf6ff 0%,#f8fbff 38%,#f4f8fd 100%);color:#12233f;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 header{background:linear-gradient(180deg,#e8f4ff 0%,#f6fbff 100%);color:#12233f;padding:20px 18px 16px;border-bottom:1px solid rgba(210,226,242,.75)}
 header h1{margin:0;font-size:28px;line-height:1.1;font-weight:850;letter-spacing:-.6px}header p{margin:7px 0 0;color:#6b86a2;font-size:14px}.brandline{margin-top:9px;font-size:10px;letter-spacing:2.4px;color:#2d79df;font-weight:800}.slogan{margin-top:3px;font-size:11px;color:#7d93aa}
 main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padding:14px 16px;border:1px solid #dce8f5;border-radius:17px;font-size:16px;margin-bottom:11px;background:rgba(255,255,255,.94);outline:none;box-shadow:0 5px 18px rgba(48,110,180,.05)}.search:focus{border-color:#8dbef5;box-shadow:0 0 0 4px rgba(64,145,235,.1)}
@@ -216,29 +215,12 @@ try{
   mq.addListener?.(applySystemTheme);
 }catch(e){}
 </script>
-
-<style id="startup-style">
-#startupCover{
-  position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
-  background:#eef6ff;color:#18212b;opacity:1;transition:opacity .12s ease;
-}
-#startupCover.hide{opacity:0;pointer-events:none}
-.startupInner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
-.startupIcon{width:72px;height:72px;border-radius:16px;display:block}
-.startupName{font-size:17px;font-weight:700;letter-spacing:.1px}
-@media(prefers-color-scheme:dark){
-  #startupCover{background:#191919;color:#f2f2f2}
-}
-</style>
 </head>
 <body>
-<div id="startupCover"><div class="startupInner">
-<img class="startupIcon" src="./icon-192.png" alt="">
-<div class="startupName">DC Engineer English</div>
 </div></div>
 
-<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.60</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
-<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V1.60：基于 V1.56 优化每日新词数量设置；日常与专业新词均支持 0–20 滑动调节；无内置音频。</div></main>
+<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.61</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>
+<main id="main"><div style="margin:12px 0;font-size:12px;color:#6b7280">V1.61：基于 V1.56 优化每日新词数量设置；日常与专业新词均支持 0–20 滑动调节；无内置音频。</div></main>
 <nav class="bottom">
 <button data-nav="home" class="active"><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="gHome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58c2ff"/><stop offset="1" stop-color="#1d69e8"/></linearGradient></defs><path d="M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z" fill="#fff" stroke="#cfe5fb" stroke-width="1.2"/><path d="M5.5 23.5 24 7l18.5 16.5" fill="none" stroke="url(#gHome)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 42V29h10v13" fill="url(#gHome)"/><rect x="18" y="20" width="5" height="5" rx="1.2" fill="#ffbf28"/><rect x="25" y="20" width="5" height="5" rx="1.2" fill="#ffbf28"/></svg></div>首页</button>
 <button data-nav="daily"><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="gBook1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4da7ff"/><stop offset="1" stop-color="#1d69e8"/></linearGradient><linearGradient id="gBook2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#45d9ad"/><stop offset="1" stop-color="#17a978"/></linearGradient></defs><path d="m8 16 25-7 7 17-25 7z" fill="url(#gBook1)"/><path d="M9 16.5 33 10l3 2-23 6.5z" fill="#7bc5ff" opacity=".75"/><path d="m11 29 25-7 5 13-24 7z" fill="url(#gBook2)"/><path d="M15 33.5 36 28l2 4-21 5.5z" fill="#fff" opacity=".9"/><path d="M30 39v5l4-3 4 1v-6z" fill="#ffc22b"/></svg></div>日常</button>
@@ -717,7 +699,7 @@ window.addEventListener('appinstalled',()=>{$id('installBtn')?.classList.add('hi
 $id('closeBtn').onclick=()=>{$id('modal').classList.remove('show')};
 $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove('show')};
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-fetch('./vocab.json?v=154').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];lastDateKey=today();render();document.body.classList.add('app-ready');setTimeout(()=>document.getElementById('startupCover')?.classList.add('hide'),40);setTimeout(()=>document.getElementById('startupCover')?.remove(),220);scheduleMidnightRefresh();scheduleGreetingRefresh()}).catch(e=>{document.body.classList.add('app-ready');document.getElementById('startupCover')?.remove();$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>';});
+fetch('./vocab.json?v=154').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{items=d.entries||[];lastDateKey=today();render();scheduleMidnightRefresh();scheduleGreetingRefresh()}).catch(e=>{$id('main').innerHTML='<div class="panel">词库加载失败：'+esc(e.message)+'</div>';});
 </script>
 
 </body></html>
