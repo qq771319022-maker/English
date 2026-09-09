@@ -23,4 +23,4 @@ V1.60 UI optimization:
 - No audio files added.
 
 
-V1.60: Rebuilt from V1.59 with a single, globally consistent system light/dark theme. No vocabulary or learning logic changes.
+V1.60 final UI fix: rebuilt from V1.59; unified system light/dark theme, synchronized browser/PWA theme colors, removed startup legacy splash/unstyled flash, and preserved all vocabulary and learning logic.

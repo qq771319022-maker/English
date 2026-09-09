@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#eaf4ff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eef6ff" media="(prefers-color-scheme: light)">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -27,178 +27,58 @@ main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padd
 .modal{position:fixed;inset:0;background:rgba(11,31,53,.48);display:none;align-items:flex-end;z-index:100;overscroll-behavior:contain}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:23px 23px 0 0;padding:20px 20px calc(44px + env(safe-area-inset-bottom));box-sizing:border-box}.close{float:right;border:0;background:#eff4f9;border-radius:10px;padding:7px 11px}.completion{position:static;display:block;width:100%;margin:18px 0 4px;padding:12px;background:#fff;border:1px solid #dbe7f2;border-radius:16px;box-shadow:0 4px 16px rgba(15,23,42,.08)}.completion b{display:inline;font-size:14px;color:#132238;padding:0}.completion span{display:inline;margin-left:7px;font-size:11px;color:#64748b;padding:0}.rating{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:11px}.rating button{border:1px solid #d5e1ec;background:#fff;border-radius:13px;padding:8px 5px;font-size:11px;min-height:46px;cursor:pointer;touch-action:manipulation}.rating button:active{transform:scale(.98);background:#eff6ff}.rating button b{color:#132238}.rating b{display:block;font-size:15px;margin-bottom:2px}.flash{background:#f5f9fd;border-radius:16px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:800}.small{font-size:12px;color:#667e98}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf2f7}.rangeSetting{display:flex;align-items:center;gap:10px;min-width:170px}.assocBox{margin:10px 0;padding:10px 12px;border:1px solid #d9e7f7;border-radius:12px;background:#f7fbff;line-height:1.65}.assocBox>b{color:#2169db}.rangeSetting input{width:130px;accent-color:#2d75e8}.rangeSetting>b{min-width:24px;text-align:center;color:#2169db;font-size:18px}.setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#71859b}.setting select{padding:9px;border:1px solid #d7e3ee;border-radius:10px;background:#fff}.status{padding:9px 11px;background:#f5f9fd;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
 .homeHero{background:#f7fbff;border:1px solid #dceaf7;border-radius:25px;padding:18px;margin-bottom:13px;box-shadow:none;position:relative;overflow:hidden}.homeTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:1}.homeTitle{font-size:30px;font-weight:850;margin:0;color:#10233f;letter-spacing:-.8px}.homeSub{color:#607a96;font-size:14px;margin-top:5px}.ring{width:92px;height:92px;border-radius:50%;background:conic-gradient(#2a74e8 var(--pct),#d9e9f8 0);display:grid;place-items:center;flex:0 0 auto;position:relative;box-shadow:0 6px 18px rgba(42,116,232,.1)}.ring:after{content:'';width:68px;height:68px;border-radius:50%;background:#fff}.ringText{position:absolute;font-weight:850;color:#132238;font-size:16px;z-index:2}.sectionTitle{font-size:20px;font-weight:850;margin:16px 2px 9px;color:#12233f}.homeTasks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0 12px;position:relative;z-index:1}.homeTask{background:#fff;border-radius:17px;padding:10px 5px;text-align:center;border:1px solid #e1ebf5;box-shadow:0 4px 12px rgba(48,103,156,.05);min-width:0;min-height:108px;display:flex;flex-direction:column;align-items:center;justify-content:center}.taskMetric{height:68px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:100%;white-space:nowrap}.taskIcon{width:30px;height:30px;flex:0 0 30px;display:block}.homeTask b{display:block;font-size:18px;line-height:1.05;color:#2169db;font-variant-numeric:tabular-nums}.homeTask span{display:block;font-size:11px;line-height:1.2;color:#647d96;margin-top:5px;white-space:nowrap}.homeTasks.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.ctaWithIcon{display:flex;align-items:center;justify-content:center;gap:9px}.ctaWithIcon .taskIcon{width:27px;height:27px;filter:none}.homeCta{display:flex;outline:none;-webkit-tap-highlight-color:transparent;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:15px;padding:14px 16px;background:linear-gradient(135deg,#3a8cf3,#2469dc);color:#fff;font-size:16px;font-weight:750;box-shadow:0 8px 18px rgba(37,105,219,.2)}.homeCta:focus,.homeCta:focus-visible{outline:none}.homeReviewSummary{display:flex;align-items:center;justify-content:space-between;margin:2px 0 12px;padding:10px 13px;border:1px solid #e1ebf5;border-radius:14px;background:#fff;color:#647d96;font-size:12px}.homeReviewSummary button{border:0;background:none;color:#2169db;font:inherit;cursor:pointer;padding:2px 0;-webkit-tap-highlight-color:transparent;outline:none}.homeReviewSummary b{font-size:15px}.quoteBox{background:linear-gradient(145deg,#edf7ff,#f8fbff);border:1px solid #dceaf7;border-radius:19px;padding:18px;text-align:center;color:#52708e;font-size:14px;line-height:1.7;box-shadow:0 6px 18px rgba(35,86,135,.05)}
 
-/* System dark mode: one unified palette for the whole app.
-   No independent component toggling; all major surfaces switch together. */
+/* V1.60 stable system theme + startup */
+html,body{margin:0;min-height:100%;background:#eef6ff;color:#18212b}
+html{color-scheme:light}
+body{visibility:visible}
+
 @media (prefers-color-scheme: dark){
   html{color-scheme:dark;background:#191919}
-  body{
-    background:#191919;
-    color:#f2f2f2;
-  }
-  header{
-    background:#191919;
-    color:#f2f2f2;
-    border-bottom-color:#303030;
-  }
-  header p,.homeSub,.small,.tr,.setting span,.stat span,.bottom button{
-    color:#a6a6a6;
-  }
-  .brandline{color:#4f9cff}
+  body{background:#191919;color:#f2f2f2}
+  header{background:#191919;color:#f2f2f2;border-bottom-color:#303030}
+  .brandline{color:#5aaeff}
+  header p,.homeSub,.small,.tr,.setting span,.stat span,.bottom button{color:#a6a6a6}
   .slogan{color:#888}
-
-  .search{
-    background:#242424;
-    color:#f2f2f2;
-    border-color:#383838;
-    box-shadow:none;
+  .search,.stat,.progress,.card,.panel,.hero,.homeTask,.homeReviewSummary,.homeHero{
+    background:#242424;color:#f2f2f2;border-color:#363636;box-shadow:none
   }
   .search::placeholder{color:#777}
-  .search:focus{
-    border-color:#4f9cff;
-    box-shadow:0 0 0 4px rgba(79,156,255,.14);
-  }
-
-  .stat,.progress,.card,.panel,.hero,.homeTask,.homeReviewSummary{
-    background:#242424;
-    border-color:#363636;
-    box-shadow:none;
-  }
-  .statBtn:active{background:#2b2b2b}
-  .statBtn:focus,.statBtn:focus-visible{box-shadow:none}
-
-  .stat b,.homeTask b,.homeReviewSummary button,.rangeSetting>b{
-    color:#4f9cff;
-  }
-  .sectionTitle,.homeTitle,.word{color:#f2f2f2}
+  .search:focus{border-color:#4f9cff;box-shadow:0 0 0 4px rgba(79,156,255,.14)}
+  .sectionTitle,.homeTitle,.word,.stat b,.homeTask b{color:#f2f2f2}
   .cn{color:#b0b0b0}
-  .tag,.familyTag{
-    background:#303030;
-    color:#9fc7ff;
-  }
-
-  .tabs button,.tools button{
-    background:#242424;
-    border-color:#3a3a3a;
-    color:#b8b8b8;
-  }
-  .tabs button.active{
-    background:#3b82f6;
-    color:#fff;
-    border-color:#3b82f6;
-    box-shadow:none;
-  }
-
-  .bar{background:#353535}
-  .bar i{background:linear-gradient(90deg,#5aaeff,#3b82f6)}
-
-  .speak{
-    background:#2b3036;
-    box-shadow:none;
-  }
-
-  .install,.cta,.homeCta{
-    box-shadow:none;
-  }
-  .cta.secondary{
-    background:#303030;
-    color:#ededed;
-  }
-
-  .task{
-    background:#2a2a2a;
-    border-color:#393939;
-  }
+  .tag,.familyTag{background:#303030;color:#9fc7ff}
+  .tabs button,.tools button{background:#242424;border-color:#3a3a3a;color:#b8b8b8}
+  .tabs button.active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .bar{background:#353535}.bar i{background:linear-gradient(90deg,#5aaeff,#3b82f6)}
+  .speak{background:#2b3036;color:#f2f2f2;box-shadow:none}
+  .cta.secondary{background:#303030;color:#ededed}
+  .task{background:#2a2a2a;border-color:#393939}
   .task span{color:#9d9d9d}
-  .badge{
-    background:#26364a;
-    color:#8fc0ff;
-  }
-  .done{
-    background:#20382f;
-    color:#7bd5b0;
-  }
-  .duebadge{
-    background:#3b3023;
-    color:#ffbd7a;
-  }
-
-  .bottom{
-    background:rgba(28,28,28,.97);
-    border-color:#363636;
-    box-shadow:0 -7px 28px rgba(0,0,0,.35);
-  }
+  .badge{background:#26364a;color:#8fc0ff}
+  .done{background:#20382f;color:#7bd5b0}
+  .duebadge{background:#3b3023;color:#ffbd7a}
+  .bottom{background:rgba(28,28,28,.97);border-color:#363636;box-shadow:0 -7px 28px rgba(0,0,0,.35)}
   .bottom button.active{color:#5aaeff}
-
-  .homeHero{
-    background:#242424;
-    border-color:#363636;
-  }
-  .ring{
-    background:conic-gradient(#3b82f6 var(--pct),#353535 0);
-    box-shadow:none;
-  }
-  .ring:after{background:#242424}
-  .ringText{color:#f2f2f2}
-
-  .homeTask span{color:#9d9d9d}
-  .quoteBox{
-    background:#252b31;
-    border-color:#39424b;
-    color:#a9bacb;
-    box-shadow:none;
-  }
-
+  .ring{background:conic-gradient(#3b82f6 var(--pct),#353535 0);box-shadow:none}
+  .ring:after{background:#242424}.ringText{color:#f2f2f2}
+  .quoteBox{background:#252b31;border-color:#39424b;color:#a9bacb;box-shadow:none}
   .modal{background:rgba(0,0,0,.62)}
-  .sheet{
-    background:#242424;
-    color:#f2f2f2;
-  }
-  .close{
-    background:#333;
-    color:#ededed;
-  }
-  .completion{
-    background:#242424;
-    border-color:#3a3a3a;
-    box-shadow:none;
-  }
-  .completion b{color:#f2f2f2}
-  .completion span{color:#9d9d9d}
-  .rating button{
-    background:#292929;
-    border-color:#3a3a3a;
-    color:#e8e8e8;
-  }
-  .rating button:active{background:#333}
-  .rating button b{color:#f2f2f2}
-
-  .flash{
-    background:#2a2a2a;
-  }
-
+  .sheet,.completion{background:#242424;color:#f2f2f2;border-color:#3a3a3a;box-shadow:none}
+  .close{background:#333;color:#ededed}
+  .completion b{color:#f2f2f2}.completion span{color:#9d9d9d}
+  .rating button{background:#292929;border-color:#3a3a3a;color:#e8e8e8}
+  .flash{background:#2a2a2a}
   .setting{border-bottom-color:#333}
-  .assocBox{
-    background:#272d34;
-    border-color:#3b4651;
-  }
+  .assocBox{background:#272d34;border-color:#3b4651}
   .assocBox>b{color:#6eafff}
-  .setting select{
-    background:#292929;
-    color:#ededed;
-    border-color:#3b3b3b;
-  }
-  .status{
-    background:#2a2a2a;
-    color:#d0d0d0;
-  }
-
-  /* Keep browser-native controls aligned with the same theme. */
+  .setting select{background:#292929;color:#ededed;border-color:#3b3b3b}
+  .status{background:#2a2a2a;color:#d0d0d0}
   input,select,button{color-scheme:dark}
 }
 
 @media(max-width:430px){.homeTasks.two{max-width:none}.taskgrid.twoTasks{max-width:none}.ctaWithIcon{font-size:15px}.ctaWithIcon .taskIcon{width:26px;height:26px}header h1{font-size:25px}.homeTitle{font-size:27px}.ring{width:82px;height:82px}.ring:after{width:61px;height:61px}.stats{gap:7px}.stat b{font-size:21px}.bottom{left:6px;right:6px}.bottom .ico{height:38px}.bottom .ico svg{width:35px;height:35px}}
 @media(min-width:700px){.modal{align-items:center;justify-content:center}.sheet{max-width:680px;padding-bottom:28px}.completion{width:100%;border-radius:16px}}
-.familyTag{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:8px;background:#eef5ff;color:#3d73b8;font-size:10px;font-weight:650}\n/* V1.60: unified system light/dark theme. One theme switch controls the whole UI. */\n@media (prefers-color-scheme: dark){\n  :root{color-scheme:dark}\n  html,body{background:#191919!important;color:#f2f2f2!important}\n  body{background-image:none!important}\n  header{background:#191919!important;color:#f2f2f2!important;border-color:#303030!important}\n  header p,.slogan,.homeSub,.small,.tr,.setting span,.stat span{color:#a6a6a6!important}\n  .brandline{color:#5aaeff!important}\n  .search{background:#242424!important;color:#f2f2f2!important;border-color:#383838!important;box-shadow:none!important}\n  .search::placeholder{color:#777!important}\n  .search:focus{border-color:#4f9cff!important;box-shadow:0 0 0 4px rgba(79,156,255,.14)!important}\n  .hero,.homeHero,.card,.panel,.progress,.stat,.homeTask,.homeReviewSummary,.completion,.assocBox,.flash{background:#242424!important;color:#f2f2f2!important;border-color:#363636!important;box-shadow:none!important}\n  .sectionTitle,.homeTitle,.word,.stat b,.homeTask b{color:#f2f2f2!important}\n  .cn,.homeTask span,.homeReviewSummary span{color:#a6a6a6!important}\n  .tag,.familyTag{background:#303030!important;color:#9fc7ff!important}\n  .bar{background:#353535!important}\n  .bar i{background:linear-gradient(90deg,#5aaeff,#3b82f6)!important}\n  .tabs button,.tools button{background:#242424!important;color:#c4c4c4!important;border-color:#3a3a3a!important}\n  .tabs button.active{background:#3b82f6!important;color:#fff!important;border-color:#3b82f6!important}\n  .speak{background:#2b3036!important;color:#f2f2f2!important;box-shadow:none!important}\n  .task{background:#2a2a2a!important;color:#f2f2f2!important;border-color:#393939!important}\n  .task span{color:#9d9d9d!important}\n  .badge{background:#26364a!important;color:#8fc0ff!important}\n  .done{background:#20382f!important;color:#7bd5b0!important}\n  .duebadge{background:#3b3023!important;color:#ffbd7a!important}\n  .bottom{background:rgba(25,25,25,.98)!important;color:#f2f2f2!important;border-color:#363636!important;box-shadow:0 -7px 28px rgba(0,0,0,.35)!important}\n  .bottom button{color:#a6a6a6!important}\n  .bottom button.active{color:#5aaeff!important}\n  .ring{background:conic-gradient(#3b82f6 var(--pct),#353535 0)!important;box-shadow:none!important}\n  .ring:after{background:#242424!important}\n  .ringText{color:#f2f2f2!important}\n  .quoteBox{background:#252b31!important;color:#a9bacb!important;border-color:#39424b!important;box-shadow:none!important}\n  .modal{background:rgba(0,0,0,.64)!important}\n  .sheet{background:#242424!important;color:#f2f2f2!important}\n  .close{background:#333!important;color:#ededed!important}\n  .completion b{color:#f2f2f2!important}.completion span{color:#9d9d9d!important}\n  .rating button{background:#292929!important;color:#e8e8e8!important;border-color:#3a3a3a!important}\n  .rating button b{color:#f2f2f2!important}\n  .setting{border-color:#333!important}\n  .setting select{background:#292929!important;color:#ededed!important;border-color:#3b3b3b!important}\n  .status{background:#2a2a2a!important;color:#d0d0d0!important}\n  input,select,button{color-scheme:dark}\n}\n</style>
+.familyTag{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:8px;background:#eef5ff;color:#3d73b8;font-size:10px;font-weight:650}</style>
 </head>
 <body>
 <header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.60</p><div class="brandline">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class="slogan">完全本地词库 · 快速学习 · 无需在线查词</div></header>

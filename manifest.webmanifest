@@ -3,7 +3,7 @@
   "short_name": "DC English",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f5f9fd",
+  "background_color": "#191919",
   "theme_color": "#191919",
   "lang": "zh-CN",
   "icons": [
