@@ -23,7 +23,13 @@ V1.59 UI optimization:
 - No audio files added.
 
 
-V1.62: Removed the in-page startup cover and opacity gate that could appear during refresh. Restored normal immediate page painting and changed navigation caching to cache-first with background update for a no-visible-intermediate refresh experience. All vocabulary and learning logic unchanged.
+V1.65: Removed the in-page startup cover and opacity gate that could appear during refresh. Restored normal immediate page painting and changed navigation caching to cache-first with background update for a no-visible-intermediate refresh experience. All vocabulary and learning logic unchanged.
 
 
-V1.62: True no-flash refresh; no visible splash/loader/opacity transition. Cached navigation is returned immediately and refreshed silently in the background. Vocabulary and learning logic unchanged.
+V1.65: removed all visible static HTML app content from initial document; app shell is created only after vocab is available, then rendered once. Vocab cache query removed for immediate SW cache hit. No vocabulary or learning logic changes.
+
+
+V1.65 quality pass: repaired 55 structurally shifted legacy records; repaired 177 generic/mismatched Chinese examples; polished selected technical/email entries; normalized high-confidence family metadata and association links; corrected daily-plan cache key so the updated vocabulary can generate a fresh plan. No audio files.
+
+
+V1.65: Fixed white-screen regression from V1.63/V1.64. The existing app shell is inserted before the main JS binds DOM events; the previous null-element error no longer stops initialization. No vocabulary, theme, learning-plan, or review logic changes.
