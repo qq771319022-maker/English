@@ -243,7 +243,7 @@ function localWordDate(x){const t=Number(x.createdAt||x.created_at||0);return t?
 function renderLocalWords(){
   const box=$id('localWordsList');if(!box)return;
   if(!personalWords.length){box.innerHTML='<div class="emptyHint">还没有本地单词。检索不到的单词可以在上方手动添加。</div>';return}
-  box.innerHTML=personalWords.slice().reverse().map(x=>`<div class="localWordItem"><button class="localWordOpen" type="button" data-local-detail="${esc(x.word)}"><div><div class="word">${esc(x.word)}</div><div class="localWordMeta"><span class="tag">${x.category==='Personal Professional'?'专业工程英语':'日常英语'}</span><span class="personalTag">本地</span><span class="localWordDate">${esc(localWordDate(x))}</span></div></div><span class="localWordArrow">›</span></button></div>`).join('');
+  box.innerHTML=personalWords.slice().reverse().map(x=>`<button class="localWordRow" type="button" data-local-detail="${esc(x.word)}"><div><b>${esc(x.word)}</b><div class="small">${esc(x.meaning_zh||'—')}</div></div><span>›</span></button>`).join('');
 }
 function editPersonalWord(word){
   const k=String(word||'').trim().toLowerCase(),x=personalWords.find(a=>String(a.word||'').trim().toLowerCase()===k);if(!x)return;
@@ -311,7 +311,7 @@ function renderMine(){
   return `<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
     <div class="wordSearchBox"><div class="wordSearchTitle">🔎 检索</div><div class="wordSearchSub">一个入口统一检索日常英语、专业工程英语；词库没有时可直接添加到本地单词。</div><div class="wordSearchRow"><input id="mineSearch" autocomplete="off" placeholder="输入英文单词 / 中文释义 / 专业术语"><button id="mineSearchBtn">检索</button></div><div class="wordSearchTabs"><button class="active" data-mine-filter="all">全部</button><button data-mine-filter="daily">日常</button><button data-mine-filter="professional">专业</button></div><div id="mineResults"></div></div>
     <div class="mineStats"><div class="task"><b>${pCount}</b><span>本地单词</span></div><div class="task"><b>${due().length}</b><span>全部待复习</span></div><div class="task"><b>${streak()}</b><span>连续学习天数</span></div></div>
-    <div class="localWordsPanel"><div class="localWordsHead"><div><h3>📚 本地单词</h3><span>手动添加的单词统一保存在这里，不参与日常新词和正常复习。</span></div><b class="localCount">${pCount}</b></div><div id="localWordsList"></div></div>
+    <button type="button" class="localWordsPanel localWordsEntry" data-page="local"><div class="localWordsHead"><div><h3>📚 本地单词</h3><span>手动添加的单词统一保存在这里，不参与日常新词和正常复习。</span></div><div class="localEntryRight"><b class="localCount">${pCount}</b><span class="localWordsArrow">›</span></div></div></button>
     <div class="panel">
       <div class="setting"><div><b>每日日常新词</b><span>日常英语每天自动安排</span></div><div class="rangeSetting"><input id="setNew" type="range" min="0" max="20" step="1"><b id="setNewVal">20</b></div></div>
       <div class="setting"><div><b>每日专业新词</b><span>专业英语每天自动安排</span></div><div class="rangeSetting"><input id="setPro" type="range" min="0" max="20" step="1"><b id="setProVal">10</b></div></div>
@@ -578,6 +578,11 @@ function render(){
     const labels={mastered:'已掌握',learning:'学习中',due:'待复习'};
     const pool=statusPool(statusFilter);
     body=`<div class="hero"><h2>${labels[statusFilter]||'学习状态'}</h2><p>${statusFilter==='mastered'?'已经掌握的词汇。':statusFilter==='learning'?'已经学过、尚未掌握且当前尚未到复习时间的词汇。':'已经到期、现在需要复习的词汇。'}</p><div class="taskgrid"><div class="task"><b>${pool.length}</b><span>当前词数</span></div></div><div class="small">下面直接显示单词、中文释义和例句；点击任意词卡可查看完整详情。</div><button type="button" class="cta secondary" data-page="home">← 返回首页</button></div>${listShell()}`;
+  }else if(page==='local'){
+    body=`<div class="hero"><h2>📚 本地单词</h2><p>你手动添加的单词。这里单独管理，不参与日常新词、专业新词和正常复习计划。</p>
+      <div class="taskgrid"><div class="task"><b>${personalWords.length}</b><span>本地单词</span></div></div>
+      <button type="button" class="cta secondary" data-page="mine">← 返回我的</button></div>
+      <div class="panel localWordsListPage"><div id="localWordsList"></div></div>`;
   }else if(page==='review'){
     body=`<div class="hero"><h2>复习</h2><p>只显示已经学习并且到期的词。复习结果会自动影响下一次出现时间。</p>
       <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r===Infinity?'不限':goals().r}</b><span>复习显示上限</span></div></div>
@@ -603,6 +608,7 @@ function bind(){
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
   if($id('loadMore'))$id('loadMore').onclick=appendLazyList;
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
+  if(page==='local') renderLocalWords();
   if($id('mineSearch')){
     const doMineSearch=()=>renderMineResults($id('mineSearch').value,mineFilter);
     $id('mineSearch').oninput=doMineSearch;
