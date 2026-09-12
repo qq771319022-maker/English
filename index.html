@@ -16,8 +16,7 @@ html{color-scheme:light;background:#edf6ff}
 body{margin:0;background:linear-gradient(180deg,#edf6ff 0%,#f8fbff 38%,#f4f8fd 100%);color:#12233f;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 header{background:linear-gradient(180deg,#e8f4ff 0%,#f6fbff 100%);color:#12233f;padding:20px 18px 16px;border-bottom:1px solid rgba(210,226,242,.75)}
 header h1{margin:0;font-size:28px;line-height:1.1;font-weight:850;letter-spacing:-.6px}header p{margin:7px 0 0;color:#6b86a2;font-size:14px}.brandline{margin-top:9px;font-size:10px;letter-spacing:2.4px;color:#2d79df;font-weight:800}.slogan{margin-top:3px;font-size:11px;color:#7d93aa}
-main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padding:14px 16px;border:1px solid #dce8f5;border-radius:17px;font-size:16px;margin-bottom:11px;background:rgba(255,255,255,.94);outline:none;box-shadow:0 5px 18px rgba(48,110,180,.05)}
-.dictSearchBox{padding:14px;border:1px solid #e1ebf5;border-radius:18px;background:rgba(255,255,255,.97);box-shadow:0 6px 18px rgba(35,86,135,.05);margin-top:12px}.dictSearchRow{display:flex;gap:8px}.dictSearchRow .search{margin:0;flex:1}.dictSearchBtn{border:0;border-radius:14px;padding:0 16px;background:#1d69e8;color:#fff;font-weight:800;white-space:nowrap}.dictResult{margin-top:12px}.dictResult .panel{margin-top:8px}.addWordBox{display:grid;gap:9px;margin-top:10px}.addWordBox input,.addWordBox textarea,.addWordBox select{width:100%;box-sizing:border-box;padding:12px 13px;border:1px solid #dce8f5;border-radius:13px;background:#fff;font:inherit;outline:none}.addWordBox textarea{min-height:76px;resize:vertical}.dictActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.dictActions button{border:0;border-radius:12px;padding:10px 13px;font-weight:800}.dictPrimary{background:#1d69e8;color:#fff}.dictSecondary{background:#eef5fc;color:#35516d}.dictHint{font-size:12px;color:#71859b;margin-top:7px}.search:focus{border-color:#8dbef5;box-shadow:0 0 0 4px rgba(64,145,235,.1)}
+main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padding:14px 16px;border:1px solid #dce8f5;border-radius:17px;font-size:16px;margin-bottom:11px;background:rgba(255,255,255,.94);outline:none;box-shadow:0 5px 18px rgba(48,110,180,.05)}.search:focus{border-color:#8dbef5;box-shadow:0 0 0 4px rgba(64,145,235,.1)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px}.stat{background:rgba(255,255,255,.94);border:1px solid #e0ebf7;border-radius:19px;padding:14px 5px;text-align:center;box-shadow:0 7px 20px rgba(43,99,155,.07)}.stat b{display:block;font-size:23px;color:#2169db}.stat span{font-size:11px;color:#6c8096}.statBtn{appearance:none;-webkit-appearance:none;width:100%;font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}.statBtn:active{transform:scale(.98);background:#f4f9ff}.statBtn:focus,.statBtn:focus-visible{outline:none!important;box-shadow:0 7px 20px rgba(43,99,155,.07)}.statBtn::-moz-focus-inner{border:0}.homeTask:focus,.homeTask:focus-visible,button:focus,button:focus-visible{outline:none!important}.bottom button:focus,.bottom button:focus-visible{outline:none!important;box-shadow:none!important}.bottom button{-webkit-tap-highlight-color:transparent}
 .progress{background:rgba(255,255,255,.94);border:1px solid #e0ebf7;border-radius:19px;padding:15px;margin-bottom:12px;box-shadow:0 7px 20px rgba(43,99,155,.06)}.progressline{display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px}.bar{height:10px;background:#e2edf8;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#4aa7ff,#2563eb)}
 .tabs{display:flex;gap:7px;overflow:auto;margin-bottom:10px}.tabs button,.tools button{border:1px solid #dce7f2;background:#fff;border-radius:13px;padding:9px 12px;font-size:14px;white-space:nowrap;color:#516a84}.tabs button.active{background:#2d75e8;color:#fff;border-color:#2d75e8;box-shadow:0 5px 12px rgba(45,117,232,.18)}
@@ -26,6 +25,7 @@ main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padd
 .bottom{position:fixed;bottom:0;left:10px;right:10px;background:rgba(255,255,255,.96);border:1px solid #dfeaf5;border-radius:25px 25px 0 0;display:grid;grid-template-columns:repeat(5,1fr);padding:10px 5px calc(10px + env(safe-area-inset-bottom));z-index:50;box-shadow:0 -7px 28px rgba(52,104,157,.12);backdrop-filter:blur(14px)}.bottom button{background:none;outline:none;-webkit-tap-highlight-color:transparent;border:0;padding:3px 2px 5px;font-size:13px;color:#60758c;min-width:0;font-weight:600;touch-action:manipulation}.bottom .ico{height:40px;display:grid;place-items:center;margin-bottom:2px}.bottom .ico svg{width:38px;height:38px;display:block;filter:drop-shadow(0 4px 5px rgba(32,89,150,.13));transition:transform .15s ease}.bottom button:focus,.bottom button:focus-visible{outline:none}.bottom button.active{color:#1767df;font-weight:800}.bottom button.active .ico svg{transform:translateY(-1px) scale(1.04)}.bottom button:active .ico svg{transform:scale(.94)}
 .hero{background:rgba(255,255,255,.94);border:1px solid #e0ebf6;border-radius:20px;padding:17px;margin-bottom:12px;box-shadow:0 7px 22px rgba(35,86,135,.06)}.hero h2{margin:0 0 5px}.hero p{margin:5px 0;color:#667e98}.cta{width:100%;border:0;border-radius:14px;cursor:pointer;touch-action:manipulation;padding:13px;background:#2b74e5;color:#fff;font-size:15px;margin-top:9px;box-shadow:0 7px 16px rgba(43,116,229,.16)}.cta.blue{background:linear-gradient(135deg,#3b8cf2,#2469dc)}.cta.secondary{background:#edf3f9;color:#1f3047;box-shadow:none}.taskgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}.taskgrid.twoTasks{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.taskgrid .task{min-width:0}.task .taskIcon{width:30px;height:30px;margin:0 auto 5px}.task{background:#f6faff;border-radius:15px;padding:10px;text-align:center;border:1px solid #e5eef7}.task b{font-size:20px;display:block}.task span{font-size:11px;color:#687f96}.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#edf6ff;color:#2b74e5;font-size:11px;margin-top:5px}.done{background:#ecfbf5;color:#087a5c}.duebadge{background:#fff6ea;color:#c15a13}
 .modal{position:fixed;inset:0;background:rgba(11,31,53,.48);display:none;align-items:flex-end;z-index:100;overscroll-behavior:contain}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:23px 23px 0 0;padding:20px 20px calc(44px + env(safe-area-inset-bottom));box-sizing:border-box}.close{float:right;border:0;background:#eff4f9;border-radius:10px;padding:7px 11px}.completion{position:static;display:block;width:100%;margin:18px 0 4px;padding:12px;background:#fff;border:1px solid #dbe7f2;border-radius:16px;box-shadow:0 4px 16px rgba(15,23,42,.08)}.completion b{display:inline;font-size:14px;color:#132238;padding:0}.completion span{display:inline;margin-left:7px;font-size:11px;color:#64748b;padding:0}.rating{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:11px}.rating button{border:1px solid #d5e1ec;background:#fff;border-radius:13px;padding:8px 5px;font-size:11px;min-height:46px;cursor:pointer;touch-action:manipulation}.rating button:active{transform:scale(.98);background:#eff6ff}.rating button b{color:#132238}.rating b{display:block;font-size:15px;margin-bottom:2px}.flash{background:#f5f9fd;border-radius:16px;padding:18px;margin-top:12px;text-align:center}.flash .big{font-size:28px;font-weight:800}.small{font-size:12px;color:#667e98}.setting{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf2f7}.rangeSetting{display:flex;align-items:center;gap:10px;min-width:170px}.assocBox{margin:10px 0;padding:10px 12px;border:1px solid #d9e7f7;border-radius:12px;background:#f7fbff;line-height:1.65}.assocBox>b{color:#2169db}.rangeSetting input{width:130px;accent-color:#2d75e8}.rangeSetting>b{min-width:24px;text-align:center;color:#2169db;font-size:18px}.setting:last-child{border-bottom:0}.setting b{display:block}.setting span{font-size:12px;color:#71859b}.setting select{padding:9px;border:1px solid #d7e3ee;border-radius:10px;background:#fff}.status{padding:9px 11px;background:#f5f9fd;border-radius:11px;margin-top:9px;font-size:12px;line-height:1.45}
+.wordSearchBox{background:rgba(255,255,255,.96);border:1px solid #e0ebf6;border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:0 7px 20px rgba(35,86,135,.05)}.wordSearchTitle{font-size:18px;font-weight:850;margin-bottom:4px}.wordSearchSub{font-size:12px;color:#71859b;margin-bottom:10px}.wordSearchRow{display:flex;gap:8px}.wordSearchRow input{flex:1;min-width:0;padding:13px 14px;border:1px solid #dce8f5;border-radius:14px;font-size:16px;background:#fff;outline:none}.wordSearchRow input:focus{border-color:#8dbef5;box-shadow:0 0 0 4px rgba(64,145,235,.1)}.wordSearchRow button{border:0;border-radius:14px;padding:0 17px;background:#2d75e8;color:#fff;font-weight:800;font-size:14px}.wordSearchTabs{display:flex;gap:7px;margin:10px 0;overflow:auto}.wordSearchTabs button{border:1px solid #dce7f2;background:#fff;border-radius:12px;padding:8px 13px;color:#516a84;white-space:nowrap}.wordSearchTabs button.active{background:#2d75e8;color:#fff;border-color:#2d75e8}.wordResult{background:#fff;border:1px solid #e0ebf6;border-radius:17px;padding:14px;margin:9px 0}.wordResultTop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.wordResult .word{font-size:22px}.wordActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.wordActions button{border:1px solid #d7e4ef;background:#fff;border-radius:11px;padding:8px 11px;font-size:13px;color:#29435f}.wordActions .primary{background:#2d75e8;color:#fff;border-color:#2d75e8}.wordActions .speakSmall{background:#eef6ff;color:#2169db;border-color:#cfe3f8}.manualBox{background:#f7fbff;border:1px dashed #bcd5ed;border-radius:18px;padding:14px;margin-top:12px}.manualBox h3{margin:0 0 4px;font-size:17px}.manualBox p{margin:0 0 10px;color:#71859b;font-size:12px}.manualGrid{display:grid;grid-template-columns:1fr;gap:8px}.manualGrid input,.manualGrid textarea,.manualGrid select{width:100%;padding:12px 13px;border:1px solid #d8e5f0;border-radius:12px;font:inherit;background:#fff;outline:none}.manualGrid textarea{min-height:78px;resize:vertical}.manualActions{display:flex;gap:8px;margin-top:9px}.manualActions button{flex:1;border:0;border-radius:12px;padding:11px;font-weight:800}.manualActions .saveWord{background:#2d75e8;color:#fff}.manualActions .speakNew{background:#edf4fa;color:#29435f}.emptyHint{text-align:center;padding:18px 10px;color:#71859b;font-size:13px}.mineStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.mineStats .task{padding:9px}.personalTag{display:inline-block;padding:3px 7px;border-radius:999px;background:#eef6ff;color:#2871d9;font-size:10px;margin-left:5px}
 .homeHero{background:#f7fbff;border:1px solid #dceaf7;border-radius:25px;padding:18px;margin-bottom:13px;box-shadow:none;position:relative;overflow:hidden}.homeTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:1}.homeTitle{font-size:30px;font-weight:850;margin:0;color:#10233f;letter-spacing:-.8px}.homeSub{color:#607a96;font-size:14px;margin-top:5px}.ring{width:92px;height:92px;border-radius:50%;background:conic-gradient(#2a74e8 var(--pct),#d9e9f8 0);display:grid;place-items:center;flex:0 0 auto;position:relative;box-shadow:0 6px 18px rgba(42,116,232,.1)}.ring:after{content:'';width:68px;height:68px;border-radius:50%;background:#fff}.ringText{position:absolute;font-weight:850;color:#132238;font-size:16px;z-index:2}.sectionTitle{font-size:20px;font-weight:850;margin:16px 2px 9px;color:#12233f}.homeTasks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:15px 0 12px;position:relative;z-index:1}.homeTask{background:#fff;border-radius:17px;padding:10px 5px;text-align:center;border:1px solid #e1ebf5;box-shadow:0 4px 12px rgba(48,103,156,.05);min-width:0;min-height:108px;display:flex;flex-direction:column;align-items:center;justify-content:center}.taskMetric{height:68px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:100%;white-space:nowrap}.taskIcon{width:30px;height:30px;flex:0 0 30px;display:block}.homeTask b{display:block;font-size:18px;line-height:1.05;color:#2169db;font-variant-numeric:tabular-nums}.homeTask span{display:block;font-size:11px;line-height:1.2;color:#647d96;margin-top:5px;white-space:nowrap}.homeTasks.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px}.ctaWithIcon{display:flex;align-items:center;justify-content:center;gap:9px}.ctaWithIcon .taskIcon{width:27px;height:27px;filter:none}.homeCta{display:flex;outline:none;-webkit-tap-highlight-color:transparent;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:15px;padding:14px 16px;background:linear-gradient(135deg,#3a8cf3,#2469dc);color:#fff;font-size:16px;font-weight:750;box-shadow:0 8px 18px rgba(37,105,219,.2)}.homeCta:focus,.homeCta:focus-visible{outline:none}.homeReviewSummary{display:flex;align-items:center;justify-content:space-between;margin:2px 0 12px;padding:10px 13px;border:1px solid #e1ebf5;border-radius:14px;background:#fff;color:#647d96;font-size:12px}.homeReviewSummary button{border:0;background:none;color:#2169db;font:inherit;cursor:pointer;padding:2px 0;-webkit-tap-highlight-color:transparent;outline:none}.homeReviewSummary b{font-size:15px}.quoteBox{background:linear-gradient(145deg,#edf7ff,#f8fbff);border:1px solid #dceaf7;border-radius:19px;padding:18px;text-align:center;color:#52708e;font-size:14px;line-height:1.7;box-shadow:0 6px 18px rgba(35,86,135,.05)}
 
 /* System dark mode: one unified palette for the whole app.
@@ -219,7 +219,7 @@ try{
 </script>
 </head>
 <body>
-<script>window.__APP_SHELL__="\n<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.66（基于V1.65重做）</p><div class=\"brandline\">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class=\"slogan\">完全本地词库 · 快速学习 · 无需在线查词</div></header>\n<main id=\"main\"></main>\n<nav class=\"bottom\">\n<button data-nav=\"home\" class=\"active\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHome\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#58c2ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient></defs><path d=\"M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z\" fill=\"#fff\" stroke=\"#cfe5fb\" stroke-width=\"1.2\"/><path d=\"M5.5 23.5 24 7l18.5 16.5\" fill=\"none\" stroke=\"url(#gHome)\" stroke-width=\"5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19 42V29h10v13\" fill=\"url(#gHome)\"/><rect x=\"18\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/><rect x=\"25\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/></svg></div>首页</button>\n<button data-nav=\"daily\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gBook1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4da7ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient><linearGradient id=\"gBook2\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#45d9ad\"/><stop offset=\"1\" stop-color=\"#17a978\"/></linearGradient></defs><path d=\"m8 16 25-7 7 17-25 7z\" fill=\"url(#gBook1)\"/><path d=\"M9 16.5 33 10l3 2-23 6.5z\" fill=\"#7bc5ff\" opacity=\".75\"/><path d=\"m11 29 25-7 5 13-24 7z\" fill=\"url(#gBook2)\"/><path d=\"M15 33.5 36 28l2 4-21 5.5z\" fill=\"#fff\" opacity=\".9\"/><path d=\"M30 39v5l4-3 4 1v-6z\" fill=\"#ffc22b\"/></svg></div>日常</button>\n<button data-nav=\"professional\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHard\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffd92e\"/><stop offset=\"1\" stop-color=\"#f89c16\"/></linearGradient></defs><path d=\"M9 26c0-10 7-16 15-16s15 6 15 16v7H9z\" fill=\"url(#gHard)\"/><path d=\"M8 32h32v5H8z\" fill=\"#f59b12\"/><path d=\"M24 14 18.5 25h5l-2 8L30 22h-5z\" fill=\"#fff\"/></svg></div>专业</button>\n<button data-nav=\"review\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gRev\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#a99bff\"/><stop offset=\"1\" stop-color=\"#6552e8\"/></linearGradient></defs><rect x=\"7\" y=\"7\" width=\"34\" height=\"34\" rx=\"9\" fill=\"url(#gRev)\"/><path d=\"M13 24a11 11 0 0 1 19-7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m31 13 1 7-7-1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 24a11 11 0 0 1-19 7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m17 35-1-7 7 1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>复习</button>\n<button data-nav=\"mine\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gMe\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#65d2ff\"/><stop offset=\"1\" stop-color=\"#2379e8\"/></linearGradient></defs><circle cx=\"24\" cy=\"15\" r=\"8.5\" fill=\"url(#gMe)\"/><path d=\"M9 41c1.5-10 7-15 15-15s13.5 5 15 15z\" fill=\"url(#gMe)\"/></svg></div>我的</button>\n</nav>\n<div id=\"modal\" class=\"modal\"><div class=\"sheet\"><button class=\"close\" id=\"closeBtn\">关闭</button><div id=\"detail\"></div></div></div>"</script>
+<script>window.__APP_SHELL__="\n<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.66</p><div class=\"brandline\">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class=\"slogan\">完全本地词库 · 快速学习 · 无需在线查词</div></header>\n<main id=\"main\"></main>\n<nav class=\"bottom\">\n<button data-nav=\"home\" class=\"active\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHome\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#58c2ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient></defs><path d=\"M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z\" fill=\"#fff\" stroke=\"#cfe5fb\" stroke-width=\"1.2\"/><path d=\"M5.5 23.5 24 7l18.5 16.5\" fill=\"none\" stroke=\"url(#gHome)\" stroke-width=\"5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19 42V29h10v13\" fill=\"url(#gHome)\"/><rect x=\"18\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/><rect x=\"25\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/></svg></div>首页</button>\n<button data-nav=\"daily\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gBook1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4da7ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient><linearGradient id=\"gBook2\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#45d9ad\"/><stop offset=\"1\" stop-color=\"#17a978\"/></linearGradient></defs><path d=\"m8 16 25-7 7 17-25 7z\" fill=\"url(#gBook1)\"/><path d=\"M9 16.5 33 10l3 2-23 6.5z\" fill=\"#7bc5ff\" opacity=\".75\"/><path d=\"m11 29 25-7 5 13-24 7z\" fill=\"url(#gBook2)\"/><path d=\"M15 33.5 36 28l2 4-21 5.5z\" fill=\"#fff\" opacity=\".9\"/><path d=\"M30 39v5l4-3 4 1v-6z\" fill=\"#ffc22b\"/></svg></div>日常</button>\n<button data-nav=\"professional\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHard\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffd92e\"/><stop offset=\"1\" stop-color=\"#f89c16\"/></linearGradient></defs><path d=\"M9 26c0-10 7-16 15-16s15 6 15 16v7H9z\" fill=\"url(#gHard)\"/><path d=\"M8 32h32v5H8z\" fill=\"#f59b12\"/><path d=\"M24 14 18.5 25h5l-2 8L30 22h-5z\" fill=\"#fff\"/></svg></div>专业</button>\n<button data-nav=\"review\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gRev\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#a99bff\"/><stop offset=\"1\" stop-color=\"#6552e8\"/></linearGradient></defs><rect x=\"7\" y=\"7\" width=\"34\" height=\"34\" rx=\"9\" fill=\"url(#gRev)\"/><path d=\"M13 24a11 11 0 0 1 19-7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m31 13 1 7-7-1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 24a11 11 0 0 1-19 7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m17 35-1-7 7 1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>复习</button>\n<button data-nav=\"mine\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gMe\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#65d2ff\"/><stop offset=\"1\" stop-color=\"#2379e8\"/></linearGradient></defs><circle cx=\"24\" cy=\"15\" r=\"8.5\" fill=\"url(#gMe)\"/><path d=\"M9 41c1.5-10 7-15 15-15s13.5 5 15 15z\" fill=\"url(#gMe)\"/></svg></div>我的</button>\n</nav>\n<div id=\"modal\" class=\"modal\"><div class=\"sheet\"><button class=\"close\" id=\"closeBtn\">关闭</button><div id=\"detail\"></div></div></div>"</script>
 <script>document.body.insertAdjacentHTML("afterbegin",window.__APP_SHELL__);</script>
 <script>
 let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all',statusFilter='mastered',lastDateKey='';
@@ -230,16 +230,58 @@ function audioSlug(w){return String(w).toLowerCase().replace(/[^a-z0-9._-]+/g,'_
 const progress=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('dceng_v8_progress')||localStorage.getItem('dceng_v6_progress')||'{}');
 if(localStorage.getItem('dceng_dict_cache_version')!=='156'){localStorage.removeItem('dceng_dict_cache_v151');localStorage.setItem('dceng_dict_cache_version','157');}
 const favs=new Set(JSON.parse(localStorage.getItem('favs')||'[]'));
-const CUSTOM_KEY='dceng_custom_words_v1';
-let customItems=JSON.parse(localStorage.getItem(CUSTOM_KEY)||'[]');
-function saveCustomItems(){localStorage.setItem(CUSTOM_KEY,JSON.stringify(customItems))}
-function normalizeWord(w){return String(w||'').trim().toLowerCase()}
-function mergeCustomItems(){
-  const baseWords=new Set(items.map(x=>normalizeWord(x.word)));
-  customItems=customItems.filter(x=>x&&normalizeWord(x.word)&&!baseWords.has(normalizeWord(x.word)));
-  items=[...items,...customItems];
+let personalWords=[];
+function loadPersonalWords(){
+  try{personalWords=JSON.parse(localStorage.getItem('dceng_personal_words_v1')||'[]');if(!Array.isArray(personalWords))personalWords=[];}catch(e){personalWords=[]}
+  const existing=new Set(items.map(x=>String(x.word||'').trim().toLowerCase()));
+  for(const x of personalWords){const k=String(x.word||'').trim().toLowerCase();if(k&&!existing.has(k)){items.push(x);existing.add(k)}}
 }
-function findWord(w){const k=normalizeWord(w);return items.find(x=>normalizeWord(x.word)===k)}
+function savePersonalWords(){localStorage.setItem('dceng_personal_words_v1',JSON.stringify(personalWords))}
+function categoryLabel(x){return isPro(x)?'专业':'日常'}
+function addWordToReview(word){
+  const w=String(word||'').trim(); if(!w)return false;
+  const now=Date.now(),s=st(w);
+  if(s.seen===0){s.seen=1;s.box=0;s.correct=0;s.wrong=0}
+  s.last=now;s.due=now;progress[w]=s;save();return true;
+}
+function personalWordExists(word){const k=String(word||'').trim().toLowerCase();return items.some(x=>String(x.word||'').trim().toLowerCase()===k)}
+function addPersonalWord(word,meaning,category){
+  const w=String(word||'').trim(),m=String(meaning||'').trim();if(!w||!m)return {ok:false,msg:'请填写英文单词和中文释义'};
+  if(personalWordExists(w))return {ok:false,msg:'这个单词已经在词库中'};
+  const x={id:'personal_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,7),word:w,meaning_zh:m,phonetic:'',pos:'',root:'',example_en:'',example_zh:'',collocations:[],category:category==='professional'?'Personal Professional':'Personal Daily',quality:'personal'};
+  personalWords.push(x);items.push(x);savePersonalWords();addWordToReview(w);return {ok:true,item:x};
+}
+function mineSearchResults(q,filter){
+  const term=String(q||'').trim().toLowerCase();
+  let pool=items;
+  if(filter==='daily')pool=pool.filter(x=>!isPro(x));
+  if(filter==='professional')pool=pool.filter(isPro);
+  if(!term)return [];
+  return uniqueByWord(pool).filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh,x.pos,x.category].join(' ').toLowerCase().includes(term));
+}
+function renderMineResults(q='',filter='all'){
+  const box=$id('mineResults');if(!box)return;
+  const arr=mineSearchResults(q,filter);
+  if(!q.trim()){box.innerHTML='<div class="emptyHint">输入英文单词、中文释义或专业术语开始检索。<br>支持日常英语 + 数据中心工程英语。</div>';return}
+  if(!arr.length){box.innerHTML='<div class="emptyHint">词库中没有找到该词。下面可以手动添加，并立即进入复习计划。</div>';return}
+  box.innerHTML=arr.slice(0,50).map((x,i)=>{const s=st(x.word),dueNow=s.seen>0&&s.due<=Date.now();return `<div class="wordResult"><div class="wordResultTop"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'—')}</div><span class="tag">${categoryLabel(x)}${x.quality==='personal'?'<span class="personalTag">我的单词</span>':''}</span></div><div class="small">${s.seen===0?'未学习':dueNow?'待复习':s.box>=4?'已掌握':'学习中'}</div></div><div class="wordActions"><button class="speakSmall" data-mine-speak="${esc(x.word)}">🔊 发音</button><button data-mine-detail="${esc(x.word)}">查看详情</button>${dueNow?'<button class="primary" disabled>✓ 已在复习计划</button>':`<button class="primary" data-add-review="${esc(x.word)}">加入复习计划</button>`}</div></div>`}).join('');
+}
+function renderMine(){
+  const pCount=personalWords.length, reviewCount=personalWords.filter(x=>{const s=st(x.word);return s.seen>0&&s.due<=Date.now()}).length;
+  return `<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
+    <div class="wordSearchBox"><div class="wordSearchTitle">🔎 单词检索</div><div class="wordSearchSub">同时检索日常英语和专业工程英语；词库没有时可手动添加。</div><div class="wordSearchRow"><input id="mineSearch" autocomplete="off" placeholder="输入英文单词 / 中文释义 / 专业术语"><button id="mineSearchBtn">检索</button></div><div class="wordSearchTabs"><button class="active" data-mine-filter="all">全部</button><button data-mine-filter="daily">日常</button><button data-mine-filter="professional">专业</button></div><div id="mineResults"></div><div class="manualBox"><h3>＋ 手动添加单词</h3><p>词库没有的单词，可以自己填写释义；保存后立即加入正常复习计划。</p><div class="manualGrid"><input id="newWord" autocomplete="off" placeholder="英文单词，例如：commissioning"><textarea id="newMeaning" placeholder="中文释义，例如：调试；投运"></textarea><select id="newCategory"><option value="professional">专业工程英语</option><option value="daily">日常英语</option></select></div><div class="manualActions"><button class="speakNew" id="speakNew">🔊 拼读</button><button class="saveWord" id="saveNewWord">加入我的生词</button></div></div></div>
+    <div class="mineStats"><div class="task"><b>${pCount}</b><span>我的单词</span></div><div class="task"><b>${reviewCount}</b><span>我的词待复习</span></div><div class="task"><b>${due().length}</b><span>全部待复习</span></div></div>
+    <div class="panel">
+      <div class="setting"><div><b>每日日常新词</b><span>日常英语每天自动安排</span></div><div class="rangeSetting"><input id="setNew" type="range" min="0" max="20" step="1"><b id="setNewVal">20</b></div></div>
+      <div class="setting"><div><b>每日专业新词</b><span>专业英语每天自动安排</span></div><div class="rangeSetting"><input id="setPro" type="range" min="0" max="20" step="1"><b id="setProVal">10</b></div></div>
+      <div class="setting"><div><b>每日复习上限</b><span>复习页面最多显示多少个到期词；选择“不限”显示全部</span></div><select id="setReview"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="50">50</option><option value="all">不限</option></select></div>
+      <div class="setting"><div><b>发音口音</b><span>单词和例句播放使用</span></div><select id="setAccent"><option value="en-US">🇺🇸 美式 English (US)</option><option value="en-GB">🇬🇧 英式 English (UK)</option></select></div>
+      <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
+      <button id="installBtn" class="install">📲 安装到手机桌面</button><button id="voiceBtn" class="install">🔊 测试当前发音</button><button id="clearCacheBtn" class="install">🧹 清除 App 缓存</button><div id="status" class="status">学习进度保存在本机浏览器。</div>
+    </div>
+    <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||'').toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
+    <div class="panel"><b>词库质量</b><p class="small">本版本保留 V1.65 的本地词库、学习进度、关联记忆和复习机制；发音按需调用系统语音，不预加载音频。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动安排日常新词、专业新词和到期复习。通过“单词检索”加入的词会直接进入复习队列，不改变原有每日新词计划。</p></div></div>`;
+}
 
 
 function $id(x){return document.getElementById(x)}
@@ -248,7 +290,7 @@ function save(){localStorage.setItem(KEY,JSON.stringify(progress));localStorage.
 function today(){return new Date().toLocaleDateString('en-CA')}
 function greeting(){const h=new Date().getHours();if(h>=5&&h<12)return 'Good morning ☀️';if(h>=12&&h<18)return 'Good afternoon ☀️';return 'Good evening 🌙'}
 function st(w){return progress[w]||{box:0,due:0,seen:0,correct:0,wrong:0,last:0}}
-function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'}
+function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'||x.category==='Personal Professional'}
 function uniqueByWord(pool){const seen=new Set(),out=[];for(const x of pool){const k=String(x.word||'').trim().toLowerCase();if(!k||seen.has(k))continue;seen.add(k);out.push(x)}return out}
 function due(){return uniqueByWord(items.filter(x=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()}))}
 function mastered(){return uniqueByWord(items.filter(x=>{let s=st(x.word);return s.box>=4&&s.due>Date.now()}))}
@@ -446,49 +488,6 @@ function taskIcon(type,uid){
  if(type==='professional') return `<svg class="taskIcon" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="th${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd92e"/><stop offset="1" stop-color="#f89c16"/></linearGradient></defs><path d="M9 26c0-10 7-16 15-16s15 6 15 16v7H9z" fill="url(#th${id})"/><path d="M8 32h32v5H8z" fill="#f59b12"/><path d="M24 14 18.5 25h5l-2 8L30 22h-5z" fill="#fff"/></svg>`;
  return `<svg class="taskIcon" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="tr${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a99bff"/><stop offset="1" stop-color="#6552e8"/></linearGradient></defs><rect x="7" y="7" width="34" height="34" rx="9" fill="url(#tr${id})"/><path d="M13 24a11 11 0 0 1 19-7" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round"/><path d="m31 13 1 7-7-1" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 24a11 11 0 0 1-19 7" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round"/><path d="m17 35-1-7 7 1" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 }
-function addToReviewPlan(word){
-  const x=findWord(word); if(!x)return false;
-  const key=String(x.word).trim(); let s=st(key), now=Date.now();
-  if(s.seen===0){s.seen=1;s.box=0;s.correct=0;s.wrong=0;}
-  s.last=now; s.due=now; progress[key]=s; save();
-  return true;
-}
-function renderDictionarySearch(){
-  return `<div class="panel dictSearchBox">
-    <b>单词检索</b><div class="dictHint">同时检索日常英语 + 专业工程英语。词库已有单词直接沿用原词条和复习机制；词库没有的可以手动添加。</div>
-    <div class="dictSearchRow"><input id="dictSearch" class="search" autocomplete="off" placeholder="输入英文单词 / 中文释义，例如 transformer"><button id="dictSearchBtn" class="dictSearchBtn">检索</button></div>
-    <div id="dictResult" class="dictResult"></div>
-  </div>`;
-}
-function runDictionarySearch(){
-  const input=$id('dictSearch'), out=$id('dictResult'); if(!input||!out)return;
-  const q=input.value.trim(), k=normalizeWord(q);
-  if(!k){out.innerHTML='<div class="panel">请输入要检索的单词或中文释义。</div>';return;}
-  const exact=findWord(q);
-  const pool=uniqueByWord(items).filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh,x.pos,x.root].join(' ').toLowerCase().includes(k));
-  if(exact){
-    const s=st(exact.word), state=s.seen===0?'词库已有 · 尚未加入复习计划':s.due<=Date.now()?'词库已有 · 当前待复习':'词库已有 · 已在复习计划';
-    const action=s.seen===0?`<button class="dictPrimary" id="dictAddExisting">加入复习计划</button>`:'';
-    out.innerHTML=`<div class="card" style="margin:8px 0 0"><div class="word">${esc(exact.word)}</div><div class="cn">${esc(exact.meaning_zh||'—')}</div><div class="small" style="margin-top:7px">${isPro(exact)?'专业工程英语':'日常英语'} · ${esc(state)}</div><div class="dictActions">${action}<button class="dictSecondary" id="dictSpeak">🔊 系统发音</button><button class="dictSecondary" id="dictDetail">查看完整词条</button></div></div>`;
-    $id('dictSpeak').onclick=()=>playLocalWord(exact.word);
-    $id('dictDetail').onclick=()=>detailByWord(exact.word);
-    if($id('dictAddExisting'))$id('dictAddExisting').onclick=()=>{if(addToReviewPlan(exact.word)){out.querySelector('.small').textContent=(isPro(exact)?'专业工程英语':'日常英语')+' · 已加入复习计划';$id('dictAddExisting').remove();render();}};
-    return;
-  }
-  const shown=pool.slice(0,8);
-  out.innerHTML=`${shown.length?'<div class="small">未找到精确单词，以下是相关结果：</div>'+shown.map(x=>`<div class="card" style="margin:8px 0 0" data-dict-result="${esc(x.word)}"><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'—')}</div><div class="small">${isPro(x)?'专业工程英语':'日常英语'}</div></div>`).join(''):'<div class="panel">词库中没有找到该单词，可以手动添加。</div>'}
-    <div class="panel"><b>手动添加单词</b><div class="addWordBox"><input id="newWord" value="${/^[A-Za-z][A-Za-z0-9 ._-]*$/.test(q)?esc(q):''}" placeholder="英文单词"><textarea id="newMeaning" placeholder="中文释义"></textarea><select id="newCategory"><option value="daily">日常英语</option><option value="professional">专业工程英语</option></select><div class="dictActions"><button id="saveNewWord" class="dictPrimary">保存并加入复习计划</button><button id="newWordSpeak" class="dictSecondary">🔊 先听读音</button></div></div><div class="dictHint">保存后会写入本机浏览器，不会修改原始 vocab.json；该词会立即进入“复习”。</div></div>`;
-  shown.forEach(x=>{const el=document.querySelector(`[data-dict-result="${CSS.escape(x.word)}"]`);if(el)el.onclick=()=>detailByWord(x.word)});
-  $id('newWordSpeak').onclick=()=>{const w=$id('newWord').value.trim();if(w)playLocalWord(w)};
-  $id('saveNewWord').onclick=()=>{
-    const w=$id('newWord').value.trim(), m=$id('newMeaning').value.trim(), cat=$id('newCategory').value;
-    if(!w||!m){alert('请填写英文单词和中文释义。');return;}
-    const existing=findWord(w); if(existing){addToReviewPlan(existing.word);alert('该单词已在词库中，已加入复习计划。');runDictionarySearch();return;}
-    const x={id:'custom_'+Date.now(),word:w,meaning_zh:m,category:cat==='professional'?'Data Center & Electrical Engineering':'Daily & Work English',pos:'',root:'',phonetic:'',example_en:'',example_zh:'',collocations:[],related_words:[],association_types:[],scene_groups:[],connected_speech:'',quality:'user-added'};
-    customItems.push(x);saveCustomItems();items.push(x);addToReviewPlan(w);
-    alert('已保存，并已加入复习计划。'); input.value=w; runDictionarySearch();
-  };
-}
 function render(){
   let body='';
   if(page==='home'){
@@ -543,22 +542,7 @@ function render(){
       <div class="taskgrid"><div class="task"><b>${due().length}</b><span>当前待复习</span></div><div class="task"><b>${completedToday().r}</b><span>今日已复习</span></div><div class="task"><b>${goals().r===Infinity?'不限':goals().r}</b><span>复习显示上限</span></div></div>
       </div>${listShell()}`;
   }else{
-    body=`<div class="hero"><h2>我的</h2><p>学习计划、发音和 App 设置</p>
-      ${renderDictionarySearch()}
-      <div class="panel">
-        <div class="setting"><div><b>每日日常新词</b><span>日常英语每天自动安排</span></div><div class="rangeSetting"><input id="setNew" type="range" min="0" max="20" step="1"><b id="setNewVal">20</b></div></div>
-        <div class="setting"><div><b>每日专业新词</b><span>专业英语每天自动安排</span></div><div class="rangeSetting"><input id="setPro" type="range" min="0" max="20" step="1"><b id="setProVal">10</b></div></div>
-        <div class="setting"><div><b>每日复习上限</b><span>复习页面最多显示多少个到期词；选择“不限”显示全部</span></div><select id="setReview"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="50">50</option><option value="all">不限</option></select></div>
-        <div class="setting"><div><b>发音口音</b><span>单词和例句播放使用</span></div><select id="setAccent"><option value="en-US">🇺🇸 美式 English (US)</option><option value="en-GB">🇬🇧 英式 English (UK)</option></select></div>
-        <div class="setting"><div><b>播放速度</b><span>适合跟读训练</span></div><select id="setRate"><option value="0.75">慢速</option><option value="1">正常</option><option value="1.15">稍快</option></select></div>
-        <button id="installBtn" class="install">📲 安装到手机桌面</button>
-        <button id="voiceBtn" class="install">🔊 测试当前发音</button>
-        <button id="clearCacheBtn" class="install">🧹 清除 App 缓存</button>
-        <div id="status" class="status">学习进度保存在本机浏览器。</div>
-      </div>
-      <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
-      <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词库记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。发音按需调用，不预加载整套音频资源。学习进度保存在本机浏览器。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
-    </div>`;
+    body=renderMine();
   }
   $id('main').innerHTML=body; bind();
   if(page==='daily') initLazyList(items.filter(x=>!isPro(x)));
@@ -568,10 +552,6 @@ function render(){
   else if(page==='today') initLazyList(todayTasks());
 }
 function bind(){
-  if($id('dictSearch')){
-    $id('dictSearch').onkeydown=e=>{if(e.key==='Enter')runDictionarySearch()};
-    $id('dictSearchBtn').onclick=runDictionarySearch;
-  }
   let s=$id('search');
   if(s){s.oninput=e=>{query=e.target.value.toLowerCase();let pool=page==='professional'?items.filter(isPro):page==='daily'?items.filter(x=>!isPro(x)):page==='status'?statusPool(statusFilter):items;
     const filtered=uniqueByWord(pool).filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh].join(' ').toLowerCase().includes(query));
@@ -582,6 +562,17 @@ function bind(){
   document.querySelectorAll('[data-today-filter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.todayFilter;page='today';query='';render()});
   if($id('loadMore'))$id('loadMore').onclick=appendLazyList;
   document.querySelectorAll('[data-tfilter]').forEach(b=>b.onclick=()=>{todayFilter=b.dataset.tfilter;render()});
+  if($id('mineSearch')){
+    let mineFilter='all';
+    const doMineSearch=()=>renderMineResults($id('mineSearch').value,mineFilter);
+    $id('mineSearch').oninput=doMineSearch;
+    $id('mineSearch').onkeydown=e=>{if(e.key==='Enter')doMineSearch()};
+    $id('mineSearchBtn').onclick=doMineSearch;
+    document.querySelectorAll('[data-mine-filter]').forEach(b=>b.onclick=()=>{mineFilter=b.dataset.mineFilter;document.querySelectorAll('[data-mine-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');doMineSearch()});
+    $id('speakNew').onclick=()=>{const w=$id('newWord').value.trim();if(!w){alert('请先填写英文单词');return}playLocalWord(w)};
+    $id('saveNewWord').onclick=()=>{const r=addPersonalWord($id('newWord').value,$id('newMeaning').value,$id('newCategory').value);if(!r.ok){alert(r.msg);return} $id('newWord').value='';$id('newMeaning').value='';$id('mineSearch').value=r.item.word;renderMineResults(r.item.word,mineFilter);alert('已加入“我的生词”，并进入正常复习计划。')};
+    renderMineResults('',mineFilter);
+  }
   if($id('setNew')){
     $id('setNew').value=localStorage.getItem('dceng_daily_new')===null?20:localStorage.getItem('dceng_daily_new');
     $id('setPro').value=localStorage.getItem('dceng_daily_pro')===null?10:localStorage.getItem('dceng_daily_pro');
@@ -616,6 +607,12 @@ $id('main').addEventListener('click',e=>{
   if(tf){openToday(tf.dataset.todayFilter||'all');return}
   let nr=e.target.closest('[data-nav-review]');
   if(nr){page='review';query='';document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));document.querySelector('.bottom button[data-nav="review"]')?.classList.add('active');render();window.scrollTo({top:0,behavior:'instant'});return}
+  let ms=e.target.closest('[data-mine-speak]');
+  if(ms){playLocalWord(ms.dataset.mineSpeak);return}
+  let md=e.target.closest('[data-mine-detail]');
+  if(md){detailByWord(md.dataset.mineDetail);return}
+  let ar=e.target.closest('[data-add-review]');
+  if(ar){addWordToReview(ar.dataset.addReview);renderMineResults($id('mineSearch')?.value||'',document.querySelector('[data-mine-filter].active')?.dataset.mineFilter||'all');return}
   let sp=e.target.closest('[data-speak]');
   if(sp){let x=items[+sp.dataset.speak];if(x){playLocalWord(x.word);}return}
   let c=e.target.closest('[data-detail-word]');if(c){detailByWord(c.dataset.detailWord);return;}
@@ -751,7 +748,7 @@ $id('modal').onclick=e=>{if(e.target.id==='modal')$id('modal').classList.remove(
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 fetch('./vocab.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
   items=d.entries||[];
-  mergeCustomItems();
+  loadPersonalWords();
   lastDateKey=today();
   render();
   document.body.classList.add('app-ready');
