@@ -216,10 +216,78 @@ try{
   mq.addListener?.(applySystemTheme);
 }catch(e){}
 </script>
-</head>
+<style id="personal-word-style">
+.pwSearch{display:flex;gap:8px;margin:10px 0}.pwSearch input{flex:1;min-width:0}
+.pwResult{margin-top:8px}.pwCard{padding:12px;border:1px solid var(--line,#dfe6ee);border-radius:12px;background:var(--card,#fff)}
+.pwMuted{font-size:12px;opacity:.68}.pwActions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pwBtn{border:0;border-radius:10px;padding:8px 12px;background:#2f80ed;color:#fff;font-weight:600}
+.pwBtn.secondary{background:transparent;color:inherit;border:1px solid var(--line,#dfe6ee)}
+.pwField{width:100%;box-sizing:border-box;margin-top:8px;padding:9px 10px;border-radius:9px;border:1px solid var(--line,#dfe6ee);background:transparent;color:inherit}
+.pwList{margin-top:10px;display:grid;gap:8px}.pwItem{padding:10px 12px;border-radius:10px;background:var(--soft,#f5f8fc);display:flex;align-items:center;justify-content:space-between;gap:10px}
+</style></head>
 <body>
-<script>window.__APP_SHELL__="\n<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.65</p><div class=\"brandline\">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class=\"slogan\">完全本地词库 · 快速学习 · 无需在线查词</div></header>\n<main id=\"main\"></main>\n<nav class=\"bottom\">\n<button data-nav=\"home\" class=\"active\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHome\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#58c2ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient></defs><path d=\"M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z\" fill=\"#fff\" stroke=\"#cfe5fb\" stroke-width=\"1.2\"/><path d=\"M5.5 23.5 24 7l18.5 16.5\" fill=\"none\" stroke=\"url(#gHome)\" stroke-width=\"5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19 42V29h10v13\" fill=\"url(#gHome)\"/><rect x=\"18\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/><rect x=\"25\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/></svg></div>首页</button>\n<button data-nav=\"daily\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gBook1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4da7ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient><linearGradient id=\"gBook2\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#45d9ad\"/><stop offset=\"1\" stop-color=\"#17a978\"/></linearGradient></defs><path d=\"m8 16 25-7 7 17-25 7z\" fill=\"url(#gBook1)\"/><path d=\"M9 16.5 33 10l3 2-23 6.5z\" fill=\"#7bc5ff\" opacity=\".75\"/><path d=\"m11 29 25-7 5 13-24 7z\" fill=\"url(#gBook2)\"/><path d=\"M15 33.5 36 28l2 4-21 5.5z\" fill=\"#fff\" opacity=\".9\"/><path d=\"M30 39v5l4-3 4 1v-6z\" fill=\"#ffc22b\"/></svg></div>日常</button>\n<button data-nav=\"professional\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHard\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffd92e\"/><stop offset=\"1\" stop-color=\"#f89c16\"/></linearGradient></defs><path d=\"M9 26c0-10 7-16 15-16s15 6 15 16v7H9z\" fill=\"url(#gHard)\"/><path d=\"M8 32h32v5H8z\" fill=\"#f59b12\"/><path d=\"M24 14 18.5 25h5l-2 8L30 22h-5z\" fill=\"#fff\"/></svg></div>专业</button>\n<button data-nav=\"review\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gRev\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#a99bff\"/><stop offset=\"1\" stop-color=\"#6552e8\"/></linearGradient></defs><rect x=\"7\" y=\"7\" width=\"34\" height=\"34\" rx=\"9\" fill=\"url(#gRev)\"/><path d=\"M13 24a11 11 0 0 1 19-7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m31 13 1 7-7-1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 24a11 11 0 0 1-19 7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m17 35-1-7 7 1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>复习</button>\n<button data-nav=\"mine\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gMe\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#65d2ff\"/><stop offset=\"1\" stop-color=\"#2379e8\"/></linearGradient></defs><circle cx=\"24\" cy=\"15\" r=\"8.5\" fill=\"url(#gMe)\"/><path d=\"M9 41c1.5-10 7-15 15-15s13.5 5 15 15z\" fill=\"url(#gMe)\"/></svg></div>我的</button>\n</nav>\n<div id=\"modal\" class=\"modal\"><div class=\"sheet\"><button class=\"close\" id=\"closeBtn\">关闭</button><div id=\"detail\"></div></div></div>"</script>
+<script>window.__APP_SHELL__="\n<header><h1>DC Engineer English</h1><p>日常英语 + 数据中心工程英语 · V1.66</p><div class=\"brandline\">LEARN&nbsp;&nbsp; PRACTICE&nbsp;&nbsp; IMPROVE</div><div class=\"slogan\">完全本地词库 · 快速学习 · 无需在线查词</div></header>\n<main id=\"main\"></main>\n<nav class=\"bottom\">\n<button data-nav=\"home\" class=\"active\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHome\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#58c2ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient></defs><path d=\"M7 22.5 24 8l17 14.5v17a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3z\" fill=\"#fff\" stroke=\"#cfe5fb\" stroke-width=\"1.2\"/><path d=\"M5.5 23.5 24 7l18.5 16.5\" fill=\"none\" stroke=\"url(#gHome)\" stroke-width=\"5.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19 42V29h10v13\" fill=\"url(#gHome)\"/><rect x=\"18\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/><rect x=\"25\" y=\"20\" width=\"5\" height=\"5\" rx=\"1.2\" fill=\"#ffbf28\"/></svg></div>首页</button>\n<button data-nav=\"daily\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gBook1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4da7ff\"/><stop offset=\"1\" stop-color=\"#1d69e8\"/></linearGradient><linearGradient id=\"gBook2\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#45d9ad\"/><stop offset=\"1\" stop-color=\"#17a978\"/></linearGradient></defs><path d=\"m8 16 25-7 7 17-25 7z\" fill=\"url(#gBook1)\"/><path d=\"M9 16.5 33 10l3 2-23 6.5z\" fill=\"#7bc5ff\" opacity=\".75\"/><path d=\"m11 29 25-7 5 13-24 7z\" fill=\"url(#gBook2)\"/><path d=\"M15 33.5 36 28l2 4-21 5.5z\" fill=\"#fff\" opacity=\".9\"/><path d=\"M30 39v5l4-3 4 1v-6z\" fill=\"#ffc22b\"/></svg></div>日常</button>\n<button data-nav=\"professional\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gHard\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffd92e\"/><stop offset=\"1\" stop-color=\"#f89c16\"/></linearGradient></defs><path d=\"M9 26c0-10 7-16 15-16s15 6 15 16v7H9z\" fill=\"url(#gHard)\"/><path d=\"M8 32h32v5H8z\" fill=\"#f59b12\"/><path d=\"M24 14 18.5 25h5l-2 8L30 22h-5z\" fill=\"#fff\"/></svg></div>专业</button>\n<button data-nav=\"review\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gRev\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#a99bff\"/><stop offset=\"1\" stop-color=\"#6552e8\"/></linearGradient></defs><rect x=\"7\" y=\"7\" width=\"34\" height=\"34\" rx=\"9\" fill=\"url(#gRev)\"/><path d=\"M13 24a11 11 0 0 1 19-7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m31 13 1 7-7-1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35 24a11 11 0 0 1-19 7\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\"/><path d=\"m17 35-1-7 7 1\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div>复习</button>\n<button data-nav=\"mine\"><div class=\"ico\"><svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><defs><linearGradient id=\"gMe\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#65d2ff\"/><stop offset=\"1\" stop-color=\"#2379e8\"/></linearGradient></defs><circle cx=\"24\" cy=\"15\" r=\"8.5\" fill=\"url(#gMe)\"/><path d=\"M9 41c1.5-10 7-15 15-15s13.5 5 15 15z\" fill=\"url(#gMe)\"/></svg></div>我的</button>\n</nav>\n<div id=\"modal\" class=\"modal\"><div class=\"sheet\"><button class=\"close\" id=\"closeBtn\">关闭</button><div id=\"detail\"></div></div></div>"</script>
 <script>document.body.insertAdjacentHTML("afterbegin",window.__APP_SHELL__);</script>
+
+function getPersonalWords(){
+  try{const v=JSON.parse(localStorage.getItem('dceng_personal_vocab')||'[]');return Array.isArray(v)?v:[]}
+  catch(e){return []}
+}
+function savePersonalWord(x){
+  const list=getPersonalWords(),k=String(x.word||'').trim().toLowerCase();
+  const i=list.findIndex(v=>String(v.word||'').trim().toLowerCase()===k);
+  if(i>=0)list[i]={...list[i],...x};else list.unshift(x);
+  localStorage.setItem('dceng_personal_vocab',JSON.stringify(list));
+}
+function lookupPersonalOrMain(q){
+  const s=String(q||'').trim().toLowerCase();if(!s)return null;
+  return items.find(x=>String(x.word||'').trim().toLowerCase()===s)||
+         items.find(x=>String(x.word||'').trim().toLowerCase().includes(s))||null;
+}
+function speakAnyWord(word){
+  if(!('speechSynthesis'in window)){alert('当前设备不支持系统发音');return}
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(word||''));
+    const lang=localStorage.getItem('dceng_accent')||'en-US';u.lang=lang;u.rate=+(localStorage.getItem('dceng_rate')||1);
+    const vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang.toLowerCase()===lang.toLowerCase())||vs.find(v=>v.lang.toLowerCase().startsWith(lang.slice(0,2).toLowerCase()));
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+function personalWordModule(){
+  const list=getPersonalWords();
+  const saved=list.slice(0,12).map((x,i)=>`<div class="pwItem"><div><b>${esc(x.word)}</b><div class="pwMuted">${esc(x.meaning_zh||'')}</div></div><button class="pwBtn secondary" data-pw-speak="${i}">🔊</button></div>`).join('');
+  return `<div class="panel"><div style="font-weight:800;font-size:16px">➕ 自主加生词</div>
+    <div class="pwMuted" style="margin-top:4px">检索现有词库（日常 + 专业）；没有的单词可以自己添加释义。</div>
+    <div class="pwSearch"><input id="pwInput" class="pwField" style="margin-top:0" placeholder="输入英文，例如 formulate" autocomplete="off"><button id="pwSearchBtn" class="pwBtn">检索</button></div>
+    <div id="pwResult"></div>
+    ${list.length?`<div style="font-weight:700;margin-top:14px">我的生词 <span class="pwMuted">(${list.length})</span></div><div class="pwList">${saved}</div>`:''}
+  </div>`;
+}
+function bindPersonalWordModule(){
+  const input=$id('pwInput'),btn=$id('pwSearchBtn'),result=$id('pwResult');if(!input||!btn||!result)return;
+  const search=()=>{
+    const q=input.value.trim();if(!q){result.innerHTML='';return}
+    const x=lookupPersonalOrMain(q);
+    if(x){
+      result.innerHTML=`<div class="pwCard"><div style="font-size:18px;font-weight:800">${esc(x.word)}</div>
+        <div style="margin-top:5px">${esc(x.meaning_zh||'—')}</div><div class="pwMuted" style="margin-top:4px">${esc(x.phonetic||'')} ${x.pos?' · '+esc(x.pos):''}</div>
+        <div class="pwActions"><button class="pwBtn" id="pwSpeakFound">🔊 发音</button><button class="pwBtn secondary" id="pwSaveFound">加入我的生词</button></div></div>`;
+      $id('pwSpeakFound').onclick=()=>speakAnyWord(x.word);
+      $id('pwSaveFound').onclick=()=>{savePersonalWord({word:x.word,meaning_zh:x.meaning_zh||'',phonetic:x.phonetic||'',pos:x.pos||'',source:'vocab',createdAt:new Date().toISOString()});result.innerHTML=`<div class="pwCard"><b>${esc(x.word)}</b><div style="margin-top:5px">${esc(x.meaning_zh||'')}</div><div class="pwMuted">已加入我的生词</div><div class="pwActions"><button class="pwBtn" id="pwSpeakSaved">🔊 发音</button></div></div>`;$id('pwSpeakSaved').onclick=()=>speakAnyWord(x.word)};
+    }else{
+      result.innerHTML=`<div class="pwCard"><div style="font-weight:700">词库中没有 “${esc(q)}”</div>
+        <input id="pwMeaning" class="pwField" placeholder="自己填写中文释义，例如：制定；构想">
+        <div class="pwActions"><button class="pwBtn" id="pwSaveNew">加入我的生词</button><button class="pwBtn secondary" id="pwSpeakNew">🔊 拼读</button></div></div>`;
+      $id('pwSaveNew').onclick=()=>{const meaning=$id('pwMeaning').value.trim();if(!meaning){alert('请先填写中文释义');return}
+        savePersonalWord({word:q,meaning_zh:meaning,phonetic:'',pos:'',source:'user',createdAt:new Date().toISOString()});
+        result.innerHTML=`<div class="pwCard"><b>${esc(q)}</b><div style="margin-top:5px">${esc(meaning)}</div><div class="pwMuted">已加入我的生词</div><div class="pwActions"><button class="pwBtn" id="pwSpeakSaved">🔊 发音</button></div></div>`;
+        $id('pwSpeakSaved').onclick=()=>speakAnyWord(q)};
+      $id('pwSpeakNew').onclick=()=>speakAnyWord(q);
+    }
+  };
+  btn.onclick=search;input.addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+  document.querySelectorAll('[data-pw-speak]').forEach(b=>b.onclick=()=>{const x=getPersonalWords()[+b.dataset.pwSpeak];if(x)speakAnyWord(x.word)});
+}
+
 <script>
 let items=[],page='home',query='',audioEl=null,deferredInstallPrompt=null,todayFilter='all',statusFilter='mastered',lastDateKey='';
 const KEY='dceng_v9_progress';
@@ -502,9 +570,10 @@ function render(){
       </div>
       <div class="panel"><b>当前学习统计</b><p class="small">唯一单词：${new Set(items.map(x=>String(x.word||"").toLowerCase())).size}　已掌握：${mastered().length}　待复习：${due().length}　连续学习：${streak()} 天</p></div>
       <div class="panel"><b>词库质量</b><p class="small">本版本包含 2318 条词库记录（其中 2316 个唯一英文词头）；全部归入“日常”或“专业”菜单。发音按需调用，不预加载整套音频资源。学习进度保存在本机浏览器。</p></div><div class="panel"><b>学习方式</b><p class="small">每天自动混合安排日常新词、专业新词和到期复习。你必须在词卡中做出一次记忆判断，才会计入“今日已完成”。</p></div>
+      ${personalWordModule()}
     </div>`;
   }
-  $id('main').innerHTML=body; bind();
+  $id('main').innerHTML=body; bind(); if(page==='mine') bindPersonalWordModule();
   if(page==='daily') initLazyList(items.filter(x=>!isPro(x)));
   else if(page==='professional') initLazyList(items.filter(isPro));
   else if(page==='status') initLazyList(statusPool(statusFilter));
