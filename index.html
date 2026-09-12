@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#eaf4ff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eaf4ff" id="themeColorMeta">
+<meta name="mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="color-scheme" content="light dark">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -194,6 +195,39 @@ main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padd
     color:#d0d0d0;
   }
 
+  /* Added V1.66 local-word/search dark-mode coverage. */
+  .wordSearchBox,.wordResult,.manualInline,.manualBox,.localWordsPanel{
+    background:#242424;
+    border-color:#3a3a3a;
+    box-shadow:none;
+    color:#f2f2f2;
+  }
+  .wordSearchTitle,.manualInlineTitle,.manualBox h3,.localWordsHead h3{color:#f2f2f2}
+  .wordSearchSub,.manualBox p,.localWordsHead span,.emptyHint{color:#a6a6a6}
+  .wordSearchRow input,.manualInline .manualGrid input,.manualInline .manualGrid textarea,.manualInline .manualGrid select,
+  .manualGrid input,.manualGrid textarea,.manualGrid select{
+    background:#292929;
+    color:#f2f2f2;
+    border-color:#404040;
+  }
+  .wordSearchRow input::placeholder,.manualInline .manualGrid input::placeholder,.manualInline .manualGrid textarea::placeholder,
+  .manualGrid input::placeholder,.manualGrid textarea::placeholder{color:#777}
+  .wordSearchTabs button,.wordActions button{background:#292929;border-color:#3b3b3b;color:#c7c7c7}
+  .wordSearchTabs button.active,.wordActions .primary{background:#3b82f6;color:#fff;border-color:#3b82f6}
+  .wordActions .speakSmall{background:#26384d;color:#8fc0ff;border-color:#38506a}
+  .manualInline .manualActions .speakNew,.manualActions .speakNew{background:#303030;color:#d6d6d6}
+  .manualInline .manualActions .saveWord,.manualActions .saveWord{background:#3b82f6;color:#fff}
+  .localWordsPanel{background:#242424}
+  .localCount{background:#33404f;color:#9fc9ff}
+  .localWordsArrow,.localWordRow>span{color:#8fa6bc}
+  .localWordsEntry:active,.localWordRow:active{background:#2b2b2b}
+  .localWordRow{background:#242424;border-color:#3a3a3a;box-shadow:none;color:#f2f2f2}
+  .localWordRow b{color:#f2f2f2}
+  .localWordRow .small{color:#a6a6a6}
+  .localOnlyNotice{background:#2b3036;color:#b9c6d2}
+  .personalTag{background:#26384d;color:#8fc0ff}
+  html{background:#191919}
+
   /* Keep browser-native controls aligned with the same theme. */
   input,select,button{color-scheme:dark}
 }
@@ -206,10 +240,8 @@ main{max-width:980px;margin:auto;padding:15px 16px 118px}.search{width:100%;padd
 function applySystemTheme(){
   const dark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   document.documentElement.style.colorScheme=dark?'dark':'light';
-  const metaL=document.querySelector('meta[name="theme-color"][media*="light"]');
-  const metaD=document.querySelector('meta[name="theme-color"][media*="dark"]');
-  if(metaL) metaL.content='#eaf4ff';
-  if(metaD) metaD.content='#191919';
+  const meta=document.getElementById('themeColorMeta');
+  if(meta) meta.content=dark?'#191919':'#eaf4ff';
 }
 applySystemTheme();
 try{
