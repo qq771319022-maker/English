@@ -242,8 +242,23 @@ function isPersonal(x){return x&&x.quality==='personal'}
 function localWordDate(x){const t=Number(x.createdAt||x.created_at||0);return t?new Date(t).toLocaleDateString('zh-CN'):''}
 function renderLocalWords(){
   const box=$id('localWordsList');if(!box)return;
-  if(!personalWords.length){box.innerHTML='<div class=\"emptyHint\">还没有本地单词。检索不到的单词可以在上方手动添加。</div>';return}
-  box.innerHTML=personalWords.slice().reverse().map(x=>`<div class=\"localWordItem\"><div class=\"localWordMain\"><div><div class=\"word\">${esc(x.word)}</div><div class=\"cn\">${esc(x.meaning_zh||'—')}</div><span class=\"tag\">${x.category==='Personal Professional'?'专业工程英语':'日常英语'} <span class=\"personalTag\">本地</span></span></div><div class=\"localWordDate\">${esc(localWordDate(x))}</div></div><div class=\"wordActions\"><button class=\"speakSmall\" data-local-speak=\"${esc(x.word)}\">🔊 发音</button><button data-local-detail=\"${esc(x.word)}\">查看详情</button></div></div>`).join('');
+  if(!personalWords.length){box.innerHTML='<div class="emptyHint">还没有本地单词。检索不到的单词可以在上方手动添加。</div>';return}
+  box.innerHTML=personalWords.slice().reverse().map(x=>`<div class="localWordItem"><div class="localWordMain"><div><div class="word">${esc(x.word)}</div><div class="cn">${esc(x.meaning_zh||'—')}</div><span class="tag">${x.category==='Personal Professional'?'专业工程英语':'日常英语'} <span class="personalTag">本地</span></span></div><div class="localWordDate">${esc(localWordDate(x))}</div></div><div class="wordActions"><button class="speakSmall" data-local-speak="${esc(x.word)}">🔊 发音</button><button data-local-detail="${esc(x.word)}">查看详情</button><button data-local-edit="${esc(x.word)}">✏️ 修改</button><button data-local-delete="${esc(x.word)}">🗑️ 删除</button></div></div>`).join('');
+}
+function editPersonalWord(word){
+  const k=String(word||'').trim().toLowerCase(),x=personalWords.find(a=>String(a.word||'').trim().toLowerCase()===k);if(!x)return;
+  const nw=prompt('修改英文单词：',x.word);if(nw===null)return; const w=nw.trim();if(!w){alert('英文单词不能为空');return}
+  const nm=prompt('修改中文释义：',x.meaning_zh||'');if(nm===null)return; const m=nm.trim();if(!m){alert('中文释义不能为空');return}
+  const nc=confirm('确定设为“专业工程英语”吗？\n\n确定 = 专业工程英语\n取消 = 日常英语');
+  if(personalWords.some(a=>a!==x&&String(a.word||'').trim().toLowerCase()===w.toLowerCase())){alert('本地单词中已经存在这个英文单词');return}
+  const old=x.word;x.word=w;x.meaning_zh=m;x.category=nc?'Personal Professional':'Personal Daily';
+  if(old!==w&&progress[old]){delete progress[old];} if(old!==w)favs.delete(old);
+  savePersonalWords();save();render();
+}
+function deletePersonalWord(word){
+  const k=String(word||'').trim().toLowerCase(),x=personalWords.find(a=>String(a.word||'').trim().toLowerCase()===k);if(!x)return;
+  if(!confirm(`确定删除本地单词“${x.word}”吗？\n\n删除后将从“本地单词”中移除，无法恢复。`))return;
+  personalWords=personalWords.filter(a=>a!==x);items=items.filter(a=>a!==x);delete progress[x.word];favs.delete(x.word);savePersonalWords();save();render();
 }
 function categoryLabel(x){return isPro(x)?'专业':'日常'}
 function addWordToReview(word){
@@ -260,12 +275,20 @@ function addPersonalWord(word,meaning,category){
   personalWords.push(x);items.push(x);savePersonalWords();return {ok:true,item:x};
 }
 function mineSearchResults(q,filter){
-  const term=String(q||'').trim().toLowerCase();
-  let pool=items;
-  if(filter==='daily')pool=pool.filter(x=>!isPro(x));
-  if(filter==='professional')pool=pool.filter(isPro);
-  if(!term)return [];
-  return uniqueByWord(pool).filter(x=>[x.word,x.meaning_zh,x.example_en,x.example_zh,x.pos,x.category].join(' ').toLowerCase().includes(term));
+  const raw=String(q||'').trim(),term=raw.toLowerCase(); let pool=items;
+  if(filter==='daily')pool=pool.filter(x=>!isPro(x)); if(filter==='professional')pool=pool.filter(isPro); if(!term)return [];
+  const norm=v=>String(v||'').trim().toLowerCase();
+  const scored=uniqueByWord(pool).map(x=>{
+    const w=norm(x.word),m=norm(x.meaning_zh),p=norm(x.pos),c=norm(x.category); let score=0;
+    if(w===term)score=1000;
+    else if(w.startsWith(term))score=800;
+    else if(m===term)score=700;
+    else if(m.split(/[；;，,、\s]+/).filter(Boolean).some(v=>norm(v)===term))score=650;
+    else if(m.includes(term))score=500;
+    else if(p===term||c===term)score=300;
+    return {x,score};
+  }).filter(a=>a.score>0).sort((a,b)=>b.score-a.score||norm(a.x.word).localeCompare(norm(b.x.word)));
+  return scored.map(a=>a.x);
 }
 function bindManualWordActions(){
   if($id('speakNew'))$id('speakNew').onclick=()=>{const w=$id('newWord').value.trim();if(!w){alert('请先填写英文单词');return}playLocalWord(w)};
@@ -274,7 +297,7 @@ function bindManualWordActions(){
 function renderMineResults(q='',filter='all'){
   const box=$id('mineResults');if(!box)return;
   const arr=mineSearchResults(q,filter);
-  if(!q.trim()){box.innerHTML='<div class="emptyHint">输入英文单词、中文释义或专业术语开始检索。<br>支持日常英语 + 数据中心工程英语。</div>';return}
+  if(!q.trim()){box.innerHTML='<div class="emptyHint">输入完整英文单词、词根或准确中文释义开始检索。<br>优先精确匹配，不再用例句等无关内容模糊匹配。</div>';return}
   if(!arr.length){
     const safeQ=esc(String(q||'').trim());
     box.innerHTML=`<div class="emptyHint">词库中没有找到“${safeQ}”。<br>可以直接在这里补充释义，加入后只保存在“本地单词”，不会进入日常或正常复习。</div><div class="manualInline"><div class="manualInlineTitle">＋ 添加到本地单词</div><div class="manualGrid"><input id="newWord" autocomplete="off" value="${safeQ}" placeholder="英文单词，例如：commissioning"><textarea id="newMeaning" placeholder="中文释义，例如：调试；投运"></textarea><select id="newCategory"><option value="professional">专业工程英语</option><option value="daily">日常英语</option></select></div><div class="manualActions"><button class="speakNew" id="speakNew">🔊 拼读</button><button class="saveWord" id="saveNewWord">加入本地单词</button></div></div>`;
@@ -630,6 +653,10 @@ $id('main').addEventListener('click',e=>{
   if(ls){playLocalWord(ls.dataset.localSpeak);return}
   let ld=e.target.closest('[data-local-detail]');
   if(ld){detailByWord(ld.dataset.localDetail);return}
+  let le=e.target.closest('[data-local-edit]');
+  if(le){editPersonalWord(le.dataset.localEdit);return}
+  let lx=e.target.closest('[data-local-delete]');
+  if(lx){deletePersonalWord(lx.dataset.localDelete);return}
   let ar=e.target.closest('[data-add-review]');
   if(ar){addWordToReview(ar.dataset.addReview);renderMineResults($id('mineSearch')?.value||'',document.querySelector('[data-mine-filter].active')?.dataset.mineFilter||'all');return}
   let sp=e.target.closest('[data-speak]');
