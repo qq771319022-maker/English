@@ -33,3 +33,10 @@ V1.65 quality pass: repaired 55 structurally shifted legacy records; repaired 17
 
 
 V1.65: Fixed white-screen regression from V1.63/V1.64. The existing app shell is inserted before the main JS binds DOM events; the previous null-element error no longer stops initialization. No vocabulary, theme, learning-plan, or review logic changes.
+
+V1.68: Continued vocabulary quality audit based on V1.67. Refined 80+ technical/daily example sentences for natural usage, clearer engineering context, and better headword coverage; removed remaining avoidable duplicate/family examples. Updated vocabulary metadata and service-worker cache version. No app feature or learning-logic changes.
+
+V1.69: Deep vocabulary QA pass based on V1.68. Removed the 17 personal words from the formal vocab dataset and kept them local-only with first-run localStorage seeding; repaired remaining template-style Chinese translations, 80+ technical example sentences, malformed collocations, and several semantic mismatches. Revalidated JSON, JavaScript, service-worker cache version, and ZIP integrity. No learning/review logic changes.
+
+
+V1.70: Deep second-stage vocabulary QA based on V1.69. Reworked the remaining template-heavy daily, travel, medical, and technical examples; corrected the legacy Chinese template cluster; fixed semantic mismatches between headwords and examples; normalized I/O notation; refined selected collocations; and revalidated the formal/local word separation. Formal vocab remains 2,533 entries, with 17 personal words seeded locally on first run. No learning/review logic changes.
