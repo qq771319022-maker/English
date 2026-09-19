@@ -40,3 +40,15 @@ V1.69: Deep vocabulary QA pass based on V1.68. Removed the 17 personal words fro
 
 
 V1.70: Deep second-stage vocabulary QA based on V1.69. Reworked the remaining template-heavy daily, travel, medical, and technical examples; corrected the legacy Chinese template cluster; fixed semantic mismatches between headwords and examples; normalized I/O notation; refined selected collocations; and revalidated the formal/local word separation. Formal vocab remains 2,533 entries, with 17 personal words seeded locally on first run. No learning/review logic changes.
+
+
+V1.71: Third deep vocabulary QA pass based on V1.70. Reworked the remaining repetitive inspection examples into task-specific engineering sentences; repaired an incorrect Chinese meaning/example for “fitting”; polished selected everyday/workplace phrases; revalidated word-example coverage, duplicate examples, JSON, JavaScript syntax, cache version, and formal/local vocabulary separation. No learning/review logic changes.
+
+
+V1.72: Deep contextual QA and naturalness pass based on V1.71. Corrected high-confidence English/Chinese mismatches, removed generated filler collocations from generator/switchgear and daily-life vocabulary blocks, repaired travel examples that incorrectly used “booking” as a generic object, improved transformer/test-report examples, clarified REF/dB terminology, normalized “no-load test” and “function/functional test”, and synchronized connected-speech hints. No learning/review logic changes.
+
+
+V1.73: Fourth deep vocabulary QA pass based on V1.72. Normalized high-confidence part-of-speech labels that did not match standard usage, repaired several English/Chinese mismatches, refined generic or awkward engineering examples, improved technical collocations such as root cause and three-phase supply, normalized SLD capitalization, and synchronized connected-speech hints for revised examples. Updated the visible app version and service-worker cache. No learning/review logic changes.
+
+
+V1.73 QA follow-up: Removed 44 redundant hyphen/space duplicate headwords where they represented the same lexical item, while preserving genuine grammatical contrasts such as check-in/check in. Corrected several headword/POS mismatches in everyday vocabulary and technical examples, fixed the incorrect “simulate-trip” item by replacing it with “trip simulation”, and refined additional travel and engineering sentences for natural usage.
