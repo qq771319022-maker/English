@@ -1,5 +1,5 @@
 {
-  "version": "1.86",
+  "version": "1.87",
   "total": 2489,
   "entries": [
     {
@@ -71478,7 +71478,7 @@
     }
   ],
   "meta": {
-    "version": "1.83",
+    "version": "1.87",
     "last_updated": "2026-09-19",
     "semantic_review": {
       "method": "Sequential manual semantic QA",
@@ -71490,5 +71490,6 @@
       "rule": "Future semantic QA must continue from next_start_id and must not repeat previously marked entries."
     },
     "local_seed_count": 19
-  }
+  },
+  "last_updated": "2026-09-19"
 }
