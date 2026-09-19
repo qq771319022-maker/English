@@ -1,7 +1,7 @@
 {
-  "version": 164,
-  "total": 2497,
-  "unique_words": 2495,
+  "version": 165,
+  "total": 2550,
+  "unique_words": 2548,
   "phrases": 664,
   "entries": [
     {
@@ -70945,6 +70945,1331 @@
         "work"
       ],
       "quality": "v42-email-summary-proofread",
+      "status": "verified-core"
+    },
+    {
+      "id": 2498,
+      "category": "Personal Daily",
+      "word": "attached",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "附上的；随附的",
+      "root": "attach",
+      "collocations": [
+        "attached report",
+        "attached document"
+      ],
+      "example_en": "Please refer to the attached MOP and RA for your review and approval.",
+      "example_zh": "请查阅随附的 MOP 和 RA 以供审核和批准。",
+      "connected_speech": "Practice the smooth transition from attached → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2499,
+      "category": "Personal Daily",
+      "word": "owner",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "所有者；业主",
+      "root": "own",
+      "collocations": [
+        "equipment owner",
+        "system owner"
+      ],
+      "example_en": "The equipment owner should confirm the required corrective action before closure.",
+      "example_zh": "设备所有者应在结项前确认所需的整改措施。",
+      "connected_speech": "Practice the smooth transition from owner → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2500,
+      "category": "Personal Daily",
+      "word": "president",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "总统；总裁",
+      "root": "preside",
+      "collocations": [
+        "company president",
+        "president of the company"
+      ],
+      "example_en": "The company president attended the project review meeting.",
+      "example_zh": "公司总裁参加了项目评审会议。",
+      "connected_speech": "Practice the smooth transition from president → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2501,
+      "category": "Personal Professional",
+      "word": "ampere",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "安培（电流单位）",
+      "root": "ampere",
+      "collocations": [
+        "ampere rating",
+        "ampere current"
+      ],
+      "example_en": "The breaker has an ampere rating suitable for the connected load.",
+      "example_zh": "该断路器的额定安培值适用于所连接的负载。",
+      "connected_speech": "Practice the smooth transition from ampere → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2502,
+      "category": "Personal Professional",
+      "word": "firm",
+      "phonetic": "",
+      "pos": "adj./n.",
+      "meaning_zh": "坚定的；公司",
+      "root": "firm",
+      "collocations": [
+        "firm decision",
+        "engineering firm"
+      ],
+      "example_en": "The engineering firm provided the technical clarification.",
+      "example_zh": "工程公司提供了技术澄清。",
+      "connected_speech": "Practice the smooth transition from firm → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2503,
+      "category": "Personal Daily",
+      "word": "education",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "教育；培训背景",
+      "root": "educate",
+      "collocations": [
+        "engineering education",
+        "technical education"
+      ],
+      "example_en": "His electrical engineering education supports his technical work.",
+      "example_zh": "他的电气工程教育背景支持其技术工作。",
+      "connected_speech": "Practice the smooth transition from education → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2504,
+      "category": "Personal Daily",
+      "word": "pocket",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "口袋；小型的",
+      "root": "pocket",
+      "collocations": [
+        "pocket size",
+        "in your pocket"
+      ],
+      "example_en": "Keep the small test accessories in the tool pocket.",
+      "example_zh": "把小型测试附件放在工具袋里。",
+      "connected_speech": "Practice the smooth transition from pocket → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2505,
+      "category": "Personal Professional",
+      "word": "packet",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "小包；数据包",
+      "root": "pack",
+      "collocations": [
+        "data packet",
+        "packet loss"
+      ],
+      "example_en": "The monitoring system did not show any abnormal packet loss.",
+      "example_zh": "监控系统没有显示异常的数据包丢失。",
+      "connected_speech": "Practice the smooth transition from packet → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2506,
+      "category": "Personal Daily",
+      "word": "theater",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "剧院；戏院",
+      "root": "theatre",
+      "collocations": [
+        "movie theater",
+        "theater environment"
+      ],
+      "example_en": "The open theater environment made the humming sound more noticeable.",
+      "example_zh": "开放的环境使嗡嗡声更加明显。",
+      "connected_speech": "Practice the smooth transition from theater → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2507,
+      "category": "Personal Daily",
+      "word": "tissue",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "纸巾；组织",
+      "root": "tissue",
+      "collocations": [
+        "paper tissue",
+        "tissue paper"
+      ],
+      "example_en": "Use a clean tissue to remove any visible dust from the surface.",
+      "example_zh": "使用干净的纸巾清除表面的可见灰尘。",
+      "connected_speech": "Practice the smooth transition from tissue → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2508,
+      "category": "Personal Daily",
+      "word": "forward",
+      "phonetic": "",
+      "pos": "adv./v.",
+      "meaning_zh": "向前；转发",
+      "root": "forward",
+      "collocations": [
+        "forward the email",
+        "move forward"
+      ],
+      "example_en": "Please forward the updated report to the relevant stakeholders.",
+      "example_zh": "请将更新后的报告转发给相关方。",
+      "connected_speech": "Practice the smooth transition from forward → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2509,
+      "category": "Personal Daily",
+      "word": "ferment",
+      "phonetic": "",
+      "pos": "v./n.",
+      "meaning_zh": "发酵",
+      "root": "ferment",
+      "collocations": [
+        "ferment process",
+        "ferment naturally"
+      ],
+      "example_en": "The material can ferment under unsuitable storage conditions.",
+      "example_zh": "该材料在不合适的储存条件下可能发生发酵。",
+      "connected_speech": "Practice the smooth transition from ferment → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2510,
+      "category": "Personal Daily",
+      "word": "grilling",
+      "phonetic": "",
+      "pos": "n./v.",
+      "meaning_zh": "烧烤；烘烤",
+      "root": "grill",
+      "collocations": [
+        "grilling process",
+        "grilling temperature"
+      ],
+      "example_en": "The grilling process should be controlled according to the specified temperature.",
+      "example_zh": "烧烤过程应按照规定温度进行控制。",
+      "connected_speech": "Practice the smooth transition from grilling → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2511,
+      "category": "Personal Professional",
+      "word": "resident",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "居民；驻场人员",
+      "root": "reside",
+      "collocations": [
+        "local resident",
+        "site resident engineer"
+      ],
+      "example_en": "The resident engineer attended the joint site inspection.",
+      "example_zh": "驻场工程师参加了联合现场检查。",
+      "connected_speech": "Practice the smooth transition from resident → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2512,
+      "category": "Personal Daily",
+      "word": "administrative",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "行政的；管理的",
+      "root": "administer",
+      "collocations": [
+        "administrative support",
+        "administrative requirement"
+      ],
+      "example_en": "The administrative requirements were confirmed before the meeting.",
+      "example_zh": "会议前已确认行政管理要求。",
+      "connected_speech": "Practice the smooth transition from administrative → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "daily"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2513,
+      "category": "Personal Professional",
+      "word": "forgo",
+      "phonetic": "",
+      "pos": "v.",
+      "meaning_zh": "放弃；不采用",
+      "root": "go",
+      "collocations": [
+        "forgo the opportunity",
+        "forgo a formal test"
+      ],
+      "example_en": "We should not forgo the required verification just to save time.",
+      "example_zh": "不能为了节省时间而放弃必要的验证。",
+      "connected_speech": "Practice the smooth transition from forgo → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2514,
+      "category": "Personal Professional",
+      "word": "formulate",
+      "phonetic": "",
+      "pos": "v.",
+      "meaning_zh": "制定；规划；明确提出",
+      "root": "formula",
+      "collocations": [
+        "formulate a plan",
+        "formulate a corrective action plan"
+      ],
+      "example_en": "The engineering team formulated a corrective action plan based on the investigation findings.",
+      "example_zh": "工程团队根据调查结果制定了整改措施计划。",
+      "connected_speech": "Practice the smooth transition from formulate → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "personal",
+        "local",
+        "professional"
+      ],
+      "quality": "personal",
+      "verified_online": false,
+      "status": "personal"
+    },
+    {
+      "id": 2515,
+      "category": "Data Center & Electrical Engineering",
+      "word": "acceptable",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "可接受的",
+      "root": "accept",
+      "collocations": [
+        "acceptable value",
+        "acceptable operating limit"
+      ],
+      "example_en": "The measured noise level should be compared with the applicable acceptable value.",
+      "example_zh": "测得的噪声水平应与适用的可接受值进行比较。",
+      "connected_speech": "Practice the smooth transition from acceptable → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2516,
+      "category": "Data Center & Electrical Engineering",
+      "word": "elevated",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "偏高的；升高的",
+      "root": "elevate",
+      "collocations": [
+        "elevated noise level",
+        "elevated temperature"
+      ],
+      "example_en": "The elevated value may have been affected by surrounding construction works.",
+      "example_zh": "偏高的数值可能受到周围施工影响。",
+      "connected_speech": "Practice the smooth transition from elevated → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2517,
+      "category": "Data Center & Electrical Engineering",
+      "word": "adjacent",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "相邻的",
+      "root": "adjacency",
+      "collocations": [
+        "adjacent transformer",
+        "adjacent equipment"
+      ],
+      "example_en": "The remaining humming was compared with adjacent transformers.",
+      "example_zh": "剩余的嗡嗡声与相邻变压器进行了比较。",
+      "connected_speech": "Practice the smooth transition from adjacent → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2518,
+      "category": "Data Center & Electrical Engineering",
+      "word": "consolidated",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "综合的；汇总的",
+      "root": "consolidate",
+      "collocations": [
+        "consolidated technical update",
+        "consolidated report"
+      ],
+      "example_en": "We prepared a consolidated technical update covering the historical findings and latest results.",
+      "example_zh": "我们编制了一份综合技术更新，涵盖历史发现和最新结果。",
+      "connected_speech": "Practice the smooth transition from consolidated → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2519,
+      "category": "Data Center & Electrical Engineering",
+      "word": "commenced",
+      "phonetic": "",
+      "pos": "v.",
+      "meaning_zh": "开始；着手",
+      "root": "commence",
+      "collocations": [
+        "investigation commenced",
+        "work commenced"
+      ],
+      "example_en": "The investigation commenced following reports of abnormal humming noise.",
+      "example_zh": "在收到多处异常嗡嗡声报告后，调查工作开始。",
+      "connected_speech": "Practice the smooth transition from commenced → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2520,
+      "category": "Data Center & Electrical Engineering",
+      "word": "inherent",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "固有的；内在的",
+      "root": "inhere",
+      "collocations": [
+        "inherent characteristic",
+        "inherent noise"
+      ],
+      "example_en": "The transformer produces inherent electromagnetic humming during normal operation.",
+      "example_zh": "变压器在正常运行期间会产生固有的电磁嗡鸣。",
+      "connected_speech": "Practice the smooth transition from inherent → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2521,
+      "category": "Data Center & Electrical Engineering",
+      "word": "electromagnetic",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "电磁的",
+      "root": "electromagnet",
+      "collocations": [
+        "electromagnetic humming",
+        "electromagnetic effect"
+      ],
+      "example_en": "The transformer produces inherent electromagnetic humming during normal operation.",
+      "example_zh": "变压器在正常运行期间会产生固有的电磁嗡鸣。",
+      "connected_speech": "Practice the smooth transition from electromagnetic → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2522,
+      "category": "Data Center & Electrical Engineering",
+      "word": "resonant",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "共振的；产生共鸣的",
+      "root": "resonate",
+      "collocations": [
+        "resonant surface",
+        "resonant effect"
+      ],
+      "example_en": "The cable ladder cover acted as a resonant surface.",
+      "example_zh": "电缆梯架盖板形成了一个共振表面。",
+      "connected_speech": "Practice the smooth transition from resonant → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2523,
+      "category": "Data Center & Electrical Engineering",
+      "word": "amplification",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "放大；增强",
+      "root": "amplify",
+      "collocations": [
+        "noise amplification",
+        "signal amplification"
+      ],
+      "example_en": "The cable ladder cover caused acoustic amplification of the transmitted vibration.",
+      "example_zh": "电缆梯架盖板导致传递振动的声学放大。",
+      "connected_speech": "Practice the smooth transition from amplification → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2524,
+      "category": "Data Center & Electrical Engineering",
+      "word": "acoustic",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "声学的；声音的",
+      "root": "acoustics",
+      "collocations": [
+        "acoustic noise",
+        "acoustic amplification"
+      ],
+      "example_en": "The cable ladder cover acted as an acoustic amplification medium.",
+      "example_zh": "电缆梯架盖板起到了声学放大介质的作用。",
+      "connected_speech": "Practice the smooth transition from acoustic → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2525,
+      "category": "Data Center & Electrical Engineering",
+      "word": "mitigation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "缓解；减缓措施",
+      "root": "mitigate",
+      "collocations": [
+        "vibration mitigation",
+        "risk mitigation"
+      ],
+      "example_en": "The EPG team carried out vibration mitigation works at the affected locations.",
+      "example_zh": "EPG 团队在受影响位置实施了振动缓解措施。",
+      "connected_speech": "Practice the smooth transition from mitigation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2526,
+      "category": "Data Center & Electrical Engineering",
+      "word": "optimization",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "优化",
+      "root": "optimize",
+      "collocations": [
+        "system optimization",
+        "support optimization"
+      ],
+      "example_en": "Optimization of the cable ladder support arrangement reduced vibration transmission.",
+      "example_zh": "优化电缆梯架支撑布置降低了振动传递。",
+      "connected_speech": "Practice the smooth transition from optimization → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2527,
+      "category": "Data Center & Electrical Engineering",
+      "word": "transmission",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "传递；传输",
+      "root": "transmit",
+      "collocations": [
+        "vibration transmission",
+        "signal transmission"
+      ],
+      "example_en": "The modification reduced vibration transmission through the support system.",
+      "example_zh": "该修改降低了通过支撑系统的振动传递。",
+      "connected_speech": "Practice the smooth transition from transmission → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2528,
+      "category": "Data Center & Electrical Engineering",
+      "word": "substantiation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "技术依据；佐证",
+      "root": "substantiate",
+      "collocations": [
+        "technical substantiation",
+        "supporting substantiation"
+      ],
+      "example_en": "Additional technical substantiation was requested to support the engineering conclusion.",
+      "example_zh": "相关方要求提供额外的技术依据以支持工程结论。",
+      "connected_speech": "Practice the smooth transition from substantiation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2529,
+      "category": "Data Center & Electrical Engineering",
+      "word": "integrity",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "完整性；可靠性",
+      "root": "integral",
+      "collocations": [
+        "earthing integrity",
+        "system integrity"
+      ],
+      "example_en": "Earthing integrity and electrical connections were considered during the further review.",
+      "example_zh": "进一步审查时考虑了接地完整性和电气连接。",
+      "connected_speech": "Practice the smooth transition from integrity → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2530,
+      "category": "Data Center & Electrical Engineering",
+      "word": "stakeholder",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "相关方；利益相关者",
+      "root": "stake",
+      "collocations": [
+        "relevant stakeholders",
+        "key stakeholder"
+      ],
+      "example_en": "The engineering team provided additional clarification to the relevant stakeholders.",
+      "example_zh": "工程团队向相关方提供了额外说明。",
+      "connected_speech": "Practice the smooth transition from stakeholder → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2531,
+      "category": "Data Center & Electrical Engineering",
+      "word": "quantify",
+      "phonetic": "",
+      "pos": "v.",
+      "meaning_zh": "量化",
+      "root": "quantity",
+      "collocations": [
+        "quantify the noise level",
+        "quantify the difference"
+      ],
+      "example_en": "The sound level meter was used to quantify the acoustic noise level.",
+      "example_zh": "使用声级计对声学噪声水平进行量化。",
+      "connected_speech": "Practice the smooth transition from quantify → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2532,
+      "category": "Data Center & Electrical Engineering",
+      "word": "parameter",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "参数",
+      "root": "parametric",
+      "collocations": [
+        "operating parameter",
+        "measurement parameter"
+      ],
+      "example_en": "The assessment considered transformer operating parameters and site conditions.",
+      "example_zh": "评估考虑了变压器运行参数和现场条件。",
+      "connected_speech": "Practice the smooth transition from parameter → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2533,
+      "category": "Data Center & Electrical Engineering",
+      "word": "correlation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "相关性；关联",
+      "root": "correlate",
+      "collocations": [
+        "correlation between",
+        "data correlation"
+      ],
+      "example_en": "The assessment relied on correlation between thermal behavior, vibration, and sound measurements.",
+      "example_zh": "评估综合考虑了热行为、振动和声音测量之间的相关性。",
+      "connected_speech": "Practice the smooth transition from correlation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2534,
+      "category": "Data Center & Electrical Engineering",
+      "word": "comprehensive",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "全面的；综合的",
+      "root": "comprehend",
+      "collocations": [
+        "comprehensive assessment",
+        "comprehensive review"
+      ],
+      "example_en": "This combined approach provided a more comprehensive assessment.",
+      "example_zh": "这种综合方法提供了更全面的评估。",
+      "connected_speech": "Practice the smooth transition from comprehensive → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2535,
+      "category": "Data Center & Electrical Engineering",
+      "word": "phenomenon",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "现象",
+      "root": "phenomenal",
+      "collocations": [
+        "humming phenomenon",
+        "physical phenomenon"
+      ],
+      "example_en": "The engineering team evaluated the observed humming phenomenon.",
+      "example_zh": "工程团队对观察到的嗡鸣现象进行了评估。",
+      "connected_speech": "Practice the smooth transition from phenomenon → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2536,
+      "category": "Data Center & Electrical Engineering",
+      "word": "humming",
+      "phonetic": "",
+      "pos": "n./adj.",
+      "meaning_zh": "嗡嗡声；嗡鸣",
+      "root": "hum",
+      "collocations": [
+        "transformer humming",
+        "humming noise"
+      ],
+      "example_en": "A certain level of transformer humming remained noticeable after rectification.",
+      "example_zh": "整改后仍能听到一定程度的变压器嗡鸣。",
+      "connected_speech": "Practice the smooth transition from humming → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2537,
+      "category": "Data Center & Electrical Engineering",
+      "word": "surrounding",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "周围的；附近的",
+      "root": "surround",
+      "collocations": [
+        "surrounding construction works",
+        "surrounding equipment"
+      ],
+      "example_en": "The measured value may have been affected by surrounding construction works.",
+      "example_zh": "测量值可能受到周围施工工作的影响。",
+      "connected_speech": "Practice the smooth transition from surrounding → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2538,
+      "category": "Data Center & Electrical Engineering",
+      "word": "fluctuation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "波动",
+      "root": "fluctuate",
+      "collocations": [
+        "voltage fluctuation",
+        "temperature fluctuation"
+      ],
+      "example_en": "No abnormal voltage fluctuations were identified during the inspection.",
+      "example_zh": "检查期间未发现异常电压波动。",
+      "connected_speech": "Practice the smooth transition from fluctuation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2539,
+      "category": "Data Center & Electrical Engineering",
+      "word": "hotspot",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "热点；局部过热点",
+      "root": "hot spot",
+      "collocations": [
+        "thermal hotspot",
+        "hotspot detection"
+      ],
+      "example_en": "The thermal inspection did not identify any abnormal hotspots.",
+      "example_zh": "热检查未发现异常热点。",
+      "connected_speech": "Practice the smooth transition from hotspot → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2540,
+      "category": "Data Center & Electrical Engineering",
+      "word": "overheating",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "过热",
+      "root": "overheat",
+      "collocations": [
+        "overheating condition",
+        "signs of overheating"
+      ],
+      "example_en": "No overheating condition was observed during the thermal assessment.",
+      "example_zh": "评估过程中未观察到过热情况。",
+      "connected_speech": "Practice the smooth transition from overheating → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2541,
+      "category": "Data Center & Electrical Engineering",
+      "word": "anomaly",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "异常；异常现象",
+      "root": "anomalous",
+      "collocations": [
+        "thermal anomaly",
+        "operational anomaly"
+      ],
+      "example_en": "No thermal anomaly was identified during the inspection.",
+      "example_zh": "检查期间未发现热异常。",
+      "connected_speech": "Practice the smooth transition from anomaly → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2542,
+      "category": "Data Center & Electrical Engineering",
+      "word": "audible",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "可听见的；声音上的",
+      "root": "audition",
+      "collocations": [
+        "audible noise",
+        "audible humming"
+      ],
+      "example_en": "The audible humming became more noticeable in the open yard environment.",
+      "example_zh": "在开放的场地环境中，可听见的嗡鸣更加明显。",
+      "connected_speech": "Practice the smooth transition from audible → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2543,
+      "category": "Data Center & Electrical Engineering",
+      "word": "instrumentation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "仪器设备；测量仪表",
+      "root": "instrument",
+      "collocations": [
+        "measurement instrumentation",
+        "test instrumentation"
+      ],
+      "example_en": "Two separate measurement instruments were used for different technical purposes.",
+      "example_zh": "针对不同技术目的使用了两种独立的测量仪器。",
+      "connected_speech": "Practice the smooth transition from instrumentation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2544,
+      "category": "Data Center & Electrical Engineering",
+      "word": "implementation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "实施；执行",
+      "root": "implement",
+      "collocations": [
+        "implementation of corrective measures",
+        "implementation plan"
+      ],
+      "example_en": "The findings were reviewed after implementation of the corrective measures.",
+      "example_zh": "实施纠正措施后，对调查结果进行了复核。",
+      "connected_speech": "Practice the smooth transition from implementation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2545,
+      "category": "Data Center & Electrical Engineering",
+      "word": "investigation",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "调查；排查",
+      "root": "investigate",
+      "collocations": [
+        "technical investigation",
+        "site investigation"
+      ],
+      "example_en": "The investigation included thermal, acoustic, and mechanical observations.",
+      "example_zh": "调查包括热、声学和机械方面的观察。",
+      "connected_speech": "Practice the smooth transition from investigation → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2546,
+      "category": "Data Center & Electrical Engineering",
+      "word": "characteristic",
+      "phonetic": "",
+      "pos": "n.",
+      "meaning_zh": "特性；特征",
+      "root": "characterize",
+      "collocations": [
+        "operating characteristic",
+        "transformer characteristic"
+      ],
+      "example_en": "The humming was associated with the normal operating characteristics of the transformer.",
+      "example_zh": "嗡鸣与变压器正常运行特性有关。",
+      "connected_speech": "Practice the smooth transition from characteristic → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2547,
+      "category": "Data Center & Electrical Engineering",
+      "word": "substantial",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "显著的；大量的",
+      "root": "substance",
+      "collocations": [
+        "substantial reduction",
+        "substantial change"
+      ],
+      "example_en": "The amplified humming sound was substantially reduced after the modification.",
+      "example_zh": "修改后被放大的嗡鸣声显著降低。",
+      "connected_speech": "Practice the smooth transition from substantial → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2548,
+      "category": "Data Center & Electrical Engineering",
+      "word": "corresponding",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "相应的；对应的",
+      "root": "correspond",
+      "collocations": [
+        "corresponding change",
+        "corresponding result"
+      ],
+      "example_en": "The alteration resulted in a corresponding change in the audible humming pattern.",
+      "example_zh": "该调整使可听见的嗡鸣模式发生相应变化。",
+      "connected_speech": "Practice the smooth transition from corresponding → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2549,
+      "category": "Data Center & Electrical Engineering",
+      "word": "adequately",
+      "phonetic": "",
+      "pos": "adv.",
+      "meaning_zh": "充分地；适当地",
+      "root": "adequate",
+      "collocations": [
+        "adequately considered",
+        "adequately addressed"
+      ],
+      "example_en": "Potential factors were considered to ensure they had been adequately addressed.",
+      "example_zh": "对潜在因素进行了考虑，以确保其得到充分处理。",
+      "connected_speech": "Practice the smooth transition from adequately → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
+      "status": "verified-core"
+    },
+    {
+      "id": 2550,
+      "category": "Data Center & Electrical Engineering",
+      "word": "applicable",
+      "phonetic": "",
+      "pos": "adj.",
+      "meaning_zh": "适用的",
+      "root": "apply",
+      "collocations": [
+        "applicable limit",
+        "applicable standard"
+      ],
+      "example_en": "The measured value should be compared with the applicable operating limit.",
+      "example_zh": "测量值应与适用的运行限值进行比较。",
+      "connected_speech": "Practice the smooth transition from applicable → in the sentence.",
+      "difficulty": "core",
+      "tags": [
+        "professional",
+        "report",
+        "transformer-noise"
+      ],
+      "quality": "v37-technical-report-addition",
+      "verified_online": false,
       "status": "verified-core"
     }
   ],
