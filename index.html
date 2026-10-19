@@ -399,10 +399,11 @@ function greeting(){const h=new Date().getHours();if(h>=5&&h<12)return 'Good mor
 function st(w){return progress[w]||{box:0,due:0,seen:0,correct:0,wrong:0,last:0}}
 function isPro(x){return x.category==='Data Center & Electrical Engineering'||x.category==='Engineering Phrases'||x.category==='Scenario'||x.category==='Personal Professional'}
 function uniqueByWord(pool){const seen=new Set(),out=[];for(const x of pool){const k=String(x.word||'').trim().toLowerCase();if(!k||seen.has(k))continue;seen.add(k);out.push(x)}return out}
-function due(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&(()=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()})()))}
-function mastered(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&(()=>{let s=st(x.word);return s.box>=4&&s.due>Date.now()})()))}
-function learning(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&(()=>{let s=st(x.word);return s.seen>0&&s.box<4&&s.due>Date.now()})()))}
-function newWords(pool=items){return uniqueByWord(pool).filter(x=>st(x.word).seen===0)}
+function due(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&!isMastered(x.word)&&(()=>{let s=st(x.word);return s.seen>0&&s.due<=Date.now()})()))}
+function isMastered(w){return st(w).mastered===true}
+function mastered(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&(()=>{let s=st(x.word);return s.mastered===true||(s.box>=4&&s.due>Date.now())})()))}
+function learning(){return uniqueByWord(items.filter(x=>!isPersonal(x)&&!isMastered(x.word)&&(()=>{let s=st(x.word);return s.seen>0&&s.box<4&&s.due>Date.now()})()))}
+function newWords(pool=items){return uniqueByWord(pool).filter(x=>!isMastered(x.word)&&st(x.word).seen===0)}
 function statusPool(mode){if(mode==='mastered')return mastered();if(mode==='learning')return learning();if(mode==='due')return due();return []}
 function openStatus(mode){statusFilter=mode;page='status';query='';render();window.scrollTo({top:0,behavior:'instant'})}
 function goals(){const rv=localStorage.getItem('dceng_review')||'20';return{
@@ -455,7 +456,7 @@ function familyKey(x){
 }
 function seededHash(str){let h=2166136261;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function groupedNewWords(pool,limit){
-  const unseen=uniqueByWord(pool).filter(x=>st(x.word).seen===0);
+  const unseen=uniqueByWord(pool).filter(x=>!isMastered(x.word)&&st(x.word).seen===0);
   const groups=new Map();
   unseen.forEach(x=>{const k=familyKey(x);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)});
   const multi=[],single=[];
@@ -479,7 +480,7 @@ function groupedNewWords(pool,limit){
 function dailyPlan(){
   const g=goals(), key='dceng_plan_v164_'+today();
   let saved=JSON.parse(localStorage.getItem(key)||'null');
-  if(saved && Array.isArray(saved.ids)){ saved.ids=saved.ids.filter(id=>{const x=items.find(v=>v.id===id);return x&&!isPersonal(x)}); localStorage.setItem(key,JSON.stringify(saved)); return saved; }
+  if(saved && Array.isArray(saved.ids)){ saved.ids=saved.ids.filter(id=>{const x=items.find(v=>v.id===id);return x&&!isPersonal(x)&&!isMastered(x.word)}); localStorage.setItem(key,JSON.stringify(saved)); return saved; }
   const dailyPool=groupedNewWords(items.filter(x=>!isPro(x)&&!isPersonal(x)),g.n);
   const dailyIds=new Set(dailyPool.map(x=>x.id));
   const proPool=groupedNewWords(items.filter(isPro).filter(x=>!isPersonal(x)).filter(x=>!dailyIds.has(x.id)),g.p);
@@ -490,7 +491,7 @@ function todayTasks(){
   const ids=new Set(dailyPlan().ids);
   return items.filter(x=>ids.has(x.id));
 }
-function todayRemaining(){return todayTasks().filter(x=>!isCompletedToday(x.word))}
+function todayRemaining(){return todayTasks().filter(x=>!isMastered(x.word)&&!isCompletedToday(x.word))}
 function preloadTodayAudio(){}
 function todayCounts(){
   const t=completedToday(),g=goals();
@@ -778,10 +779,10 @@ function detail(i){
       <b>✓ 完成本词学习</b>
       <span>选择下面任意一个记忆结果，即表示本词今天已经学习完成。</span>
       <div class="rating">
-        <button data-rate="again"><b>忘记</b>重新安排 · 10分钟后</button>
         <button data-rate="hard"><b>困难</b>复习安排 · 次日 00:00</button>
         <button data-rate="good"><b>记得</b>复习安排 · 第3天 00:00</button>
         <button data-rate="easy"><b>简单</b>复习安排 · 第7天 00:00</button>
+        <button data-master-word="${esc(x.word)}"><b>掌握</b>加入已掌握，不再自动复习</button>
       </div>
     </div>`}`;
   $id('modal').classList.add('show');
@@ -789,6 +790,7 @@ function detail(i){
   $id('me').onclick=()=>playLocalExample(x.word);
   $id('mf').onclick=()=>{favs.has(x.word)?favs.delete(x.word):favs.add(x.word);save();detail(i)};
   $id('detail').querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>rate(x.word,b.dataset.rate));
+  $id('detail').querySelector('[data-master-word]')?.addEventListener('click',()=>markMastered(x.word));
 }
 function nextMidnight(days){
   const d=new Date();
@@ -796,13 +798,17 @@ function nextMidnight(days){
   d.setDate(d.getDate()+days);
   return d.getTime();
 }
+function markMastered(w){
+  const s=st(w),x=items.find(a=>a.word===w),wasDue=s.seen>0&&s.due<=Date.now();s.mastered=true;s.seen=Math.max(1,s.seen||0);s.last=Date.now();s.due=0;progress[w]=s;save();markDay();
+  if(!isCompletedToday(w)&&x)markToday(wasDue?'r':isPro(x)?'p':'n',w);
+  $id('modal').classList.remove('show');render();
+}
 function rate(w,l){
   let x=items.find(a=>a.word===w),s=st(w),now=Date.now();
   const wasNew=s.seen===0;
   const wasDue=!wasNew && s.due<=now;
   s.seen++;s.last=now;
-  if(l==='again'){s.box=0;s.wrong++;s.due=now+10*60000}
-  else if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=nextMidnight(1)}
+  if(l==='hard'){s.box=Math.max(1,s.box);s.wrong++;s.due=nextMidnight(1)}
   else if(l==='good'){s.box=Math.min(4,s.box+1);s.correct++;s.due=nextMidnight(3)}
   else{s.box=4;s.correct++;s.due=nextMidnight(7)}
   progress[w]=s;save();markDay();
